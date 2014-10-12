@@ -34,7 +34,6 @@ namespace StudyCenter.UI
             log4net.Config.XmlConfigurator.Configure();
             //初始化Spring.net
             SpringHelper.SpringInit("~/App_Start/Objects.xml");
-
             ////自定义数据库初始化
             //var db = new MyDatabaseInit<ModelContainer>();
             //db.Seed(new ModelContainer());
