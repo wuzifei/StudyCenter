@@ -1,0 +1,78 @@
+/* CSS Document */
+	body{
+		text-align:center;
+		font-family:Tahoma, Geneva, sans-serif;
+	}
+
+	.allItems{
+		border:1px solid red;
+		margin:0 auto;
+		width:95%;
+		text-align:left;
+	}
+	.title{
+		font-size:14px;
+		color:#007;
+		font-weight:bold;
+		margin-left:5px;
+		float: left;
+	}
+	.content textarea,.content input{
+		border:1px solid #09f;
+		margin:2px;
+	}
+	
+	.content textarea {
+		width: 98%
+	}
+
+	.singleItem{
+		margin-top:5px;
+		margin-left: 8px;
+		margin-right: 8px;
+		font-size:12px;
+	}
+	
+	.content input[type="text"]{
+		width:80%;
+		border: 0;
+		border-bottom: 1px solid #09f;
+	}	
+	input[type="checkbox"]{
+		vertical-align:middle
+	}
+	.submitBar{
+		text-align:center;
+		margin-bottom:10px;
+		margin-top: 10px;
+	}
+	.btnSubmit{
+		margin:0 auto;
+		background-color:#09f;
+		color:#fff;
+		width:31%;
+		border:1px solid #300;	
+		font-size:25px;
+
+	}
+	.btnSubmit:hover{
+		background-color:#006;
+		color:#fff;
+	}
+	
+	.commonItems{
+		text-align:center;
+	}
+	.commonItems label{
+		font-size:12px;
+		color:#007;
+		margin-left:0px;
+	}
+
+	.checkAnswer{
+		color: red;
+	}	
+	.checkAnswer:hover {
+		font-weight: bold;
+	}
+

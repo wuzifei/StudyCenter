@@ -1,0 +1,380 @@
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2014-09-23 19:47:39,239 [38] ERROR DefaultErrorHandle - System.Web.HttpRequestValidationException (0x80004005): 从客户端(1005-SQ-1="<h1 style="margin: 0...")中检测到有潜在危险的 Request.Form 值。
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.<>c__DisplayClass5.<ValidateHttpValueCollection>b__3(String key, String value)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.Get(String name)
+   在 System.Collections.Specialized.NameValueCollection.get_Item(String name)
+   在 StudyCenter.BLL.TestPaperService.AnswerList(Int32 userId, NameValueCollection form, List`1 smallQuestions, ChoiceQuestion[] cqList, TrueFalseQuestion[] tqList, Int32& allScore) 位置 d:\SourceCode\StudyCenter\StudyCenter.BLL\TestPaperService.cs:行号 109
+   在 StudyCenter.BLL.TestPaperService.SaveAnswer(Int32 testpaperId, Int32 userId, NameValueCollection form) 位置 d:\SourceCode\StudyCenter\StudyCenter.BLL\TestPaperService.cs:行号 58
+   在 StudyCenter.UI.Controllers.TestPaperController.Report(Int32 id, FormCollection formCollection) 位置 d:\SourceCode\StudyCenter\StudyCenter.UI\Controllers\TestPaperController.cs:行号 285
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-09-23 19:47:39,609 [38] DEBUG DefaultErrorHandle - System.Web.HttpRequestValidationException (0x80004005): 从客户端(1005-SQ-1="<h1 style="margin: 0...")中检测到有潜在危险的 Request.Form 值。
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.<>c__DisplayClass5.<ValidateHttpValueCollection>b__3(String key, String value)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.Get(String name)
+   在 System.Collections.Specialized.NameValueCollection.get_Item(String name)
+   在 StudyCenter.BLL.TestPaperService.AnswerList(Int32 userId, NameValueCollection form, List`1 smallQuestions, ChoiceQuestion[] cqList, TrueFalseQuestion[] tqList, Int32& allScore) 位置 d:\SourceCode\StudyCenter\StudyCenter.BLL\TestPaperService.cs:行号 109
+   在 StudyCenter.BLL.TestPaperService.SaveAnswer(Int32 testpaperId, Int32 userId, NameValueCollection form) 位置 d:\SourceCode\StudyCenter\StudyCenter.BLL\TestPaperService.cs:行号 58
+   在 StudyCenter.UI.Controllers.TestPaperController.Report(Int32 id, FormCollection formCollection) 位置 d:\SourceCode\StudyCenter\StudyCenter.UI\Controllers\TestPaperController.cs:行号 285
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-09-23 19:49:12,972 [38] ERROR DefaultErrorHandle - System.Web.HttpRequestValidationException (0x80004005): 从客户端(1005-SQ-1="<h1 style="margin: 0...")中检测到有潜在危险的 Request.Form 值。
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.<>c__DisplayClass5.<ValidateHttpValueCollection>b__3(String key, String value)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.Get(String name)
+   在 System.Collections.Specialized.NameValueCollection.get_Item(String name)
+   在 StudyCenter.BLL.TestPaperService.AnswerList(Int32 userId, NameValueCollection form, List`1 smallQuestions, ChoiceQuestion[] cqList, TrueFalseQuestion[] tqList, Int32& allScore) 位置 d:\SourceCode\StudyCenter\StudyCenter.BLL\TestPaperService.cs:行号 109
+   在 StudyCenter.BLL.TestPaperService.SaveAnswer(Int32 testpaperId, Int32 userId, NameValueCollection form) 位置 d:\SourceCode\StudyCenter\StudyCenter.BLL\TestPaperService.cs:行号 58
+   在 StudyCenter.UI.Controllers.TestPaperController.Report(Int32 id, FormCollection formCollection) 位置 d:\SourceCode\StudyCenter\StudyCenter.UI\Controllers\TestPaperController.cs:行号 285
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-09-23 19:49:13,008 [38] DEBUG DefaultErrorHandle - System.Web.HttpRequestValidationException (0x80004005): 从客户端(1005-SQ-1="<h1 style="margin: 0...")中检测到有潜在危险的 Request.Form 值。
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.<>c__DisplayClass5.<ValidateHttpValueCollection>b__3(String key, String value)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.Get(String name)
+   在 System.Collections.Specialized.NameValueCollection.get_Item(String name)
+   在 StudyCenter.BLL.TestPaperService.AnswerList(Int32 userId, NameValueCollection form, List`1 smallQuestions, ChoiceQuestion[] cqList, TrueFalseQuestion[] tqList, Int32& allScore) 位置 d:\SourceCode\StudyCenter\StudyCenter.BLL\TestPaperService.cs:行号 109
+   在 StudyCenter.BLL.TestPaperService.SaveAnswer(Int32 testpaperId, Int32 userId, NameValueCollection form) 位置 d:\SourceCode\StudyCenter\StudyCenter.BLL\TestPaperService.cs:行号 58
+   在 StudyCenter.UI.Controllers.TestPaperController.Report(Int32 id, FormCollection formCollection) 位置 d:\SourceCode\StudyCenter\StudyCenter.UI\Controllers\TestPaperController.cs:行号 285
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-09-23 19:50:01,085 [35] ERROR DefaultErrorHandle - System.Web.HttpRequestValidationException (0x80004005): 从客户端(1005-SQ-1="<p>1</p>")中检测到有潜在危险的 Request.Form 值。
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.<>c__DisplayClass5.<ValidateHttpValueCollection>b__3(String key, String value)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.Get(String name)
+   在 System.Collections.Specialized.NameValueCollection.get_Item(String name)
+   在 StudyCenter.BLL.TestPaperService.AnswerList(Int32 userId, NameValueCollection form, List`1 smallQuestions, ChoiceQuestion[] cqList, TrueFalseQuestion[] tqList, Int32& allScore) 位置 d:\SourceCode\StudyCenter\StudyCenter.BLL\TestPaperService.cs:行号 109
+   在 StudyCenter.BLL.TestPaperService.SaveAnswer(Int32 testpaperId, Int32 userId, NameValueCollection form) 位置 d:\SourceCode\StudyCenter\StudyCenter.BLL\TestPaperService.cs:行号 58
+   在 StudyCenter.UI.Controllers.TestPaperController.Report(Int32 id, FormCollection formCollection) 位置 d:\SourceCode\StudyCenter\StudyCenter.UI\Controllers\TestPaperController.cs:行号 285
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-09-23 19:50:01,122 [35] DEBUG DefaultErrorHandle - System.Web.HttpRequestValidationException (0x80004005): 从客户端(1005-SQ-1="<p>1</p>")中检测到有潜在危险的 Request.Form 值。
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.<>c__DisplayClass5.<ValidateHttpValueCollection>b__3(String key, String value)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.Get(String name)
+   在 System.Collections.Specialized.NameValueCollection.get_Item(String name)
+   在 StudyCenter.BLL.TestPaperService.AnswerList(Int32 userId, NameValueCollection form, List`1 smallQuestions, ChoiceQuestion[] cqList, TrueFalseQuestion[] tqList, Int32& allScore) 位置 d:\SourceCode\StudyCenter\StudyCenter.BLL\TestPaperService.cs:行号 109
+   在 StudyCenter.BLL.TestPaperService.SaveAnswer(Int32 testpaperId, Int32 userId, NameValueCollection form) 位置 d:\SourceCode\StudyCenter\StudyCenter.BLL\TestPaperService.cs:行号 58
+   在 StudyCenter.UI.Controllers.TestPaperController.Report(Int32 id, FormCollection formCollection) 位置 d:\SourceCode\StudyCenter\StudyCenter.UI\Controllers\TestPaperController.cs:行号 285
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2014-09-23 20:14:44,618 [40] ERROR DefaultErrorHandle - System.Web.HttpRequestValidationException (0x80004005): 从客户端(1005-SQ-1="<h1 style="margin: 0...")中检测到有潜在危险的 Request.Form 值。
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.<>c__DisplayClass5.<ValidateHttpValueCollection>b__3(String key, String value)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.GetValues(Int32 index)
+   在 System.Collections.Specialized.NameValueCollection.Add(NameValueCollection c)
+   在 System.Web.Mvc.FormCollection..ctor(ControllerBase controller, Func`1 validatedValuesThunk, Func`1 unvalidatedValuesThunk)
+   在 System.Web.Mvc.FormCollection.FormCollectionBinderAttribute.FormCollectionModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__1e(AsyncCallback asyncCallback, Object asyncState)
+2014-09-23 20:14:44,813 [40] DEBUG DefaultErrorHandle - System.Web.HttpRequestValidationException (0x80004005): 从客户端(1005-SQ-1="<h1 style="margin: 0...")中检测到有潜在危险的 Request.Form 值。
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.<>c__DisplayClass5.<ValidateHttpValueCollection>b__3(String key, String value)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.GetValues(Int32 index)
+   在 System.Collections.Specialized.NameValueCollection.Add(NameValueCollection c)
+   在 System.Web.Mvc.FormCollection..ctor(ControllerBase controller, Func`1 validatedValuesThunk, Func`1 unvalidatedValuesThunk)
+   在 System.Web.Mvc.FormCollection.FormCollectionBinderAttribute.FormCollectionModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__1e(AsyncCallback asyncCallback, Object asyncState)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2014-09-23 22:32:52,252 [46] ERROR DefaultErrorHandle - System.Web.HttpRequestValidationException (0x80004005): 从客户端(1-SQ-1="<table><tbody><tr cl...")中检测到有潜在危险的 Request.Form 值。
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.<>c__DisplayClass5.<ValidateHttpValueCollection>b__3(String key, String value)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.GetValues(Int32 index)
+   在 System.Collections.Specialized.NameValueCollection.Add(NameValueCollection c)
+   在 System.Web.Mvc.FormCollection..ctor(ControllerBase controller, Func`1 validatedValuesThunk, Func`1 unvalidatedValuesThunk)
+   在 System.Web.Mvc.FormCollection.FormCollectionBinderAttribute.FormCollectionModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__1e(AsyncCallback asyncCallback, Object asyncState)
+2014-09-23 22:32:53,461 [46] DEBUG DefaultErrorHandle - System.Web.HttpRequestValidationException (0x80004005): 从客户端(1-SQ-1="<table><tbody><tr cl...")中检测到有潜在危险的 Request.Form 值。
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.<>c__DisplayClass5.<ValidateHttpValueCollection>b__3(String key, String value)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.GetValues(Int32 index)
+   在 System.Collections.Specialized.NameValueCollection.Add(NameValueCollection c)
+   在 System.Web.Mvc.FormCollection..ctor(ControllerBase controller, Func`1 validatedValuesThunk, Func`1 unvalidatedValuesThunk)
+   在 System.Web.Mvc.FormCollection.FormCollectionBinderAttribute.FormCollectionModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__1e(AsyncCallback asyncCallback, Object asyncState)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2014-09-23 22:57:16,786 [17] ERROR DefaultErrorHandle - System.Web.HttpRequestValidationException (0x80004005): 从客户端(Content="<h1>你最喜欢的人是谁？</h1>")中检测到有潜在危险的 Request.Form 值。
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.<>c__DisplayClass5.<ValidateHttpValueCollection>b__3(String key, String value)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.Get(String name)
+   在 System.Collections.Specialized.NameValueCollection.get_Item(String name)
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 d:\SourceCode\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 279
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 d:\SourceCode\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 137
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-09-23 22:57:16,883 [17] DEBUG DefaultErrorHandle - System.Web.HttpRequestValidationException (0x80004005): 从客户端(Content="<h1>你最喜欢的人是谁？</h1>")中检测到有潜在危险的 Request.Form 值。
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.<>c__DisplayClass5.<ValidateHttpValueCollection>b__3(String key, String value)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.Get(String name)
+   在 System.Collections.Specialized.NameValueCollection.get_Item(String name)
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 d:\SourceCode\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 279
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 d:\SourceCode\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 137
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2014-09-23 23:34:06,151 [41] ERROR DefaultErrorHandle - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 StudyCenter.UI.Controllers.QuestionController.List(Int32 pageSize, Int32 pageIndex, String questionType) 位置 d:\SourceCode\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 56
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-09-23 23:34:06,152 [51] ERROR DefaultErrorHandle - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 StudyCenter.UI.Controllers.QuestionController.List(Int32 pageSize, Int32 pageIndex, String questionType) 位置 d:\SourceCode\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 56
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-09-23 23:34:06,151 [48] ERROR DefaultErrorHandle - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 StudyCenter.UI.Controllers.QuestionController.List(Int32 pageSize, Int32 pageIndex, String questionType) 位置 d:\SourceCode\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 56
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-09-23 23:34:07,685 [41] DEBUG DefaultErrorHandle - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 StudyCenter.UI.Controllers.QuestionController.List(Int32 pageSize, Int32 pageIndex, String questionType) 位置 d:\SourceCode\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 56
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-09-23 23:34:07,706 [51] DEBUG DefaultErrorHandle - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 StudyCenter.UI.Controllers.QuestionController.List(Int32 pageSize, Int32 pageIndex, String questionType) 位置 d:\SourceCode\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 56
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-09-23 23:34:07,734 [48] DEBUG DefaultErrorHandle - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 StudyCenter.UI.Controllers.QuestionController.List(Int32 pageSize, Int32 pageIndex, String questionType) 位置 d:\SourceCode\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 56
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+
+----------------------footer--------------------------

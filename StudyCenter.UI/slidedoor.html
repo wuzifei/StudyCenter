@@ -1,0 +1,37 @@
+<style type="text/css">
+ul li { list-style: none; }
+ul, li { margin: 0; padding: 0;}
+.tabs,.tabs_act{float:left;width:103px;border-bottom:1px solid #ccc;border-right:1px solid #ccc;height:25px;text-align:center;line-height:25px;display:block;}
+.tabs_act{font-weight:bold;color:#FC7404;border-bottom:1px solid #fff; background-image:url(../images/bj.gif)}
+.Sliding_tab{width:513px;border-left:1px solid #ccc;height:27px;}
+.Sliding_tab li{float:left;border-top:1px solid #ccc;}
+.Sliding_tab li.table_li{border-bottom:1px solid #ccc;border-top:0px;width:305px;height:26px;line-height:26px;}
+.tablist { clear:both; width:513px;border:1px solid #ccc;border-top:0px;height:300px;overflow:hidden;}
+</style>
+<SCRIPT language=javascript type=text/javascript>
+function g(o){return document.getElementById(o);}
+function Hovertab(num,counts,tabname,tabclass){
+for (i=1;i<=counts;i++)
+{
+g(tabname+'tab0'+i).className=tabclass+'tabs';
+g(tabname+'div0'+i).style.display='none';
+}
+g(tabname+'tab0'+num).className=tabclass+'tabs_act';
+g(tabname+'div0'+num).style.display='block';
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<div style=" width:513px; float:left; clear:both;">
+<DIV class="Sliding_tab">
+<UL>
+<LI><A class=tabs_act id=set_tab01 onMouseOver="Hovertab('1','2','set_','');" href="#">选项卡一</A></LI>
+<LI><A class=tabs id=set_tab02 onMouseOver="Hovertab('2','2','set_','');" href="#">选项卡二</A> </LI>
+<LI class="table_li"></LI>
+</UL>
+</DIV>
+<DIV class=tablist id=set_div01>选项卡一 内容</DIV>
+<DIV class=tablist id=set_div02 style="DISPLAY: none">选项卡二 内容</DIV>
+</div>
+</BODY>
+</HTML>

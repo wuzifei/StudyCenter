@@ -1,0 +1,169 @@
+﻿@model StudyCenter.Model.ChoiceQuestion
+
+<link href="/Content/CSS/Question.css" rel="stylesheet" />
+<script src="~/Scripts/question/question.js"></script>
+<script src="~/Scripts/ueditor1_4_3-utf8-net/ueditor.config.js"></script>
+<script src="~/Scripts/ueditor1_4_3-utf8-net/ueditor.all.min.js"></script>
+<script type="text/javascript">
+	var ue = UE.getEditor("editor");
+	var ue1 = UE.getEditor("editor1");
+</script>
+<form id="questionForm" name="questionForm">
+    <div class="allItems">
+        <div>
+            <input type="hidden" id="qId" name="qId" value="@Model.ID"/>
+            <input type="hidden" id ="Answers" name="Answers" value="@Model.Answers"/>
+            <input type="hidden" id="CourseId" name="CourseId" value="@Model.CourseID"/>
+            <div class="pageDescription" style="margin:10px;font-size:12px;color:#09f;line-height:15px">
+                <span style="color:red;">1.最少填两个选项,请依次填写！</span><br/>
+                <span style="color:red;">2.请将要设为答案的选项后的复选框选中,若没有选中,将默认为第一个！支持多选！</span><br/>
+            </div>
+        </div>
+        <hr style="border:0.5px solid #09f ;width:98%;" />
+        <script src="~/Scripts/question/question.js"></script>
+        <div class="singleItem">
+            <div class="commonItems">
+                <label for="Course">所属课程</label>
+                @Html.DropDownList("Course",@TempData["qCourseList"] as List<SelectListItem>,new{@id="Course",name="Courese"})
+                <label for="Difficulty">难度系数</label> 
+                <select id="Difficulty" name="Difficulty"  >
+                    @{
+                        for (int i = 0; i <= 5; i++)
+                        {
+                            if (i == Model.Difficulty)
+                            {
+                                <option  value="@i" selected="true">@i</option>
+                            }
+                            else
+                            {
+                                <option  value="@i">@i</option>
+                            }
+                        }
+                    }
+                </select>
+                @*试题是否为公开*@
+                @{
+                    if (Model.IsPublic == true)
+                    {
+                        <input type="checkbox" id="isPublic" name="isPublic" checked="checked"/>
+                        <label for="isPublic">公开</label>
+                    }
+                    else
+                    {
+                        <input type="checkbox" id="isPublic" name="isPublic"/>
+                        <label for="isPublic">公开</label>
+                    }
+                }
+                    
+            </div>
+        </div>
+    
+        <div class="singleItem">
+            <div class="title">
+                <label for="Content">选择题内容</label>
+            </div>
+            <div class="content">
+	            @*<textarea rows="3" id="Content" cols="45" name="Content">@Model.Content</textarea>*@
+				<script id="editor"  type="text/plain" name="Content">
+					@Html.Raw(Model.Content)
+				</script>
+            </div>
+        </div>
+
+        <div class="singleItem">
+            <div class="title">
+                 <label for="SelectA">选项A</label>
+            </div>
+            <div class="content">
+                <input type="text" id="SelectA"name="SelectA" value="@Model.SelectA"/>
+                <input type="checkbox" id="A" class="setAnswer" name="A"/><label class="checkAnswer" for="A">设为答案</label>
+            </div>
+        </div>  
+    
+        <div class="singleItem">
+            <div class="title">
+                <label for="SelectB">选项B</label>
+            </div>
+            <div class="content">
+                <input id="SelectB" type="text" name="SelectB" value="@Model.SelectB"/>
+                <input type="checkbox" id="B" class="setAnswer" name="B"/><label class="checkAnswer"  for="B">设为答案</label>
+            </div>
+        </div>
+        
+        <div class="singleItem">
+            <div class="title">
+                <label for="SelectC">选项C</label>
+            </div>
+            <div class="content">
+                <input type="text" id="SelectC" name="SelectC" value="@Model.SelectC"/>
+                <input type="checkbox" id="C"class="setAnswer" name="C"/><label class="checkAnswer" for="C">设为答案</label>
+            </div>
+        </div>
+
+        <div class="singleItem">
+            <div class="title">
+                <label for="SelectD">选项D</label>
+            </div>
+            <div class="content">
+                <input type="text" id="SelectD" name="SelectD" value="@Model.SelectD" />
+                <input type="checkbox" id="D"class="setAnswer" name="D"/><label class="checkAnswer" for="D">设为答案</label>
+
+            </div>
+        </div>
+
+        <div class="singleItem">
+            <div class="title">
+                <label for="SelectE">选项E</label>
+            </div>
+            <div class="content">
+                <input type="text" id="SelectE"name="SelectE" value="@Model.SelectE"/> 
+                <input type="checkbox" id="E"class="setAnswer" name="E"/><label class="checkAnswer" for="E">设为答案</label>
+
+            </div>
+        </div>
+
+        <div class="singleItem">
+            <div class="title">
+                <label for="SelectE" >选项F</label>
+            </div>
+            <div class="content">
+                <input type="text" name="SelectF" id="SelectF" value="@Model.SelectF"/>
+                <input type="checkbox" id="F" class="setAnswer" name="F"/><label class="checkAnswer" for="F">设为答案</label>
+            </div>
+        </div>
+    
+        <div class="singleItem">
+            <div class="title">
+                <label for="Remark">试题详解</label>
+            </div>
+            <div class="content">
+	            @*<textarea rows="3" cols="45" id="Remark" name="Remark">@Model.Remark</textarea>*@
+				<script id="editor1" type="text/plain" name="Remark">
+					@Html.Raw(Model.Remark)
+				</script>
+            </div>
+        </div>
+
+        <div class="singleItem">
+            <div class="submitBar">
+                @{
+                    if (@TempData["qOperateType"].ToString() == "add")
+                    {
+                        <input type="submit" class="btnSubmit" id="addBtn" onclick="Add('choice'); return false;" value="添加"/>
+                        <input type="submit" class="btnSubmit" id="addContinueBtn" onclick="javascript: Add('choice'); Continue('choice');" 
+                               value="添加并继续"/>
+                        <input type="submit" class="btnSubmit" onclick="CloseWindow('add'); return false;" value="关闭窗口"/>
+                    }
+                    else
+                    {
+                        <input type="submit" class="btnSubmit" id="updateBtn" onclick="Update('choice'); return false;" value="修改"/>
+                        <input type="submit" class="btnSubmit" id="updateCloseBtn" onclick="Update('choice'); CloseWindow('edit'); return false;" value="修改并关闭窗口"/>
+                        <input type="submit" class="btnSubmit" onclick="CloseWindow('edit'); return false;" value="关闭窗口"/>
+
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</form>
+    @*}*@

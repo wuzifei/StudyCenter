@@ -1,0 +1,330 @@
+﻿@*<h2>登录</h2>
+<br />
+@using(@Html.BeginForm("Login", "User", FormMethod.Post))
+{
+    @Html.Label("用户名")
+    @Html.TextBox("UserName")
+    @Html.Label("密码")
+    @Html.TextBox("UserPwd")   
+    @Html.Label("记住我")
+    @Html.CheckBox("Remember", true, new
+{
+    Name = "Remember"
+})
+    <input id="Submit1" type="submit" value="登录" />
+}
+
+
+@{
+    Layout = null;//当前页面的模板页是空的。
+}
+*@
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>学生学习中心系统登录</title>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="../../Scripts/jquery.validate.js"></script>
+    <script src="../../Scripts/jquery.unobtrusive-ajax.js"></script>
+    <style type="text/css">
+        *
+        {
+            padding: 0;
+            margin: 0;
+        }
+
+        body
+        {
+            text-align: center;
+            background: #4974A4;
+        }
+
+        #login
+        {
+            width: 740px;
+            margin: 0 auto;
+            font-size: 12px;
+        }
+
+        #loginlogo
+        {
+            width: 700px;
+            height: 100px;
+            overflow: hidden;
+            background: url('/Content/Images/mylogo.gif') no-repeat;
+            margin-top: 50px;
+        }
+
+        #loginpanel
+        {
+            width: 729px;
+            position: relative;
+            height: 300px;
+        }
+
+        .panel-h
+        {
+            width: 729px;
+            height: 20px;
+            background: url('/Content/Images/login/panel-h.gif') no-repeat;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 3;
+        }
+
+        .panel-f
+        {
+            width: 729px;
+            height: 13px;
+            background: url('/Content/Images/login/panel-f.gif') no-repeat;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            z-index: 3;
+        }
+
+        .panel-c
+        {
+            z-index: 2;
+            background: url('/Content/Images/login/panel-c.gif') repeat-y;
+            width: 729px;
+            height: 300px;
+        }
+
+        .panel-c-l
+        {
+            position: absolute;
+            left: 60px;
+            top: 40px;
+        }
+
+        .panel-c-r
+        {
+            position: absolute;
+            right: 20px;
+            top: 50px;
+            width: 222px;
+            line-height: 200%;
+            text-align: left;
+        }
+
+        .panel-c-l h3
+        {
+            color: #556A85;
+            margin-bottom: 10px;
+        }
+
+        .panel-c-l td
+        {
+            padding: 7px;
+        }
+
+        .login-text
+        {
+            height: 24px;
+            left: 24px;
+            border: 1px solid #e9e9e9;
+            background: #f9f9f9;
+        }
+
+        .login-text-focus
+        {
+            border: 1px solid #E6BF73;
+        }
+
+        .login-btn
+        {
+            width: 114px;
+            height: 29px;
+            color: #E9FFFF;
+            line-height: 29px;
+            background: url('/Content/Images/login/login-btn.gif') no-repeat;
+            border: none;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        #txtUsername, #code, #txtPassword
+        {
+            width: 191px;
+        }
+
+        #logincopyright
+        {
+            text-align: center;
+            color: White;
+            margin-top: 50px;
+        }
+
+        a
+        {
+            color: Black;
+        }
+
+            a:hover
+            {
+                color: Red;
+                text-decoration: underline;
+            }
+    </style>
+
+    <script type="text/javascript">
+        //当登陆成功的时候，返回数据，并执行此代码
+        $(function () {
+            $("#imgCode").click(function () {
+                $(this).attr("src", $(this).attr("src") + 1);
+            });
+            //当iframe中session过期要求重新登录时
+            if (top.location !== self.location) {
+                top.location = self.location;
+            }
+            $("#loading").hide();
+        });
+
+        function beginLogin() {
+            $("#btnLogin").attr("value", "正在登录...");
+        }
+
+        function loginFailure() {
+            $("#btnLogin").attr("value", "重新登录 ");
+        }
+
+        function afterLogin(data) {
+            if (data == "ok"){
+                //window.location.href ="/user/index";
+                window.location = "/user/index";
+                $("#loading").show();
+                $("#btnLogin").attr("value","正在跳转...");
+            }
+            else {
+                $("#imgCode").click();
+                alert(data);
+            }
+        }
+        //function ChangeVCode() {
+        //    this.attr("src").val("~/User/VCode?" + now());
+        //    alert("Click");
+        //}
+    </script>
+
+</head>
+<body style="padding: 10px">
+    @using(Ajax.BeginForm("Login", "User", new AjaxOptions()
+                        {
+                            HttpMethod = "Post",
+                            OnBegin = "beginLogin",
+                            OnFailure = "loginFailure",
+                            OnSuccess = "afterLogin",
+                            LoadingElementId = "loading",
+                        }))
+    {
+        <div id="login">
+            <div id="loginlogo">
+            </div>
+            <div id="loginpanel">
+                <div class="panel-h">
+                </div>
+                <div class="panel-c">
+                    <div class="panel-c-l">
+                        <table cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td align="left" colspan="2">
+                                        <h3>学生学习中心系统账号登录</h3>
+                                    </td>
+                                    <td rowspan="6">
+                                        <img id="loading"src="~/Content/Images/login/loading.gif" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">账号：
+                                    </td>
+                                    <td align="left">
+                                        <input type="text" name="userId" id="userId" value="吴自飞" class="login-text" />
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">密码：
+                                    </td>
+                                    <td align="left">
+                                        <input type="password" name="UserPwd" id="UserPwd" value="wuzifei" class="login-text" />
+                                    </td>
+                                                                        <td>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>验证码：
+                                    </td>
+                                    <td align="left">
+                                        <input type="text" class="login-text" id="vCode" name="vCode" value="1234" />
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                       @*<input type="checkbox" class="login-text" id="remember" name="remember" selected />
+                                        <label for="loading">记住我</label>*@
+                                    </td>
+                                    <td>
+                                        <img id="imgCode" src="~/User/VCode?id=6" style="float: left; height: 24px;" />
+                                        <div style="float: left; margin-left: 5px; margin-top: 10px;">
+                                            <a id="changeVCode" onclick="$('#imgCode').click();return false;" href="javascript:void(0)">看不清，换一张</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" colspan="2">
+                                        <input type="submit" id="btnLogin" value="登录"  class="login-btn" />
+                                    </td>
+                                     <td>
+                                        
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-c-r">
+                        <p>
+                            请从左侧输入登录账号和密码登录
+                        </p>
+                        <br />
+                        <p>
+                            如果遇到系统问题，请联系网络管理员。
+                        </p>
+                        <br />
+                        <p>
+                            如果没有账号，请联系网站管理员。
+                        </p>
+                        <br />
+                        <p>
+                            <a href="mailto:wuzifei@hotmail.com">给管理员发邮件</a>
+                            <br />
+                            @ViewData["Msg"]
+                        </p>
+
+                    </div>
+                </div>
+                <div class="panel-f">
+                </div>
+            </div>
+            <div id="logincopyright">
+                Copyright @@ 2014 江西科技师范大学
+            </div>
+        </div>
+    }
+</body>
+</html>

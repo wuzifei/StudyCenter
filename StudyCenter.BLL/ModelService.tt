@@ -1,0 +1,61 @@
+﻿<#@ template language="C#" debug="true" hostSpecific="true" #>
+<#@ Assembly Name="System.Core" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Linq" #>
+<#@ include file="EF.Utility.CS.ttinclude"#>
+<#@ output extension=".cs"#>
+ 
+<#
+
+	CodeGenerationTools code = new CodeGenerationTools(this);
+	MetadataLoader loader = new MetadataLoader(this);
+	CodeRegion region = new CodeRegion(this, 1);
+	MetadataTools ef = new MetadataTools(this);
+
+	//选择要操作的edmx路径
+	string inputFile = @"..\\StudyCenter.Model\\Model.edmx";
+
+	EdmItemCollection ItemCollection = loader.CreateEdmItemCollection(inputFile);
+	string namespaceName = code.VsNamespaceSuggestion();
+	EntityFrameworkTemplateFileManager fileManager = EntityFrameworkTemplateFileManager.Create(this);
+
+#>
+using StudyCenter.Model;
+using StudyCenter.DalFactory;
+using StudyCenter.IBLL;
+using StudyCenter.IDAL;
+
+
+namespace StudyCenter.BLL
+{
+   
+<#
+// Emit Entity Types
+
+foreach (EntityType entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
+{
+    //fileManager.StartNewFile(entity.Name + "RepositoryExt.cs");
+    //BeginNamespace(namespaceName, code);    
+#>
+	 public partial class <#=entity.Name#>Service : BaseService<<#=entity.Name#>>,I<#=entity.Name#>Service
+    {
+		//设置为私有变量是一种方法，但效率低
+		//是否可以设置为线程内唯一呢？
+		//private IDbSession _dbSession;
+		//public override void SetDal()
+		//{
+		//	if(_dbSession==null)
+		//		//此处建议使用依赖注入
+		//		//不然仍然是强耦合
+		//		_dbSession = new DbSession();
+		//	else
+		//		CurrentDal=_dbSession.<#= entity.Name #>;
+		//直接使用工厂获取，而且是线程唯一实例，提升效率
+		public override void SetDal()
+		{
+			CurrentDal = DbSessionFactory.GetCurrentDbSession().<#= entity.Name #>;
+		}
+    }	
+<#}#>
+	
+}

@@ -1,0 +1,211 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02_BLL", "02_BLL", "{51273117-B18B-4D86-895B-FCE40E587D2C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03_DAL", "03_DAL", "{B6C326C4-A943-414B-8CF5-9BB77C768DFC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_UI", "01_UI", "{6354355C-AB6F-491D-B46A-400D1B88E986}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05_Model", "05_Model", "{BFE84F91-A02E-433A-8A7B-742D9B5C450F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04_Common", "04_Common", "{33C16F37-60C5-456F-B842-6D105C80CD93}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\百度下载\黑马四期\黑马四期\视频\2013-06-13\01Spring\01Spring\Spring资源\Spring.NET-1.3.2\Spring.NET\doc\schema\spring-objects-1.3.xsd = ..\..\..\..\百度下载\黑马四期\黑马四期\视频\2013-06-13\01Spring\01Spring\Spring资源\Spring.NET-1.3.2\Spring.NET\doc\schema\spring-objects-1.3.xsd
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyCenter.Common", "StudyCenter.Common\StudyCenter.Common.csproj", "{30BBCA7C-AD70-4180-B343-8228173CDBE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyCenter.EFDAL", "StudyCenter.EFDAL\StudyCenter.EFDAL.csproj", "{6B976859-34E5-4D40-BA1E-A493ECA5675D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0} = {E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0}
+		{30BBCA7C-AD70-4180-B343-8228173CDBE1} = {30BBCA7C-AD70-4180-B343-8228173CDBE1}
+		{804AD3BE-9DC2-4C9C-B59B-82BFD62F7227} = {804AD3BE-9DC2-4C9C-B59B-82BFD62F7227}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyCenter.IDAL", "StudyCenter.IDAL\StudyCenter.IDAL.csproj", "{E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{30BBCA7C-AD70-4180-B343-8228173CDBE1} = {30BBCA7C-AD70-4180-B343-8228173CDBE1}
+		{804AD3BE-9DC2-4C9C-B59B-82BFD62F7227} = {804AD3BE-9DC2-4C9C-B59B-82BFD62F7227}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyCenter.AdoNetDAL", "StudyCenter.AdoNetDAL\StudyCenter.AdoNetDAL.csproj", "{54BFEE61-2C62-4571-97C8-4D75D0B01975}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0} = {E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0}
+		{30BBCA7C-AD70-4180-B343-8228173CDBE1} = {30BBCA7C-AD70-4180-B343-8228173CDBE1}
+		{804AD3BE-9DC2-4C9C-B59B-82BFD62F7227} = {804AD3BE-9DC2-4C9C-B59B-82BFD62F7227}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyCenter.DalFactory", "StudyCenter.DalFactory\StudyCenter.DalFactory.csproj", "{872869A6-F89F-4F27-8748-7AF7FD2E1AEC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0} = {E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0}
+		{6B976859-34E5-4D40-BA1E-A493ECA5675D} = {6B976859-34E5-4D40-BA1E-A493ECA5675D}
+		{54BFEE61-2C62-4571-97C8-4D75D0B01975} = {54BFEE61-2C62-4571-97C8-4D75D0B01975}
+		{30BBCA7C-AD70-4180-B343-8228173CDBE1} = {30BBCA7C-AD70-4180-B343-8228173CDBE1}
+		{804AD3BE-9DC2-4C9C-B59B-82BFD62F7227} = {804AD3BE-9DC2-4C9C-B59B-82BFD62F7227}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyCenter.IBLL", "StudyCenter.IBLL\StudyCenter.IBLL.csproj", "{F077602A-F1F9-4E40-98C6-0E88E7CDF731}"
+	ProjectSection(ProjectDependencies) = postProject
+		{30BBCA7C-AD70-4180-B343-8228173CDBE1} = {30BBCA7C-AD70-4180-B343-8228173CDBE1}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyCenter.BLL", "StudyCenter.BLL\StudyCenter.BLL.csproj", "{718D7073-5779-4284-A8CD-78F461DC2DCC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0} = {E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0}
+		{30BBCA7C-AD70-4180-B343-8228173CDBE1} = {30BBCA7C-AD70-4180-B343-8228173CDBE1}
+		{872869A6-F89F-4F27-8748-7AF7FD2E1AEC} = {872869A6-F89F-4F27-8748-7AF7FD2E1AEC}
+		{804AD3BE-9DC2-4C9C-B59B-82BFD62F7227} = {804AD3BE-9DC2-4C9C-B59B-82BFD62F7227}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyCenter.Model", "StudyCenter.Model\StudyCenter.Model.csproj", "{804AD3BE-9DC2-4C9C-B59B-82BFD62F7227}"
+	ProjectSection(ProjectDependencies) = postProject
+		{30BBCA7C-AD70-4180-B343-8228173CDBE1} = {30BBCA7C-AD70-4180-B343-8228173CDBE1}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyCenter.UI", "StudyCenter.UI\StudyCenter.UI.csproj", "{D2E81CA8-DCA0-4C3E-8809-EAAACAC3F839}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0} = {E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0}
+		{F077602A-F1F9-4E40-98C6-0E88E7CDF731} = {F077602A-F1F9-4E40-98C6-0E88E7CDF731}
+		{6B976859-34E5-4D40-BA1E-A493ECA5675D} = {6B976859-34E5-4D40-BA1E-A493ECA5675D}
+		{54BFEE61-2C62-4571-97C8-4D75D0B01975} = {54BFEE61-2C62-4571-97C8-4D75D0B01975}
+		{718D7073-5779-4284-A8CD-78F461DC2DCC} = {718D7073-5779-4284-A8CD-78F461DC2DCC}
+		{30BBCA7C-AD70-4180-B343-8228173CDBE1} = {30BBCA7C-AD70-4180-B343-8228173CDBE1}
+		{872869A6-F89F-4F27-8748-7AF7FD2E1AEC} = {872869A6-F89F-4F27-8748-7AF7FD2E1AEC}
+		{804AD3BE-9DC2-4C9C-B59B-82BFD62F7227} = {804AD3BE-9DC2-4C9C-B59B-82BFD62F7227}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyCenter.UI.Tests", "StudyCenter.UI.Tests\StudyCenter.UI.Tests.csproj", "{DC62C99E-675F-4DD0-8876-A9F5D7C74C28}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0} = {E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0}
+		{F077602A-F1F9-4E40-98C6-0E88E7CDF731} = {F077602A-F1F9-4E40-98C6-0E88E7CDF731}
+		{6B976859-34E5-4D40-BA1E-A493ECA5675D} = {6B976859-34E5-4D40-BA1E-A493ECA5675D}
+		{54BFEE61-2C62-4571-97C8-4D75D0B01975} = {54BFEE61-2C62-4571-97C8-4D75D0B01975}
+		{718D7073-5779-4284-A8CD-78F461DC2DCC} = {718D7073-5779-4284-A8CD-78F461DC2DCC}
+		{30BBCA7C-AD70-4180-B343-8228173CDBE1} = {30BBCA7C-AD70-4180-B343-8228173CDBE1}
+		{872869A6-F89F-4F27-8748-7AF7FD2E1AEC} = {872869A6-F89F-4F27-8748-7AF7FD2E1AEC}
+		{804AD3BE-9DC2-4C9C-B59B-82BFD62F7227} = {804AD3BE-9DC2-4C9C-B59B-82BFD62F7227}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{F0924B20-1A47-4FD4-922B-0D970998BBCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyCenter.UI.Helper", "StudyCenter.UI.Helper\StudyCenter.UI.Helper.csproj", "{0B264EBC-2F56-45B6-8E87-40925A95F8E0}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://wuzifei.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = StudyCenter.AdoNetDAL\\StudyCenter.AdoNetDAL.csproj
+		SccProjectTopLevelParentUniqueName1 = StudyCenter.sln
+		SccProjectName1 = StudyCenter.AdoNetDAL
+		SccLocalPath1 = StudyCenter.AdoNetDAL
+		SccProjectUniqueName2 = StudyCenter.BLL\\StudyCenter.BLL.csproj
+		SccProjectTopLevelParentUniqueName2 = StudyCenter.sln
+		SccProjectName2 = StudyCenter.BLL
+		SccLocalPath2 = StudyCenter.BLL
+		SccProjectUniqueName3 = StudyCenter.Common\\StudyCenter.Common.csproj
+		SccProjectTopLevelParentUniqueName3 = StudyCenter.sln
+		SccProjectName3 = StudyCenter.Common
+		SccLocalPath3 = StudyCenter.Common
+		SccProjectUniqueName4 = StudyCenter.DalFactory\\StudyCenter.DalFactory.csproj
+		SccProjectTopLevelParentUniqueName4 = StudyCenter.sln
+		SccProjectName4 = StudyCenter.DalFactory
+		SccLocalPath4 = StudyCenter.DalFactory
+		SccProjectUniqueName5 = StudyCenter.EFDAL\\StudyCenter.EFDAL.csproj
+		SccProjectTopLevelParentUniqueName5 = StudyCenter.sln
+		SccProjectName5 = StudyCenter.EFDAL
+		SccLocalPath5 = StudyCenter.EFDAL
+		SccProjectUniqueName6 = StudyCenter.IBLL\\StudyCenter.IBLL.csproj
+		SccProjectTopLevelParentUniqueName6 = StudyCenter.sln
+		SccProjectName6 = StudyCenter.IBLL
+		SccLocalPath6 = StudyCenter.IBLL
+		SccProjectUniqueName7 = StudyCenter.IDAL\\StudyCenter.IDAL.csproj
+		SccProjectTopLevelParentUniqueName7 = StudyCenter.sln
+		SccProjectName7 = StudyCenter.IDAL
+		SccLocalPath7 = StudyCenter.IDAL
+		SccProjectUniqueName8 = StudyCenter.Model\\StudyCenter.Model.csproj
+		SccProjectTopLevelParentUniqueName8 = StudyCenter.sln
+		SccProjectName8 = StudyCenter.Model
+		SccLocalPath8 = StudyCenter.Model
+		SccProjectUniqueName9 = StudyCenter.UI.Tests\\StudyCenter.UI.Tests.csproj
+		SccProjectTopLevelParentUniqueName9 = StudyCenter.sln
+		SccProjectName9 = StudyCenter.UI.Tests
+		SccLocalPath9 = StudyCenter.UI.Tests
+		SccProjectUniqueName10 = StudyCenter.UI\\StudyCenter.UI.csproj
+		SccProjectTopLevelParentUniqueName10 = StudyCenter.sln
+		SccProjectName10 = StudyCenter.UI
+		SccLocalPath10 = StudyCenter.UI
+		SccProjectUniqueName11 = StudyCenter.UI.Helper\\StudyCenter.UI.Helper.csproj
+		SccProjectTopLevelParentUniqueName11 = StudyCenter.sln
+		SccProjectName11 = StudyCenter.UI.Helper
+		SccLocalPath11 = StudyCenter.UI.Helper
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30BBCA7C-AD70-4180-B343-8228173CDBE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30BBCA7C-AD70-4180-B343-8228173CDBE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30BBCA7C-AD70-4180-B343-8228173CDBE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30BBCA7C-AD70-4180-B343-8228173CDBE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B976859-34E5-4D40-BA1E-A493ECA5675D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B976859-34E5-4D40-BA1E-A493ECA5675D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B976859-34E5-4D40-BA1E-A493ECA5675D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B976859-34E5-4D40-BA1E-A493ECA5675D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54BFEE61-2C62-4571-97C8-4D75D0B01975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54BFEE61-2C62-4571-97C8-4D75D0B01975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54BFEE61-2C62-4571-97C8-4D75D0B01975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54BFEE61-2C62-4571-97C8-4D75D0B01975}.Release|Any CPU.Build.0 = Release|Any CPU
+		{872869A6-F89F-4F27-8748-7AF7FD2E1AEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{872869A6-F89F-4F27-8748-7AF7FD2E1AEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{872869A6-F89F-4F27-8748-7AF7FD2E1AEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{872869A6-F89F-4F27-8748-7AF7FD2E1AEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F077602A-F1F9-4E40-98C6-0E88E7CDF731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F077602A-F1F9-4E40-98C6-0E88E7CDF731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F077602A-F1F9-4E40-98C6-0E88E7CDF731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F077602A-F1F9-4E40-98C6-0E88E7CDF731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{718D7073-5779-4284-A8CD-78F461DC2DCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{718D7073-5779-4284-A8CD-78F461DC2DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{718D7073-5779-4284-A8CD-78F461DC2DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{718D7073-5779-4284-A8CD-78F461DC2DCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{804AD3BE-9DC2-4C9C-B59B-82BFD62F7227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{804AD3BE-9DC2-4C9C-B59B-82BFD62F7227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{804AD3BE-9DC2-4C9C-B59B-82BFD62F7227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{804AD3BE-9DC2-4C9C-B59B-82BFD62F7227}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2E81CA8-DCA0-4C3E-8809-EAAACAC3F839}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2E81CA8-DCA0-4C3E-8809-EAAACAC3F839}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2E81CA8-DCA0-4C3E-8809-EAAACAC3F839}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2E81CA8-DCA0-4C3E-8809-EAAACAC3F839}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC62C99E-675F-4DD0-8876-A9F5D7C74C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC62C99E-675F-4DD0-8876-A9F5D7C74C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC62C99E-675F-4DD0-8876-A9F5D7C74C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC62C99E-675F-4DD0-8876-A9F5D7C74C28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B264EBC-2F56-45B6-8E87-40925A95F8E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B264EBC-2F56-45B6-8E87-40925A95F8E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B264EBC-2F56-45B6-8E87-40925A95F8E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B264EBC-2F56-45B6-8E87-40925A95F8E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F077602A-F1F9-4E40-98C6-0E88E7CDF731} = {51273117-B18B-4D86-895B-FCE40E587D2C}
+		{718D7073-5779-4284-A8CD-78F461DC2DCC} = {51273117-B18B-4D86-895B-FCE40E587D2C}
+		{6B976859-34E5-4D40-BA1E-A493ECA5675D} = {B6C326C4-A943-414B-8CF5-9BB77C768DFC}
+		{E7BF4C12-78B9-4A24-99EC-30B3FD7DC4D0} = {B6C326C4-A943-414B-8CF5-9BB77C768DFC}
+		{54BFEE61-2C62-4571-97C8-4D75D0B01975} = {B6C326C4-A943-414B-8CF5-9BB77C768DFC}
+		{872869A6-F89F-4F27-8748-7AF7FD2E1AEC} = {B6C326C4-A943-414B-8CF5-9BB77C768DFC}
+		{D2E81CA8-DCA0-4C3E-8809-EAAACAC3F839} = {6354355C-AB6F-491D-B46A-400D1B88E986}
+		{0B264EBC-2F56-45B6-8E87-40925A95F8E0} = {6354355C-AB6F-491D-B46A-400D1B88E986}
+		{804AD3BE-9DC2-4C9C-B59B-82BFD62F7227} = {BFE84F91-A02E-433A-8A7B-742D9B5C450F}
+		{30BBCA7C-AD70-4180-B343-8228173CDBE1} = {33C16F37-60C5-456F-B842-6D105C80CD93}
+		{DC62C99E-675F-4DD0-8876-A9F5D7C74C28} = {F0924B20-1A47-4FD4-922B-0D970998BBCA}
+	EndGlobalSection
+EndGlobal

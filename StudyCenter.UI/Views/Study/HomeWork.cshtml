@@ -1,0 +1,144 @@
+﻿@using StudyCenter.Model
+
+<link href="~/Content/CSS/HomeWork.css" rel="stylesheet" />
+
+<div class="TaskContent">
+    @foreach (StudentPaper studentPaper in ViewBag.StudentPapers)
+    {
+        <div class="taskItems">   
+            <div class="taskStatus" id="taskStatus">
+                <div class="taskComplete">
+                    未完成@*<img style="padding:2px;width:20px;height:20px;" src="/Content/Images/search.png" />*@
+                    <div class="taskScore">
+                        <p>0分</p>
+                    </div>
+                </div>
+            </div>
+            <div class="taskDetail">
+                <!--标题不宜超过18个字,英文则28个字-->
+                <a class="taskTitle"   style="padding-left:50px;font-size:24px;text-decoration:none;color: red;" href="javascript:parent.addTab('@studentPaper.TestPaper.PaperName@studentPaper.TestPaper.ID','/study/task/@studentPaper.TestPaper.ID','650')">
+                    @{
+                        if (studentPaper.TestPaper.PaperName.Length > 15)
+                        {
+                            @studentPaper.TestPaper.PaperName.Substring(0, 15)<text>...</text>
+                        }
+                        else
+                        {
+                            @studentPaper.TestPaper.PaperName
+                        }
+                    }
+                    
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                </a> 
+                <span style="color:#30F;">By:</span><a href="/user/list/id">吴自飞</a>
+                <p style="margin-left:25px;font-size:15px"> 
+                    <span style="color:#30F;">考试日期：</span> <span> @studentPaper.TestPaper.StartTime.ToShortDateString()</span>  
+                    <span style="color:#30F;">截止日期：</span> <span> @studentPaper.TestPaper.EndTime.ToShortDateString()</span>   
+                </p> 
+                <p style="margin-left:25px;font-size:15px">
+                    <span style="color:#30F;">试卷类型：</span>@studentPaper.TestPaper.PaperType
+                    <span style="color:#30F;">&nbsp;&nbsp;持续时间： </span>  25天      	
+                    <span style="color:#30F;">&nbsp;&nbsp;说明： </span> @studentPaper.TestPaper.PaperDescription
+                </p>    
+            </div>     
+        </div>
+    }
+    
+
+
+</div>
+
+<br/>
+
+@*分页链接栏 开始*@
+<div style="text-align: center">
+    @{
+        <a class="pageLink"  href="/study/homework/1?pageIndex=1&pageSize=5">
+            首页
+        </a>   
+        //获取上页页码
+        int forwardPage = ViewBag.PageIndex;
+        if (ViewBag.PageIndex > 1)
+        {
+            forwardPage = ViewBag.PageIndex - 1;
+        }
+        <a class="pageLink"  href="/study/homework/@forwardPage?pageIndex=@forwardPage&pageSize=5">
+            上页
+        </a>
+        //总页数不超过10页时
+        int curPage = ViewBag.PageIndex;
+        if(@ViewBag.TotalPage <=10)
+        {
+
+            for (int i = 1; i <= (int) ViewBag.TotalPage; i++)
+            {
+                if (curPage == i)
+                {
+                    <a class="pageLink curPage"  href="/study/homework/@i?pageIndex=@i&pageSize=5">
+                        @i
+                    </a>
+                }
+                else
+                {
+                    <a class="pageLink"  href="/study/homework/@i?pageIndex=@i&pageSize=5">
+                        @i
+                    </a>
+                }
+            }
+        }
+        //总页数超过10页时
+        else
+        {
+            for (int i = 1; i <= 5; i++)
+            {
+                if (curPage == i)
+                {
+                    <a class="pageLink curPage"  href="/study/homework/@i?pageIndex=@i&pageSize=5">
+                        @i
+                    </a>
+                }
+                else
+                {              
+                    <a class="pageLink"  href="/study/homework/@i?pageIndex=@i&pageSize=5">
+                        @i
+                    </a> 
+                }
+             } 
+            <text>···</text>
+            for (int i = (int)ViewBag.TotalPage-4; i <= (int)ViewBag.TotalPage; i++)
+            {
+                if (curPage == i)
+                {
+                    <a class="pageLink curPage"  href="/study/homework/@i?pageIndex=@i&pageSize=5">
+                        @i
+                    </a>
+                }
+                else
+                {
+                    <a class="pageLink"  href="/study/homework/@i?pageIndex=@i&pageSize=5">
+                        @i
+                    </a>                   
+                }
+            } 
+        } 
+        //获取下页页码  
+        int nextPage = ViewBag.PageIndex;
+        if (ViewBag.PageIndex < ViewBag.TotalPage)
+        {
+            nextPage = ViewBag.PageIndex + 1;
+        }   
+        <a class="pageLink"  href="/study/homework/@nextPage?pageIndex=@nextPage&pageSize=5">
+            下页
+        </a>
+
+        <a class="pageLink"  href="/study/homework/@(ViewBag.TotalPage)?pageIndex=@(ViewBag.TotalPage)&pageSize=5">
+            尾页
+        </a>
+    }
+</div>
+@*分页链接栏 结束*@
+
+<hr  style="border:1px solid #09f;margin: 10px;width: 730px; "/>
+

@@ -1,0 +1,75 @@
+﻿@model StudyCenter.Model.ViewModel.Pagination
+<link href="~/Content/CSS/PageLink.css" rel="stylesheet" />
+        @*分页链接栏 开始*@
+        <div style="text-align: center">
+            @{
+                
+                <span style="font-size: 13px;color:#09f;">共 @Model.TotalRecords 条记录</span>
+                <span style="font-size: 13px;color:#09f;">&nbsp;&nbsp; @Model.CurrentPage/@Model.TotalPage 页&nbsp;&nbsp;</span>
+                //首页链接
+                <a href="/@Model.ControllerName/@Model.ActionName/?pageindex=1&pageSize=@Model.PageSize" class="pageLink">首页</a>
+                
+                //上一页链接
+                <a href="/@Model.ControllerName/@Model.ActionName/?pageindex=@Model.PrePage&pageSize=@Model.PageSize" class="pageLink">上页</a>
+                //总页数不超过10页时
+                if(Model.TotalPage <=10)
+                {
+
+                    for (int i = 1; i <= Model.TotalPage; i++)
+                    {                    
+                        if (Model.CurrentPage == i)
+                        {
+                            <a href="/@Model.ControllerName/@Model.ActionName/?pageindex=@i&pageSize=@Model.PageSize" class="pageLink curPage">@i</a>
+                        }
+                        else
+                        {
+                            <a href="/@Model.ControllerName/@Model.ActionName/?pageindex=@i&pageSize=@Model.PageSize" class="pageLink">@i</a>
+                        }
+                    }
+                }
+                else
+                {   //总页数超过10页时
+                    var beforeindex = 1;
+                    var afterindex = 10;
+                    if (Model.CurrentPage > 5)
+                    {
+                        beforeindex = Model.CurrentPage - 5;
+                        afterindex = Model.CurrentPage + 5;
+                    }
+                    //当前页之前的链接
+                    for (int i = beforeindex; i <= Model.CurrentPage; i++)
+                    {
+                        Model.UrlParameters["pageIndex"] = i;
+                        if (Model.CurrentPage == i)
+                        {
+                            <a href="/@Model.ControllerName/@Model.ActionName/?pageindex=@i&pageSize=@Model.PageSize" class="pageLink curPage">@i</a>
+                        }
+                        else
+                        {              
+                            <a href="/@Model.ControllerName/@Model.ActionName/?pageindex=@i&pageSize=@Model.PageSize" class="pageLink">@i</a>
+                        }
+                     }
+                     //当前页之后的链接
+                    for (int i = Model.CurrentPage+1; i <= afterindex && i <= Model.TotalPage; i++)
+                    {
+                        Model.UrlParameters["pageIndex"] = i;
+                        if (Model.CurrentPage == i)
+                        {
+                            <a href="/@Model.ControllerName/@Model.ActionName/?pageindex=@i&pageSize=@Model.PageSize" class="pageLink curPage">@i</a>
+                        }
+                        else
+                        {              
+                            <a href="/@Model.ControllerName/@Model.ActionName/?pageindex=@i&pageSize=@Model.PageSize" class="pageLink">@i</a>
+                        }
+                    } 
+                } 
+                //下页链接
+                <a href="/@Model.ControllerName/@Model.ActionName/?pageindex=@Model.NextPage&pageSize=@Model.PageSize" class="pageLink">下页</a>
+                
+                //尾页链接
+                <a href="/@Model.ControllerName/@Model.ActionName/?pageindex=@Model.TotalPage&pageSize=@Model.PageSize" class="pageLink">尾页</a>
+
+            }
+        </div>
+        @*分页链接栏 结束*@
+

@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>滑动门通用JS封装类，同一页面多个滑动门丨芯晴网页特效丨CsrCode.Cn</title>
+<style type="text/css">
+<!--
+body{margin:0px;padding:0px;font-size:12px;background:#eee;line-height:20px;}
+.bodyer{width:760px;margin:20px auto auto;border:1px dotted #ccc;background:#fff;}
+.t_rt{text-align:right;}
+h1,h2,h3,h4,h5,h6{font-weight:bold;margin:0px;padding:0px;font-size:12px;}
+ul,li{margin:0px;padding:0px;}
+li{list-style-type:none;}
+h1{margin:10px;padding-right:10px;padding-bottom:5px;border-bottom:1px dotted #ccc;}
+.preview{margin:10px;padding:10px;overflow:hidden;background:#eee;}
+.cont{padding:10px;}
+.cls{clear:both;}
+.hidden{display:none;}
+#sourse{border:1px dotted #ccc;width:600px;height:300px;margin:0px auto;}
+.textDiv{margin:10px 40px 10px;text-align:center;}
+h2{margin:0px 10px;background:#ccc;padding:5px;}
+.example{margin:10px;background:#FFF;border:1px dotted #ccc;padding:10px;}
+.scrolldoorFrame{width:400px;margin:0px auto;overflow:hidden;}
+.scrollUl{width:400px;border-bottom:1px solid #CCC;overflow:hidden;height:35px;}
+.scrollUl li{float:left;}
+.bor03{border:1px solid #ccc;border-top-width:0px;}
+.sd01{cursor:pointer;border:1px solid #CCC;background:#FFF;margin:5px;padding:2px;font-weight:bold;}
+.sd02{cursor:pointer;border:0px solid #CCC;margin:5px;padding:2px;}
+-->
+</style>
+<script type="text/javascript">
+/*
+十三妖
+qq:181907667
+msn:wl181907667@hotmail.com
+邮箱:thirdteendevil@163.com
+*/
+function scrollDoor(){
+}
+scrollDoor.prototype = {
+sd : function(menus,divs,openClass,closeClass){
+var _this = this;
+if(menus.length != divs.length)
+{
+alert("菜单层数量和内容层数量不一样!");
+return false;
+}
+for(var i = 0 ; i < menus.length ; i++)
+{
+_this.$(menus[i]).value = i;
+_this.$(menus[i]).onmouseover = function(){
+for(var j = 0 ; j < menus.length ; j++)
+{
+_this.$(menus[j]).className = closeClass;
+_this.$(divs[j]).style.display = "none";
+}
+_this.$(menus[this.value]).className = openClass;
+_this.$(divs[this.value]).style.display = "block";
+}
+}
+},
+$ : function(oid){
+if(typeof(oid) == "string")
+return document.getElementById(oid);
+return oid;
+}
+}
+window.onload = function(){
+var SDmodel = new scrollDoor();
+SDmodel.sd(["m01","m02","m03","m04","m05"],["c01","c02","c03","c04","c05"],"sd01","sd02");
+SDmodel.sd(["mm01","mm02","mm03","mm04","mm05"],["cc01","cc02","cc03","cc04","cc05"],"sd01","sd02");
+SDmodel.sd(["mmm01","mmm02","mmm03","mmm04","mmm05"],["ccc01","ccc02","ccc03","ccc04","ccc05"],"sd01","sd02");
+}
+</script>
+</head>
+<body>
+<div class="bodyer">
+<h1 class="t_rt">
+滑动门封装类
+</h1>
+<h2>
+效果预览
+</h2>
+<div class="preview">
+<div class="scrolldoorFrame">
+<ul class="scrollUl">
+<li class="sd01" id="m01">滑动门</li>
+<li class="sd02" id="m02">滑动门</li>
+<li class="sd02" id="m03">滑动门</li>
+<li class="sd02" id="m04">滑动门</li>
+<li class="sd02" id="m05">滑动门</li>
+</ul>
+<div class="bor03 cont">
+<div id="c01">
+第一层内容
+</div>
+<div id="c02" class="hidden">
+第二层内容
+</div>
+<div id="c03" class="hidden">
+第三层内容
+</div>
+<div id="c04" class="hidden">
+第四层内容
+</div>
+<div id="c05" class="hidden">
+第五层内容
+</div>
+</div>
+</div>
+</div>
+<div class="preview">
+<div class="scrolldoorFrame">
+<ul class="scrollUl">
+<li class="sd01" id="mm01">滑动门</li>
+<li class="sd02" id="mm02">滑动门</li>
+<li class="sd02" id="mm03">滑动门</li>
+<li class="sd02" id="mm04">滑动门</li>
+<li class="sd02" id="mm05">滑动门</li>
+</ul>
+<div class="bor03 cont">
+<div id="cc01">
+第一层内容
+</div>
+<div id="cc02" class="hidden">
+第二层内容
+</div>
+<div id="cc03" class="hidden">
+第三层内容
+</div>
+<div id="cc04" class="hidden">
+第四层内容
+</div>
+<div id="cc05" class="hidden">
+第五层内容
+</div>
+</div>
+</div>
+</div>
+<div class="preview">
+<div class="scrolldoorFrame">
+<ul class="scrollUl">
+<li class="sd01" id="mmm01">滑动门</li>
+<li class="sd02" id="mmm02">滑动门</li>
+<li class="sd02" id="mmm03">滑动门</li>
+<li class="sd02" id="mmm04">滑动门</li>
+<li class="sd02" id="mmm05">滑动门</li>
+</ul>
+<div class="bor03 cont">
+<div id="ccc01">
+第一层内容
+</div>
+<div id="ccc02" class="hidden">
+第二层内容
+</div>
+<div id="ccc03" class="hidden">
+第三层内容
+</div>
+<div id="ccc04" class="hidden">
+第四层内容
+</div>
+<div id="ccc05" class="hidden">
+第五层内容
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</body>
+</html>
+
+<p align="center">本特效由 <a href="http://www.CsrCode.cn">芯晴网页特效</a>丨CsrCode.Cn 收集于互联网，只为兴趣与学习交流，不作商业用途。</p>
+

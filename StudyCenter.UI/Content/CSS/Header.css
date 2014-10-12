@@ -1,0 +1,202 @@
+﻿		/*<!-- 头部及导航栏布局样式 start-- >*/ 
+		body {
+			width: auto;
+		}
+		* {
+			padding: 0px;
+			margin: 0px;
+		}
+		a:hover {
+			color: #62aad8;
+			font-weight: bold;
+		}		
+
+		#top_bar {
+			max-width: 1040px;
+			height: 28px;
+			margin: 0 auto;
+			left: 50%;
+		}
+
+		#school_log {
+			width: 200px;
+			height: 26px;
+			float: left;
+			background-image: url("/Content/images/log.png");
+			background-repeat: no-repeat;
+			background-position: left;
+		}
+
+		#top_bar .status_bar {
+			width: 30%;
+			float: right;
+			text-align: right;
+			text-decoration: none;
+			font-size: 13px;
+			margin-top: 2px;
+		}
+		.status_bar{ float: left;}
+		.status_bar a {
+			text-decoration: none;
+			margin-top: 2px;
+		}
+		#loginStatus a {
+			color: black;
+			font-size: 12px;
+		}
+
+
+		.container, #content {
+			width: 1040px;
+			margin: 5px auto;
+			left: 50%;
+			overflow: hidden;
+		}
+
+		#log a {
+			text-decoration: none;
+			font-size: 30px;
+		}
+
+		#log, #menu_list {
+			float: left;
+		}
+
+		ol, ul {
+			display: block;
+			list-style: none;
+		}
+
+		li a {
+			text-decoration: none;
+			display: inline;
+			color: #000;
+			margin: 9px 5px 0px 20px;
+			font-size: 22px;
+		}
+
+
+		.menu_item {
+			text-decoration: none;
+			float: left;
+			margin: 9px 5px 0px 0px;
+		}
+
+		#search_word {
+			width: 218px;
+			height: 22px;
+			float: right;
+			border: 1px solid #62aad8;
+			margin: 9px 0px 0px 0px;
+		}
+
+		#search_box {
+			float: right;
+		}
+
+		#search {
+			float: right;
+			border: hidden;
+			background-image: url("/Content/images/index/search.png");
+			background-repeat: no-repeat;
+			width: 30px;
+			height: 22px;
+			cursor: pointer;
+			margin: 9px 0px 0px 0px;
+		}
+		/*<!-- 头部布局样式 end-- >
+		<!-- 主要内容布局样式 start-- >*/
+
+
+		#main_content {
+			float: left;
+			width: 750px;
+			margin: auto;
+			padding: 0px;
+		}
+
+		#side_bar {
+			float: right;
+			width: 250px;
+			margin: auto;
+			padding: 0px;
+		}
+
+		#footer {
+			float: left;
+			padding-top: 30px;
+			width: 100%;
+		}
+		/*/*<!-- 主要内容布局样式 end-- >
+		<!-- 滑动门样式 start-- >*/
+		#slide_container {
+			overflow: hidden;
+			width: 750px;
+			height: 300px;
+			position: relative;
+			top: 1px;
+		}
+		.slide_elements {
+			float: left;
+			width: 750px;
+			height: 300px;
+			top: 1px;
+		}
+
+		.slide_element_current a {
+			height: 300px;
+			width: 750px;
+			display: block;
+			float: left;
+		}
+
+		#slide_buttons {
+			position:absolute;
+			top:275px;
+			left: 630px;
+			height: 277px;
+			overflow: hidden;
+		}
+
+		.slide_button {
+			float: left;
+			width: 12px;
+			height: 12px;
+			margin: 4px;
+			background-image: url(/Content/images/index/select.png);
+			cursor: pointer;
+		}
+		.slide_button_selected,.slide_button:hover{
+			float: left;
+			width: 12px;
+			height: 12px;
+			margin: 4px;
+			background-image: url(/Content/images/index/selected.png);
+			cursor: pointer;
+		}
+
+
+		/*<!-- 滑动门样式 end-->
+		<!-- 通告框样式 start-->*/ 
+		.notice_bar {
+			width: 99%;
+			overflow: hidden;
+			border: 1px solid #0072c6;
+		}
+
+		.notice_left {
+			width: 65%;
+			height: 135px;
+			float: left;
+			background-color: #FFF;
+			color: #0072c6;
+		}
+
+		.notice_right {
+			width: 35%;
+			height: 135px;
+			float: left;
+			background-color: #0072c6;
+			color: white;
+			overflow: hidden;
+		}

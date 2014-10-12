@@ -1,0 +1,203 @@
+﻿	body{
+		text-align:center;
+		width:auto;
+		margin:auto;
+	}
+	.addLink{
+		display:inline;
+		margin:0px auto;
+		margin-bottom:5px;
+	}
+
+	.addContent{
+		width:100%;
+		height:20px;
+	}
+	.addContent:hover{
+		cursor:pointer;
+	}
+	.addLeft{
+		float:left;
+		height:20px;
+		width:20px;
+		margin:0;
+		background-image:url(/Content/Images/TestPaper/add-left-black.png);
+		background-repeat:repeat;
+	}
+	.addCenter{
+		float:left;
+		width:93%;
+		height:20px;
+		background-image:url(/Content/Images/TestPaper/add-center-black.png);
+		background-repeat:repeat;
+		padding-bottom:1px;
+	}	
+	.addRight{
+		float:left;
+		width:20px;
+		height:20px;
+		margin:0;
+		background-image:url(/Content/Images/TestPaper/add-right-black.png);
+		background-repeat:repeat;
+	}	
+	.addContent:hover .addCenter{
+		background-image:url(/Content/Images/TestPaper/add-center.png);
+	}
+	.addContent:hover .addLeft{
+		background-image:url(/Content/Images/TestPaper/add-left.png);
+	}
+	.addContent:hover .addRight{
+		background-image:url(/Content/Images/TestPaper/add-right.png);
+	}
+	
+
+	.singleTool label{
+		font-size:15px;
+		color:#09f;
+	}	
+	
+	
+	.paperToolBar,.paperContent,.paperList{
+		margin-top:10px;
+		width:100%;
+	}
+	
+	.paperToolBar p {
+		margin-top: 15px;
+	}
+
+	.singleTool{
+		display:inline-block;
+		margin-top:5px;
+	}
+	
+	#DraftBox{
+		padding-left: 20px;
+		background-image: url('/Content/Images/TestPaper/box.png');
+		background-repeat:no-repeat;
+		font-size: 14px;
+		background-color: #00bfff;
+	}
+	#DraftBox:hover{
+		background-color: #000099;
+	}
+
+	.paperContent input[type='button']{
+		border:0;
+		color:#fff;
+		background-color:#09f;
+	}
+	.paperContent input[type='button']:hover{
+		cursor:pointer;
+		background-color:#009;
+	}
+	
+	.testPaperTitle{
+		margin:0 auto;
+		width:100%;
+	}
+
+	.testPaperTitle p
+	{
+		margin-top: 15px;
+	}
+
+	.allQuestion > div{
+		/*margin-top:60px;*/
+	}
+	.bigQuestion {
+		margin-top:15px;
+		margin-bottom: 15px;
+	}
+
+	.addSmallItemButton >li {
+		margin-left: 22px;
+	}
+
+	.testPaper input[type='text']{
+		border:0;
+		border-bottom:1px solid #09f;	
+	}
+	
+	.testPaperTitle label{
+		font-size:20px;
+		color:#09f;
+	}
+	
+	.testPaperTitle input[type='text'], .questionTitle input[type='text']{
+		width:50px;
+		font-size:25px;color:red;
+		text-align:left;
+	}
+
+	.PublishContent input[type='text'] {
+		font-size:15px;color:red;
+	}
+
+
+	 .RedAndBold{
+		color: red;
+		font-weight: bold;
+	}
+
+	#AddBigQuestionDiv{
+	position:absolute;
+	}
+
+	#AddBigQuestion
+	{
+		cursor: pointer;
+		font-size: 15px;
+		background-image: url('/Content/Images/TestPaper/add-blue.png');
+		background-repeat:no-repeat;
+		background-color: white;
+		padding-left: 22px;
+		color: #09f;
+	}
+
+
+	#AddBigQuestion:hover
+	{
+		font-weight: bold;
+		background-image: url('/Content/Images/TestPaper/add.png');
+		background-repeat: no-repeat;
+		background-color: white;
+		color: red;
+	}
+
+	#SaveTestPaper {
+		background-color:#fff;
+		color:#09f;
+		font-size: 15px;
+		background-image: url(/Content/Images/TestPaper/save-blue.png);
+		background-repeat :no-repeat ;
+		padding-left: 20px;
+		margin-top: 5px;
+		margin-left: 3px; 
+	}
+
+	#SaveTestPaper:hover
+	{
+		font-weight: bold;
+		background-image: url('/Content/Images/TestPaper/save.png');
+		background-repeat: no-repeat;
+		background-color: white;
+		color: red;
+	}
+
+
+
+	/*#PublishAs,#PublishTo {
+		width: 47%;
+		float: left;
+	}
+
+	.PublishAsClass , .PublishToClass {
+		float: left;
+		margin: 5px;
+		width: 22%;
+		height: 80px;
+		background-color: #09f;
+		color: white;
+		font-size: 25px;
+	}*/

@@ -1,0 +1,24 @@
+
+----------------------header--------------------------
+2014-09-21 11:27:03,037 [9] ERROR DefaultErrorHandle - System.Web.HttpRequestValidationException (0x80004005): 从客户端(1-SQ-1="<h1 label="标题居中" sty...")中检测到有潜在危险的 Request.Form 值。
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.<>c__DisplayClass5.<ValidateHttpValueCollection>b__3(String key, String value)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.GetValues(Int32 index)
+   在 System.Collections.Specialized.NameValueCollection.Add(NameValueCollection c)
+   在 System.Web.Mvc.FormCollection..ctor(ControllerBase controller, Func`1 validatedValuesThunk, Func`1 unvalidatedValuesThunk)
+   在 System.Web.Mvc.FormCollection.FormCollectionBinderAttribute.FormCollectionModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__1e(AsyncCallback asyncCallback, Object asyncState)
+2014-09-21 11:27:03,526 [9] DEBUG DefaultErrorHandle - System.Web.HttpRequestValidationException (0x80004005): 从客户端(1-SQ-1="<h1 label="标题居中" sty...")中检测到有潜在危险的 Request.Form 值。
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.<>c__DisplayClass5.<ValidateHttpValueCollection>b__3(String key, String value)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.GetValues(Int32 index)
+   在 System.Collections.Specialized.NameValueCollection.Add(NameValueCollection c)
+   在 System.Web.Mvc.FormCollection..ctor(ControllerBase controller, Func`1 validatedValuesThunk, Func`1 unvalidatedValuesThunk)
+   在 System.Web.Mvc.FormCollection.FormCollectionBinderAttribute.FormCollectionModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__1e(AsyncCallback asyncCallback, Object asyncState)

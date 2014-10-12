@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{718D7073-5779-4284-A8CD-78F461DC2DCC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StudyCenter.BLL</RootNamespace>
+    <AssemblyName>StudyCenter.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\StudyCenter.UI\Library\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseService.cs" />
+    <Compile Include="BllFactory.cs" />
+    <Compile Include="BllSession1.cs">
+      <DependentUpon>BllSession.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ModelService.cs">
+      <DependentUpon>ModelService.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestPaperService.cs" />
+    <Compile Include="UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StudyCenter.Common\StudyCenter.Common.csproj">
+      <Project>{30bbca7c-ad70-4180-b343-8228173cdbe1}</Project>
+      <Name>StudyCenter.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudyCenter.DalFactory\StudyCenter.DalFactory.csproj">
+      <Project>{872869a6-f89f-4f27-8748-7af7fd2e1aec}</Project>
+      <Name>StudyCenter.DalFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudyCenter.EFDAL\StudyCenter.EFDAL.csproj">
+      <Project>{6b976859-34e5-4d40-ba1e-a493eca5675d}</Project>
+      <Name>StudyCenter.EFDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudyCenter.IBLL\StudyCenter.IBLL.csproj">
+      <Project>{f077602a-f1f9-4e40-98c6-0e88e7cdf731}</Project>
+      <Name>StudyCenter.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudyCenter.IDAL\StudyCenter.IDAL.csproj">
+      <Project>{e7bf4c12-78b9-4a24-99ec-30b3fd7dc4d0}</Project>
+      <Name>StudyCenter.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudyCenter.Model\StudyCenter.Model.csproj">
+      <Project>{804ad3be-9dc2-4c9c-b59b-82bfd62f7227}</Project>
+      <Name>StudyCenter.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="BllSession.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BllSession1.cs</LastGenOutput>
+    </None>
+    <None Include="ModelService.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelService.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

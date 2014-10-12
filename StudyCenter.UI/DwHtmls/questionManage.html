@@ -1,0 +1,474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>题库管理</title>
+	<script type="text/javascript" src="../Scripts/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="../Scripts/jquery-easyui-1.3.6/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Scripts/jquery-easyui-1.3.6/themes/metro-blue/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="../Scripts/jquery-easyui-1.3.6/themes/icon.css"/>
+</head>
+
+<body>
+<form method="post" action="../DwHtmls/Allquestions.html" >
+<style type="text/css">
+	.allQuestionContent{
+		text-align:center;
+
+	}
+	.centerContent{
+		margin:0 auto;	
+		width:745px;
+	}
+	.questionKind{
+		width:100px;
+		background-color:#09f;
+		}
+	.questionList{
+		border:1px solid #09f;
+		height:800px;
+	}
+	.questionItemContanier{
+		width:745px;
+	}
+	
+	.modeHide{
+		display:none;
+	}
+	
+	.questionItems{
+		list-style:none;
+	}	
+	.questionItem{
+		list-style:none;
+		display:inline-block;
+		text-align:justify;
+		min-width:740px;
+		margin-top:15px;
+	}
+	.questiontitleContent{
+		width:20px;
+		font-size:15px;
+		float:left;
+		background-color:#09f;
+		color:#fff;
+		border:1px solid #09f;
+		/*height:expression_r(questiontitleContent.scrollHeight+"px");*/
+	}
+	.questionContent{
+		border:2px solid #09f;
+		width:80%;
+		float:left;	
+	}
+	.questionBy{
+		border-right:1px solid #09f;
+		width:15px;
+		float:left;
+		background-color:#09f;color:#fff;	
+		font-size:12px;
+	}
+	
+	.question{
+		padding-top:5px;
+		border-top:1px solid #09f;
+		padding-left:10px;
+		padding-right:5px;
+		font-size:14px;
+	}
+	
+	.answer{
+		border-top:1px solid #09f;
+		padding-left:20px;
+		padding-right:5px;
+		font-size:13px;
+	}
+	
+	.chooseQuestion{	
+		float:left;
+		width:20px;
+		color:#fff;
+		text-decoration:none;
+		font-size:14px;
+		border:2px solid #09f;
+		margin-top:1px;
+		margin-left:2px;
+		background-color:#09f;
+	}
+	
+	.chooseQuestion:hover{
+		background-color:#00C;
+	}
+	
+	.questionInfo{
+		color:#00C;
+		font-weight:bold;
+		text-decoration:none;
+	}	
+	.centerToolBar{
+		text-align:center;
+	}
+	
+	.centerToolBarContanier{
+		width:80%;
+		margin:0 auto;
+		border:1px solid #09f;
+		height:80px;
+	}
+	
+</style>
+	<div class="allQuestionContent">
+        <div class="centerContent">       
+            <!--beautiful separate line-->
+            <hr  style="border:0.5px solid #09f;width: 740px; "/>
+            <div class="topToolBar">
+                <a href="javascript:loadQuestions('/question/choice')" class="easyui-linkbutton questionKind" 
+                		data-options="iconCls:'icon-redo',toggle:true">
+                    选择题
+                </a>
+                <a href="javascript:loadQuestions('/question/filling')" class="easyui-linkbutton questionKind"
+                		data-options="iconCls:'icon-redo',toggle:true">
+                    填空题
+                </a>
+                <a href="javascript:loadQuestions('/question/truefalse')" class="easyui-linkbutton questionKind"
+                		data-options="iconCls:'icon-redo',toggle:true">
+                    判断题
+                </a>
+                <a href="javascript:loadQuestions('/question/short')" class="easyui-linkbutton questionKind"
+                		data-options="iconCls:'icon-redo',toggle:true">
+                    简答题
+                </a> 
+                <!---编辑菜单--> 
+                <a href="javascript:void(0)" id="menuButton" class="easyui-menubutton"     
+                        data-options="menu:'#EditMenu',iconCls:'icon-edit'">编辑</a>   
+                <div id="EditMenu" style="width:100px;">   
+                    <div data-options="iconCls:'icon-add'">添加</div>   
+                    <div data-options="iconCls:'icon-remove'">删除</div>    
+                    <div data-options="iconCls:'icon-update'">修改</div>   
+                    <div class="menu-sep"></div>   
+                    <div>全选</div>   
+                </div>
+                <a href="#" onclick="toggleDisplayMode()" id="toggleMode"  name="table" style="margin-left:0px;" 
+                			class="easyui-linkbutton" data-options="iconCls:'icon-application_view_list',toggle:true">
+                    显示为列表
+                </a>
+             
+                <a class="easyui-linkbutton" href="#" onclick="toggleCheckAll()"data-options="toggle:true" id="btnSelectAll" 
+                			name="btnSelectAll" value="no"/>
+                    全选
+                </a>
+ 
+
+            </div><!--topToolBar end-->
+            <!--beautiful separate line-->
+            <!--<hr  style="border:0.5px solid #09f;width: 740px; "/>-->
+
+            
+			<script type="text/javascript">
+				$("document").ready(function(e) {
+					$(".listUIMode").hide();
+					$("#toggleMode").click();
+					ajustHeight();
+					$(":checkbox").click(toggleCheckedCss);
+					//使列表第一个元素向上靠齐
+					$(".questionItem").first().css('margin-top',0);
+					//菜单点击事件绑定
+					$('#EditMenu').menu({    
+						onClick:function(item){    
+							Edit(item);
+						}    
+					}); 
+					//隐藏暂且不显示的对话框
+					$('#editWindow').hide();
+
+				});
+				
+				
+				//编辑菜单
+				function Edit(item){
+					switch(item.text){
+						case '添加':
+							AddNewQuestion();break;
+						case '删除':
+							DeleteQuestion();break;
+						case '修改':
+							ViewQuestion();break;
+						case '全选':
+							toggleCheckAll();break;
+					}
+			
+				}
+				
+				//获取选中的项目
+				function GetSelectedQuestions(){
+					var selectedItems = $(":checked").filter(".chooseQuestion");
+					var length = selectedItems.length;
+					if(length==0) 
+					{
+						return;
+					}
+					return selectedItems;
+				}
+				
+				//新添
+				function AddNewQuestion(){
+					$('#editWindow').show();
+					$('#editWindow').window({    
+						title: 'My Dialog',    
+						width: 700,
+						height: 600,    
+						closed: false,
+						collapsed: false, 
+						cache: false,    
+						minimizable:false,
+						maximizable:false,
+						collapsible:false,
+						noheader:false,
+						href:'../DwHtmls/Allquestions.html',   
+						loadingMessage:'正在加载...',
+						content:"I Hate this"
+					}); 
+					//setTimeout("$('#editWindow').window('close')",1500);
+				}
+				
+				//删除选中的项目
+				function DeleteQuestion(){
+					var selectedItems = GetSelectedQuestions();
+					if(selectedItems==null) return;
+					var length = selectedItems.length;
+					for(var i =0;i<length;i++){
+						alert(selectedItems[i].value);
+					}
+					
+					$('#editWindow').show();
+					$('#editWindow').window({    
+						title: 'My Dialog',    
+						width: 200,
+						height: 45,    
+						closed: false,
+						collapsed: false, 
+						cache: false,    
+						noheader:true,
+						content:ContentData('del'),
+					}); 
+					setTimeout("$('#editWindow').window('close')",1500);
+				}
+				
+				//更新项目
+				function UpdateQuestion(){
+					$('#editWindow').show();
+					$('#editWindow').window({    
+						title: 'My Dialog',    
+						width: 200,
+						height: 45,    
+						closed: false,
+						collapsed: false, 
+						cache: false,    
+						noheader:true,
+						content:ContentData('update'),
+					}); 
+					setTimeout("$('#editWindow').window('close')",1500);
+				}
+				
+				//查看选中的第一个项目
+				function ViewQuestion(id){
+					var selectedItems = GetSelectedQuestions();
+					if(id==null) id = selectedItems[0].value;
+					if(selectedItems==null && id==null) return;
+					$('#editWindow').show();
+					$('#editWindow').window({    
+						title: 'My Dialog',    
+						width: 700,
+						height: 600,    
+						closed: false,
+						collapsed: false, 
+						cache: false,    
+						minimizable:false,
+						maximizable:false,
+						collapsible:false,
+						noheader:false,
+						href:'/question/select/' + id,   
+						loadingMessage:'正在加载...',
+						content:ContentData('view')
+					}); 
+				}
+				//
+				function ContentData(type){
+					if(type=='del')
+						return "正在删除...";
+					if(type=='add')
+					{
+						return "姓名<input type='text' value='wuzifei'/>"
+					}
+					if(type=='update')
+					{
+						return '修改中...';
+					}
+					if(type=='view')
+					{
+						return '查看中....';
+					}				
+				}
+
+				
+				
+				//切换CheckBox的选中样式
+				function toggleCheckedCss(){
+						$(":checkbox").css("background-color","#09f");
+						$(":checked").css("background-color","#00C");	
+				}
+				
+				//切换显示模式
+				function toggleDisplayMode(){
+					if($("#toggleMode").attr('name') == 'list')
+					{
+						$(".listUIMode").hide();
+						$(".tableUIMode").show();
+						$("#toggleMode").attr('name','table')
+						$("#toggleMode").html('显示为列表');
+						//$("#btnSelectAll").linkbutton({disabled:true});
+						$("#btnSelectAll").linkbutton('disable');
+					}
+					else
+					{
+						$(".tableUIMode").hide();
+						$(".listUIMode").show();
+						$("#toggleMode").attr('name','list')
+						$("#toggleMode").html('显示为表格');
+						//$("#btnSelectAll").linkbutton({disabled:false});
+						$("#btnSelectAll").linkbutton('enable');
+
+					}
+				}
+				
+				//调整'选择框'高度
+				function ajustHeight(){
+					var a=document.getElementById("questiontitleContent")
+					var b=document.getElementById("questionContent")
+					if (a.scrollHeight<b.scrollHeight)     
+					//很多网友在这里写成了a.style.height，经测试不行。
+					{
+						$(".chooseQuestion").css('height',b.scrollHeight+"px");
+					 		//c.style.height = b.scrollHeight+"px"
+					 //我在实际操作中因为左边有最小高度，所以此处设定成了固定值。
+					}
+				}
+				
+				//列表元素全选
+				function toggleCheckAll(){
+					if($(":checkbox").filter(".chooseQuestion").length != $(":checked").filter(".chooseQuestion").length){	
+						$(":checkbox").attr('checked',"checked");
+					}	
+					else{
+						$(":checkbox").attr('checked',false);
+					}
+					toggleCheckedCss();
+				}
+				   
+				
+            </script>
+            
+            <div id="editWindow" style="padding:10px;">  
+            </div>    
+
+            
+            <div class="questionList">   
+            
+				<!--<div class='centerToolBar'> 
+                    <div class="centerToolBarContanier" style="padding:5px 0;">
+ 					</div>
+                </div>-->
+                
+            	<!--easyUI的详细列表显示模式 开始-->
+                <div class="tableUIMode">
+                    <table class="easyui-datagrid" data-options="pagination:true,autoRowHeight:true">   
+                        <thead>   
+                            <tr>
+                                <th data-options="checkbox:true">全选</th>
+                                <th data-options="field:'ID',hidden:true,">ID</th>      
+                                <th data-options="field:'Content',width:200,">试题内容</th>   
+                                <th data-options="field:'Answers',width:200">参考答案</th>   
+                                <th data-options="field:'Remark',width:60">归属课程</th>   
+                                <th data-options="field:'Course',width:60">添加者</th>  
+                                <th data-options="field:'Difficulgy',width:60">难度系数</th>  
+                                <th data-options="field:'SubTime',width:60">添加时间</th>  
+                            </tr>   
+                        </thead>   
+                        <tbody>   
+                            <tr>
+                                <td>1</td> 
+                                <td>001</td>
+                                <td>name1</td>
+                                <td>2323</td>   
+                            </tr>   
+                            <tr>  
+                                <td>2</td> 
+                                <td>002</td>
+                                <td>name2</td>
+                                <td>4612</td>   
+                            </tr>   
+                        </tbody>   
+                    </table>                  
+                </div> <!--easyUI的详细列表显示模式  显示-->
+                
+                
+                <!--自定义的平铺列表显示模式 开始-->
+                <div class="listUIMode">
+                    <div class="questionItemContanier">
+                        <ul class='questionItems'>
+                            <li class="questionItem">
+                                <div class="questionTiltle">
+                                    <div id = "questiontitleContent" class="questiontitleContent">
+                                        选择题
+                                    </div>
+                                    <div id="questionContent" class="questionContent" >
+                                        <div class="question">
+                                            <div>
+                                                1.钢铁是怎么样炼成的?
+                                                1.钢铁是怎么样炼成的?
+                                                1.钢铁是怎么样炼成的?
+                                                1.钢铁是怎么样炼成的?
+                                                1.钢铁是怎么样炼成的?
+                                                1.钢铁是怎么样炼成的?
+                                                1.钢铁是怎么样炼成的?
+                                                <span style="color:#09f;">
+                                                    <a class="questionInfo"  href="javascript:ViewQuestion(1111)">&nbsp;&nbsp;详情...</a>
+                                                </span>
+                                                
+                                                <div style="width:400px;height:20px;margin-left:30%;text-align:left;">
+                                                    <span style="color:#09f;">出题人:</span>吴自飞&nbsp;&nbsp;
+                                                    <span style="color:#09f;">时间:</span>2015-05-15&nbsp;&nbsp;
+                                                    <span style="color:#09f;">难度:</span>★★★☆☆
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                       <div class="answer">
+                                        <span style="color:#09f;">答案:</span>
+                                        &nbsp;&nbsp;put it into the pot and boil it with fire
+                                        &nbsp;&nbsp;put it into the pot and boil it with fire
+                                        &nbsp;&nbsp;put it into the pot and boil it with fire
+                                        &nbsp;&nbsp;put it into the pot and boil it with fire
+                                        &nbsp;&nbsp;put it into the pot and boil it with fire
+                                       </div>
+                                    </div>
+                                </div>
+                                <input type="checkbox"  name="question1" class="chooseQuestion"  value="1111" />
+                            </li>   
+    
+                        </ul>
+                    </div>
+                </div>
+                <!--自定义的平铺列表显示模式 结束-->
+  			
+            <input type="submit" value="提交" /> 
+             
+            </div><!--questionList end-->   
+        </div><!--centerContent-->
+        
+    </div><!--allQuestionContent end-->
+    
+    
+</form> 
+
+</body>
+</html>

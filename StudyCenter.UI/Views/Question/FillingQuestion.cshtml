@@ -1,0 +1,116 @@
+﻿@model StudyCenter.Model.FillingQuestion
+
+<link rel="stylesheet" type="text/css" href="/Content/CSS/Question.css"/>
+<script src="~/Scripts/question/question.js"></script>
+<script src="~/Scripts/ueditor1_4_3-utf8-net/ueditor.config.js"></script>
+<script src="~/Scripts/ueditor1_4_3-utf8-net/ueditor.all.min.js"></script><script type="text/javascript">
+	var ue = UE.getEditor("editor");
+	var ue1 = UE.getEditor("editor1");
+</script>
+<form id="questionForm" name="questionForm">
+<div class="allItems">
+    <div class="pageDescription" style="margin:10px;font-size:12px;color:#09f;">
+        <input type="hidden" id="qId" name="qId" value="@Model.ID"/>
+@*        <input type="hidden" id ="Answers" name="Answers" value="@Model.Answers"/>*@
+        <input type="hidden" id="CourseId" name="CourseId" value="@Model.CourseID"/>
+        <p>可以同过此页进行题库的添加工作，请注意不要添加重复或相似的问题</p>
+        <p>添加完一个题目后，您将会获得5经验值与5金币</p>
+        <p style="color:red;">填空题中的空请用下划线占位,如：”填空题的答案是_____.</p>
+    </div>
+
+	<hr style="border:0.5px solid #09f ;width:98%;" />
+    <script src="~/Scripts/question/question.js"></script>
+    <div class="singleItem">
+       <div class="commonItems">
+            <label for="Course">所属课程</label> 
+            @Html.DropDownList("Course",@TempData["qCourseList"] as List<SelectListItem>,new{@id="Course",name="Courese"})
+            <label for="Difficulty">难度系数</label> 
+            <select id="Difficulty" name="Difficulty"  >
+                @{
+                    for (int i = 0; i <= 5; i++)
+                    {
+                        if (i == Model.Difficulty)
+                        {
+                            <option  value="@i" selected="true">@i</option>
+                        }
+                        else
+                        {
+                            <option  value="@i">@i</option>
+                        }
+                    }
+                }
+            </select>
+            @*试题是否为公开*@
+            @{
+                if (Model.IsPublic == true)
+                {
+                    <input type="checkbox" id="isPublic" name="isPublic" checked="checked"/>
+                    <label for="isPublic">公开</label>
+                }
+                else
+                {
+                    <input type="checkbox" id="isPublic" name="isPublic"/>
+                    <label for="isPublic">公开</label>
+                }
+            }       
+
+       </div>
+    </div>
+    
+	<div class="singleItem">
+        <div class="title">
+            <label for="Content">题目</label>
+            <input type="button" id="insertBlank" value="插入空位" onclick="javascript: InsertBlank();"
+                style="color:#fff;background-color: #09f;font-size: 14px;"/>
+        </div>
+        <div class="content">
+	        @*<textarea rows="7" id="Content" cols="50" name="Content">@Model.Content</textarea>*@
+			<script id="editor"  type="text/plain" name="Content">
+				@Html.Raw(Model.Content)
+			</script>
+        </div>
+    </div>
+   <div class="singleItem">
+        <div class="title">
+            <label for="Answers">答案</label>
+            <input type="button" id="insertSeparator" value="插入分隔符" onclick="javascript: InsertSeparator();"
+                style="color:#fff;background-color: #09f;font-size: 14px;"/>
+        </div>
+        <div class="content">
+            <textarea rows="5" id="Answers" cols="50" name="Answers">@Model.Answers</textarea>
+        </div>
+    </div>
+    
+   <div class="singleItem">
+        <div class="title">
+            <label for="Remark">试题详解</label>
+        </div>
+        <div class="content">
+	        @*<textarea rows="5" id="Remark" cols="50" name="Remark">@Model.Remark</textarea>*@
+			<script id="editor1" type="text/plain" name="Remark">
+				@Html.Raw(Model.Remark)
+			</script>
+        </div>
+    </div>
+
+    
+    <div class="submitBar">
+        @{
+            if (@TempData["qOperateType"].ToString() == "add")
+            {
+                <input type="submit" class="btnSubmit" id="addBtn" onclick="Add('filling'); return false;" value="添加"/>
+                <input type="submit" class="btnSubmit" id="addContinueBtn" onclick="Add('filling'); Continue('filling');" 
+                       value="添加并继续"/>
+                <input type="submit" class="btnSubmit" onclick="CloseWindow('add'); return false;" value="关闭窗口"/>
+            }
+            else
+            {
+                <input type="submit" class="btnSubmit" id="updateBtn" onclick="Update('filling'); return false;" value="修改"/>
+                <input type="submit" class="btnSubmit" id="updateCloseBtn" onclick="Update('filling'); CloseWindow('edit'); return false;" value="修改并关闭窗口"/>
+                <input type="submit" class="btnSubmit" onclick="CloseWindow('edit'); return false;" value="关闭窗口"/>
+            }
+        }
+    </div>
+  
+</div>
+</form>

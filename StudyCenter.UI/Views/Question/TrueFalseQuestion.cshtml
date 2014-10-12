@@ -1,0 +1,116 @@
+﻿@model StudyCenter.Model.TrueFalseQuestion
+
+<link rel="stylesheet" type="text/css" href="/Content/CSS/Question.css"/>
+<script src="~/Scripts/question/question.js"></script>
+<script src="~/Scripts/ueditor1_4_3-utf8-net/ueditor.config.js"></script>
+<script src="~/Scripts/ueditor1_4_3-utf8-net/ueditor.all.min.js"></script>
+
+<script type="text/javascript">
+	var ue = UE.getEditor("editor");
+	var ue1 = UE.getEditor("editor1");
+</script>
+
+<form id="questionForm" name="questionForm">
+<div class="allItems">
+<div class="pageDescription" style="margin:10px;font-size:12px;color:#09f;">
+	<p>可以同过此页进行题库的添加工作，请注意不要添加重复或相似的问题</p>
+    <p>添加完一个题目后，您将会获得5经验值与5金币</p>
+</div>
+    <input type="hidden" id="qId" name="qId" value="@Model.ID"/>
+    <input type="hidden" id ="Answers" name="Answers" value="@Model.Answers"/>
+    <input type="hidden" id="CourseId" name="CourseId" value="@Model.CourseID"/>
+
+	<hr style="border:0.5px solid #09f ;width:98%;" />
+    
+    <div class="singleItem">
+       <div class="commonItems">
+            <label for="Course">所属课程</label>
+            @Html.DropDownList("Course",@TempData["qCourseList"] as List<SelectListItem>,new{@id="Course",name="Courese"})
+            <label for="Difficulty">难度系数</label> 
+            <select id="Difficulty" name="Difficulty"  >
+                @{
+                    for (int i = 0; i <= 5; i++)
+                    {
+                        if (i == Model.Difficulty)
+                        {
+                            <option  value="@i" selected="true">@i</option>
+                        }
+                        else
+                        {
+                            <option  value="@i">@i</option>
+                        }
+                    }
+                }
+            </select>
+            @*试题是否为公开*@
+            @{
+                if (Model.IsPublic == true)
+                {
+                    <input type="checkbox" id="isPublic" name="isPublic" checked="checked"/>
+                    <label for="isPublic">公开</label>
+                }
+                else
+                {
+                    <input type="checkbox" id="isPublic" name="isPublic"/>
+                    <label for="isPublic">公开</label>
+                }
+            }
+        </div>
+    </div>
+    
+	<div class="singleItem">
+        <div class="title">
+            <label for="Content">题目</label>
+        </div>
+        <div class="content">
+	        @*<textarea rows="7" cols="50" id="Content" name="Content">@Model.Content</textarea>*@
+	        <script id="editor" type="text/plain" name="Content">
+		        @Html.Raw( Model.Content)
+	        </script>
+        </div>
+    </div>
+   <div class="singleItem">
+        <div class="title">
+            <label style ="font-size:20px;" for="Content">答案:</label>
+            <input type="radio" id="trueRadio" name="AnswerRadio" value="对" onclick="javascript:SetTrueFalseToHiddenInput();" checked="checked" />
+            <label for="true" style ="font-size:25px;">对</label>
+            <input type="radio" id="falseRadio" name="AnswerRadio"  onclick="javascript:SetTrueFalseToHiddenInput();" value="错" />
+            <label for="false" style ="font-size:25px;">错</label>
+        </div>
+
+    </div>
+    
+   <div class="singleItem">
+        <div class="title">
+            <label for="Remark">试题详解</label>
+        </div>
+        <div class="content">
+	        @*<textarea rows="5" cols="50" id="Remark" name="Remark">@Model.Remark</textarea>*@
+			<script id="editor1" type="text/plain" name="Remark">
+				@Html.Raw(Model.Remark)
+			</script>
+        </div>
+    </div>
+
+    
+    <div class="submitBar">
+        @{
+            if (@TempData["qOperateType"].ToString() == "add")
+            {
+                <input type="submit" class="btnSubmit" id="addBtn" onclick="Add('truefalse'); return false;" value="添加"/>
+                <input type="submit" class="btnSubmit" id="addContinueBtn" onclick="Add('truefalse'); Continue('truefalse');" value="添加并继续"/>
+                <input type="submit" class="btnSubmit" onclick="CloseWindow('add'); return false;" value="关闭窗口"/>
+            }
+            else
+            {
+                <input type="submit" class="btnSubmit" id="updateBtn" onclick="Update('truefalse'); return false;" value="修改"/>
+                <input type="submit" class="btnSubmit" id="updateCloseBtn" onclick="Update('truefalse'); CloseWindow('edit'); return false;" value="修改并关闭窗口"/>
+                <input type="submit" class="btnSubmit" onclick="CloseWindow('edit'); return false;" value="关闭窗口"/>
+            }
+        }
+    </div>
+    
+    
+    
+</div>
+</form>

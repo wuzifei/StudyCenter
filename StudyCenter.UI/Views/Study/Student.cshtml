@@ -1,0 +1,194 @@
+﻿@using Newtonsoft.Json.Linq
+@using StudyCenter.Model
+@model StudyCenter.Model.ViewModel.StudentPaperInfo
+@{
+    ViewBag.Title = "学生学习中心";
+    Layout = "~/Views/Shared/_Header.cshtml";
+}
+
+@section Head
+{
+    @Styles.Render("/Content/CSS/studyindex.css")
+    <link href="~/Scripts/jquery-easyui-1.3.6/themes/metro-blue/easyui.css" rel="stylesheet" />
+    <link href="~/Scripts/jquery-easyui-1.3.6/themes/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-easyui-1.3.6/jquery.easyui.min.js"></script>
+    <link href="~/Content/CSS/Student.css" rel="stylesheet" />
+}
+
+@section Sidebar
+{
+    <div id ="studyTask">
+        <div id="studyTaskTitle">
+            我的学习任务
+        </div>
+
+        <div id="studyTaskContent">
+            <ul>               
+                <li class="studyTaskItem">
+                    <a class="itemContent"  href = "/study/task/id" style="font-size: 14px;color: #0271cd">
+                        1.数据结构练习&nbsp; 
+                        <font color="red">未完成</font>
+                    </a>                         
+                    <a class="itemContent"  href = "/study/task/id" style="font-size: 14px;color: #0271cd">
+                        2.数据结构练习&nbsp; 
+                        <font color="red">未完成</font>
+                    </a>   
+                    <a class="itemContent" href = "/study/task/id" style="font-size: 14px;color: #0271cd">
+                        3.数据结构练习&nbsp; 
+                        <font color="red">未完成</font>
+                   </a>                            
+                </li>
+            </ul>
+        </div>
+    </div>
+}
+
+@*选项卡开始*@
+<script type="text/javascript">
+    
+    $.ready(function() {
+    });
+
+    function DisplayToggle(who) {
+        var divContent = $("." + who + " .AllContent");
+        divContent.fadeToggle();
+        var btn = $("." + who + " .DisplayAllBtn")[0];
+        if (btn.value == "+展开") {
+            btn.value = "- 收起";
+        }
+        else {
+            btn.value = "+展开";
+        }
+    }
+
+</script>
+
+@section footer{
+
+     <p>hello this is Footer</p>
+}
+
+@*width:750px;*@
+
+
+<hr class="HrStyle" />
+
+@{
+
+    var number = 1;
+    <div class="HomeWork TestShortContent">
+        <div class="BigTitle" style="background-color: #09f;">
+            <p class="ContentTitle" style="margin: 0;">
+                <span >作业</span>
+                <span style="font-size:12px;">（@(Model.HomeWork.Count() - Model.UndoneHomeWorkCount) 个完成，@(Model.UndoneHomeWorkCount) 个待做）</span>
+            </p>
+            <div class="DisplayAll">
+                <input class="DisplayAllBtn" id="DisplayAllBtn" type="button" onclick="DisplayToggle('HomeWork')" value="- 收起"/>
+            </div>
+        </div>
+        <div class="AllContent">
+            @foreach (var homework in Model.HomeWork)
+            {
+                <p class="TestLinkContent">
+                    <a class="TestLink" href="/testpaper/do/@homework.Id">
+                        <span class="TestNumber">@(number++).</span>
+                        <span class="TestTitle" >@homework.Name-</span>
+                        <span class="TestInfo">@homework.Publisher &nbsp;@homework.TestDate.ToString("u") 发布</span>
+                        @if (homework.GetScore == -1)
+                        {
+                            <span class="TestUserInfo">(未完成，满分@(homework.TotalScore)分)</span>
+                        }
+                        else
+                        {
+                            <span class="TestUserInfo">(已完成，获得@(homework.GetScore)分，满分@(homework.TotalScore)分)</span>
+                        }
+                    </a>
+                </p>
+            }   
+        </div>
+    </div>
+    
+    number = 1;
+    <div class="ForTest TestShortContent">
+        <div class="BigTitle" style="background-color: #09f;">
+            <p class="ContentTitle" style="margin: 0;">
+                <span >考试</span>
+                <span style="font-size:12px;">（@(Model.ForTest.Count() - Model.UndoneForTestCount) 个完成，@(Model.UndoneForTestCount) 个待做）</span>
+            </p>
+            <div class="DisplayAll">
+                <input class="DisplayAllBtn" id="DisplayAllBtn" type="button" onclick="DisplayToggle('ForTest')" value="- 收起"/>
+            </div>
+        </div>
+        <div class="AllContent">
+            @foreach (var homework in Model.ForTest)
+            {
+                <p class="TestLinkContent">
+                    <a class="TestLink" href="/testpaper/do/@homework.Id">
+                        <span class="TestNumber">@(number++).</span>
+                        <span class="TestTitle" >@homework.Name-</span>
+                        <span class="TestInfo">@homework.Publisher &nbsp;@homework.TestDate.ToString("u") 发布</span>
+                        @if (homework.GetScore == -1)
+                        {
+                            <span class="TestUserInfo">(未完成，满分@(homework.TotalScore)分)</span>
+                        }
+                        else
+                        {
+                            <span class="TestUserInfo">(已完成，获得@(homework.GetScore)分，满分@(homework.TotalScore)分)</span>
+                        }
+                    </a>
+                </p>      
+            }  
+        </div>
+    </div>
+    
+    number = 1;
+    <div class="ToPublic TestShortContent">
+        <div class="BigTitle" style="background-color: #09f;">
+            <p class="ContentTitle" style="margin: 0;">
+                <span >公开</span>
+                <span style="font-size:12px;">（@(Model.ToPublic.Count() - Model.UndoneForTestCount) 个完成，@(Model.UndoneToPublicCount) 个待做）</span>
+            </p>
+            <div class="DisplayAll">
+                <input class="DisplayAllBtn" id="DisplayAllBtn" type="button" onclick="DisplayToggle('ToPublic')" value="- 收起"/>
+            </div>
+        </div>
+        <div class="AllContent">
+            @foreach (var homework in Model.ToPublic)
+            {
+                <p class="TestLinkContent">
+                    <a class="TestLink" href="/testpaper/do/@homework.Id">
+                        <span class="TestNumber">@(number++).</span>
+                        <span class="TestTitle" >@homework.Name-</span>
+                        <span class="TestInfo">@homework.Publisher &nbsp;@homework.TestDate.ToString("u") 发布</span>
+                        @if (homework.GetScore == -1)
+                        {
+                            <span class="TestUserInfo">(未完成，满分@(homework.TotalScore)分)</span>
+                        }
+                        else
+                        {
+                            <span class="TestUserInfo">(已完成，获得@(homework.GetScore)分，满分@(homework.TotalScore)分)</span>
+                        }
+                    </a>
+                </p>      
+            }  
+        </div>
+    </div>
+    
+    <div class="DoTestPaper TestShortContent">
+        <div class="BigTitle" >
+            <p class="ContentTitle" style="margin: 0;">
+                <span >做题</span>
+                <span style="font-size:12px;">学如逆水行舟，不进则退</span>
+            </p>
+            <div class="DisplayAll">
+                <input class="DisplayAllBtn"  id="DisplayAllBtn" type="button" onclick="DisplayToggle('DoTestPaper')" value="- 收起"/>
+            </div>
+        </div>
+        <div class="AllContent">
+            <p class="TestLinkContent">
+                <h1>小二，来五题计算机的题，让爷尝尝</h1>
+            </p>     
+        </div>
+    </div>
+
+}

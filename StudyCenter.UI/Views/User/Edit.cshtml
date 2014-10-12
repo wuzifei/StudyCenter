@@ -1,0 +1,150 @@
+﻿@model StudyCenter.Model.User
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>User</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserNumber)
+            @Html.ValidationMessageFor(model => model.UserNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NickName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NickName)
+            @Html.ValidationMessageFor(model => model.NickName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserPwd)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserPwd)
+            @Html.ValidationMessageFor(model => model.UserPwd)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Experiences)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Experiences)
+            @Html.ValidationMessageFor(model => model.Experiences)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Golds)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Golds)
+            @Html.ValidationMessageFor(model => model.Golds)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastLoginTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastLoginTime)
+            @Html.ValidationMessageFor(model => model.LastLoginTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SafeQuestion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SafeQuestion)
+            @Html.ValidationMessageFor(model => model.SafeQuestion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SafeAnswer)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SafeAnswer)
+            @Html.ValidationMessageFor(model => model.SafeAnswer)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsDeleted)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsDeleted)
+            @Html.ValidationMessageFor(model => model.IsDeleted)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Remark)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Remark)
+            @Html.ValidationMessageFor(model => model.Remark)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SubTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SubTime)
+            @Html.ValidationMessageFor(model => model.SubTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsLocked)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsLocked)
+            @Html.ValidationMessageFor(model => model.IsLocked)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ClassInfoID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ClassInfoID)
+            @Html.ValidationMessageFor(model => model.ClassInfoID)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

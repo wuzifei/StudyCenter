@@ -1,0 +1,160 @@
+﻿@model StudyCenter.Model.ViewModel.AnswerTestpaper
+@{
+    ViewBag.Title = "做题答卷";
+    Layout = "~/Views/Shared/_Header.cshtml";
+}
+
+@section Head
+{
+    @Styles.Render("/Content/CSS/studyindex.css")
+    <link href="~/Scripts/jquery-easyui-1.3.6/themes/metro-blue/easyui.css" rel="stylesheet" />
+    <link href="~/Scripts/jquery-easyui-1.3.6/themes/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-easyui-1.3.6/jquery.easyui.min.js"></script>
+    <link href="~/Content/CSS/Do.css" rel="stylesheet" />
+	<link href="~/Content/CSS/Report.css" rel="stylesheet" />
+}
+
+
+
+@*选项卡开始*@
+<script type="text/javascript">
+
+    $.ready(function() {
+    });
+
+    function ShowHide(bqid) {
+        var btn = $("#BQ-" + bqid + " .btnShowHide")[0];
+        if (btn.value == "-收起") {
+            $("#BQ-" + bqid + " .SmallQuestion").hide();
+            btn.value = "+展开";
+        } else {
+            $("#BQ-" + bqid + " .SmallQuestion").show();
+            btn.value = "-收起";
+        }
+
+    }
+
+</script>
+
+@section footer{
+
+     <p>hello this is Footer</p>
+}
+
+<form id="TestpaperForm" method="POST" action="">
+    <div class="TestPaperTitle">
+        <h1>@Model.TestPaper.PaperName</h1>
+        <div class="TitleContent">
+            <p>说明：请学生们不要作弊，不然将无法获得学士学位!</p>
+            <p style="color:red;">注意：本考试系统具有防作弊功能，若发现雷同试卷，都将将视为作弊!</p>
+            <span style="margin-right: 100px;">出题人：吴自飞</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>考试时间：90分钟</span>
+        </div>
+    </div>
+    @{           
+        var i = 1;
+        foreach (var bigQuestion in Model.BigQuestions)
+        {
+          <div class="BigQuestion" id="BQ-@(bigQuestion.Id)">
+              <div class="BigTitle">
+                  <div class="Title">
+                      <span>一.@(bigQuestion.Title)</span>
+                      <span class="BigQuestionInfo">(共@(bigQuestion.SmallQustionInfos.Count())道题,总分@(bigQuestion.TotalScore)分)</span>
+                      <span class="BigQuestionInfo" style="color:red;">共获得@(bigQuestion.TotalGetScore)分</span>
+                  </div>
+                  <div class="ShowHideBtn">
+                      <input class="btnShowHide" type="button" value="-收起" onclick="ShowHide('@(bigQuestion.Id)');"/>
+                  </div>
+              </div>
+              @foreach (var smallQustion in bigQuestion.SmallQustionInfos)
+              {
+                  <div class="SmallQuestion" id="@(bigQuestion.Id)-@(smallQustion.QuestionType)-@(smallQustion.Id)">
+                      
+                      <div class="SmallTitle">
+	                      @(i++).@(smallQustion.Title)(@(smallQustion.Score)分)
+						  @if (smallQustion.GetScore == -1)
+						  {
+							<span style="color:red;font-size:12px;">未批改</span>
+						  }
+						  else
+						  {
+							<span style="color:blue;font-size:12px;">获得:@(smallQustion.GetScore)分</span>
+						  }
+						  
+                      </div>
+                      @*只有选择题才有答案内容*@
+                      <div class="SmallQuestionAnswer">
+                          @{
+                              var btName =bigQuestion.Id + "-" + smallQustion.QuestionType + "-" + smallQustion.Id;
+                          }
+                          @if (smallQustion.Choices.Any())//选择题
+                          {                                  
+                              var select = 'A';
+                              foreach (var choice in smallQustion.Choices)
+                              {
+                                  if (choice != "")
+                                  {
+                                      <p>
+                                          <label for="@(btName)-@(select)">
+                                              <span>@(select++).</span>
+                                              @choice
+                                          </label>
+                                      </p>
+                                  }
+                              }
+                          }
+                      </div>
+	                  <div class="UserAnswer">
+		                  <div style="float: left;width: 30px;">
+			                  @{
+				                  if (smallQustion.GetScore == smallQustion.Score)//正确
+				                  {
+					                  <img src="~/Content/Images/TestPaper/yes.png" class="AnswerStatus" />
+				                  }
+				                  else if (smallQustion.GetScore == 0)//错误
+				                  {
+					                  <img src="~/Content/Images/TestPaper/no.png" class="AnswerStatus" />
+				                  }
+				                  else if (smallQustion.GetScore == -1)//未批改
+				                  {
+					                  <img src="~/Content/Images/TestPaper/Question.jpg" class="AnswerStatus" />
+				                  }
+				                  else if (smallQustion.GetScore > 0 && smallQustion.GetScore < smallQustion.Score)//对了点
+				                  {
+					                  <img src="~/Content/Images/TestPaper/light.gif" class="AnswerStatus" />
+				                  }
+			                  }
+		                  </div>
+		                  <div style="width: 90%;min-height: 40px;">
+			                  <div>
+				                  <span style="color:red;">您的答案：</span>
+				                  @Html.Raw(smallQustion.UserAnswer)
+			                  </div>
+			                  <div>
+				                  <span style="color:red;">正确答案：</span>
+				                  @smallQustion.Answer
+			                  </div>
+		                  </div>
+	                  </div>
+	                  <div class="DetailAnswer">
+		                  <div class="TitleBar">
+			                  <span style="font-weight: bold;margin: 2px;">详解</span>
+			                  <div style="float: right;text-align:left;">
+				                  <input type="button" value="收藏" />
+				                  <input type="button" value="加入错题集" />
+				                  <input type="button" value="写解析" />
+								  <input type="button" value="+展开" />
+			                  </div>
+		                  </div>
+		                  <div class="Detail">
+			                  @smallQustion.QuestionRemark
+		                  </div>
+	                  </div>
+                  </div>
+              }
+        </div>
+        }
+    }
+
+</form>
+

@@ -1,0 +1,113 @@
+﻿    .HomeWork {
+        border: 1px green solid;
+    }
+    .ForTest {
+        border: 1px red solid;
+    }
+    .ToPublic {
+	    border: 1px #09f solid;
+    }
+	.DoTestPaper {
+	    border: 1px blue solid;
+	}
+     .TestShortContent {
+         width: 99%;
+         background-color: #f8f8ff;
+         float: left;
+         margin-top: 10px;
+         text-decoration: none;
+     }
+    .TestShortContent a {
+        text-decoration: none;
+    }
+    .BigTitle {
+        color: white;
+        background-color: #09f;
+    }
+    .ContentTitle {
+        color: white;
+        background-color: #09f;
+        font-size: 22px;
+        font-weight: bold;
+        float: left;
+        width: 95%;
+    }
+
+	.ToPublic .ContentTitle {
+		background-color: #09f;
+	}
+	.ForTest .ContentTitle {
+		background-color: red;
+	}
+	.HomeWork .ContentTitle {
+		background-color: green;
+	}
+	.DoTestPaper .ContentTitle {
+		background-color: blue;
+	}
+    .DisplayAll {
+        color: white;
+        background-color: #09f;
+        float: left;
+        width: 5%;
+        height: 25px;
+     }
+    .DisplayAllBtn  {
+        background-color: #09f;
+        color: white;
+        border: 0;
+	    margin-top: 5px;
+    }
+	.HomeWork .DisplayAll,.HomeWork .DisplayAllBtn{
+        background-color: green;
+	}
+	.ForTest .DisplayAll,.ForTest .DisplayAllBtn{
+		background-color: red;
+	}
+	.DoTestPaper .DisplayAll,.DoTestPaper .DisplayAllBtn{
+		background-color: blue;
+	}
+    .DisplayAllBtn:hover  {
+	    cursor: pointer;
+	    font-weight: bold;
+    }   
+	 .HrStyle {
+        border:1px #09f solid;
+        width:99%;
+        margin: 0;
+    }
+    .TestShortContent .TestNumber {
+        font-size: 17px;
+        font-weight: bold;
+        color: black;
+    }
+    .TestShortContent .TestTitle {
+        font-size: 15px;
+        color: black;
+    }
+    .TestShortContent .TestInfo {
+        color: #09f;
+        font-size: 15px;
+    }
+    .TestShortContent .TestUserInfo {
+        color: red;
+        font-size: 12px;
+    }
+    /*.TestShortContent .TestLink {
+       font-size: 20px;
+       margin-left: 15px;
+   }*/
+    .TestLinkContent {
+        margin-top: 10px;
+        margin-left: 5px;
+	    float: left;
+    }
+    .TestLinkContent:hover {
+        margin-left: 15px;
+    }
+
+	.AllContent {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+

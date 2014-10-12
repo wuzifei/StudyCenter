@@ -1,0 +1,103 @@
+﻿
+    <body>
+        <script type="text/javascript" src="/Scripts/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="/Scripts/jquery-easyui-1.3.6/jquery.easyui.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/Scripts/jquery-easyui-1.3.6/themes/metro-blue/easyui.css"/>
+        <link rel="stylesheet" type="text/css" href="/Scripts/jquery-easyui-1.3.6/themes/icon.css"/>
+        <script src="~/Scripts/question/index.js"></script>
+        <script type="text/javascript">
+
+        </script>
+            <div>
+                <div id="editWindow">  
+                </div>    
+                <div id="delWindow">  
+                </div>    
+                <div id="addWindow">  
+                </div>
+            </div>
+            <div class="allQuestionContent">
+                <div class="centerContent">       
+                    <!--beautiful separate line-->
+                    <hr  style="border:1px solid #09f;width:99% "/>
+                    <!--Edit Panel start-->
+                    <div class="topToolBar">
+                        <a id="choiceBtn" onclick="LoadQuestions('/question/list/?pageSize=5&pageIndex=1&questionType=Choice');ChangeQType('choice');SetChecked();"
+                           class="easyui-linkbutton questionKind" 
+                           data-options="iconCls:'icon-redo',toggle:true">
+                            选择题
+                        </a>
+                        <a id="fillingBtn" onclick="LoadQuestions('/question/list/?pageSize=5&pageIndex=1&questionType=Filling');ChangeQType('filling');SetChecked();"
+                           class="easyui-linkbutton questionKind"
+                           data-options="iconCls:'icon-redo',toggle:true">
+                            填空题
+                        </a>
+                        <a id="truefalseBtn" 
+                           onclick="LoadQuestions('/question/list/?pageSize=5&pageIndex=1&questionType=TrueFalse');ChangeQType('truefalse');SetChecked();" 
+                           class="easyui-linkbutton questionKind"
+                           data-options="iconCls:'icon-redo',toggle:true">
+                            判断题
+                        </a>
+                        <a id="shortBtn" 
+                           class="easyui-linkbutton questionKind"
+                           data-options="iconCls:'icon-redo',toggle:true"
+                           onclick="LoadQuestions('/question/list/?pageSize=5&pageIndex=1&questionType=Short');ChangeQType('short');SetChecked();">
+                            简答题
+                        </a> 
+                        <!---编辑菜单--> 
+                        <a href="javascript:void(0)" id="menuButton" class="easyui-menubutton"     
+                           data-options="menu:'#EditMenu',iconCls:'icon-edit'">编辑</a>   
+                        <div id="EditMenu" class="menuButton" >   
+                            <div class="menuItem" data-options="iconCls:'icon-add'">添加</div>   
+                            <div class="menuItem" data-options="iconCls:'icon-remove'">删除所有选中</div>    
+                            <div class="menuItem" data-options="iconCls:'icon-edit'">修改第一个选中</div>   
+                            <div class="menuItem" data-options="iconCls:'icon-redo'">新窗口打开</div> 
+                            <div class="menu-sep menuItem"></div>   
+                            <div class="menuItem" >全选</div>   
+                        </div>
+                        <a id="questionMenuText" href="javascript:void(0)" id="" class="easyui-menubutton"     
+                           data-options="menu:'#PersonalMenu',iconCls:'icon-edit'">题库</a>   
+                        <div id="PersonalMenu" class="menuButton" >   
+                            <div class="menuItem" data-options="iconCls:'icon-add'">个人题库</div>   
+                            <div class="menuItem" data-options="iconCls:'icon-remove'">个人私有题库</div>    
+                            <div class="menuItem" data-options="iconCls:'icon-edit'">个人公开题库</div>   
+                            <div class="menuItem" data-options="iconCls:'icon-edit'">总题库</div>   
+                        </div>  
+                        <a href="javascript:void(0)" id="toTestPaperMenuBtn" class="easyui-menubutton"     
+                           data-options="menu:'#TestPaperMenu',iconCls:'icon-edit'">To试卷</a>   
+                        <div id="TestPaperMenu" class="menuButton" >   
+                            <div class="menuItem" data-options="iconCls:'icon-add'">选入试卷</div>   
+                        </div>   
+                        <input type="hidden" id="qType" value="choice"/>
+ 
+                    </div>
+                    <!--beautiful separate line-->
+                    <hr  style="border:1px solid #09f;width: 99%; "/>
+                    <div class="questionList">   
+                        <!--自定义的平铺列表显示模式 开始-->
+                        <div id="listUIMode" class="listUIMode">
+                            <div class="questionItemContanier">
+                            </div>
+                        </div>
+                        <!--自定义的平铺列表显示模式 结束-->
+                    </div><!--questionList end-->   
+
+                </div>
+            </div><!--allQuestionContent end-->
+            <style type="text/css">
+                #SelectToTestPaperBtn {
+                    color:white;
+                    background-color:#09f;
+                    border: 0;width: 90%;
+                    font-size: 24px;
+                }
+                #SelectToTestPaperBtn:hover {
+                    color:white;
+                    background-color:#000080;
+                    cursor: pointer;
+                }           
+            </style>
+            <div >
+                <input type="button" style="" id="SelectToTestPaperBtn" onclick="PassSelectedToTestPaper();" value="将选中的试题存入试卷"/>
+            </div><!--centerContent--> 
+    </body>

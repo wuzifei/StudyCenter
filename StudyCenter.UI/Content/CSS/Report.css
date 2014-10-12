@@ -1,0 +1,31 @@
+﻿.AnswerStatus {
+	width: 30px;
+	height: 30px;
+}
+
+.DetailAnswer {
+	width: 100%;
+	font-size: 15px;
+	background-color: #00bfff;
+	color: white;
+}
+
+.DetailAnswer input[type='button'] {
+	background-color:#00bfff;
+	color: white;
+	font-size: 14px;
+	border: 0;
+}
+
+.DetailAnswer input[type='button']:hover {
+	cursor: pointer;
+	background-color: blue;
+}
+
+.Detail {
+	display: none;
+	border: 1px solid #00bfff;
+	font-size: 15px;
+	background-color: white;
+	color: black;
+}

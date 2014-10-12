@@ -1,0 +1,142 @@
+/* CSS Document */
+
+body{
+	text-align:center;
+}
+
+.testPaper{
+	width:740px;
+	margin:0 auto;
+}
+
+#CourseID,#BigCategory,#SmallCategory {
+	color: red;
+}
+
+.allQuestion{
+	text-align:left;
+}
+
+.testPaperTitle{
+	text-align:center;
+}
+
+.testPaperTitle h1{
+	color:#09f;
+}
+
+.questionTitle h2 {
+	text-align:left;
+	color:#09f;
+	-moz-word-break: break-all;
+	-o-word-break: break-all;
+	word-break: break-all;
+}
+
+.questionTitle{
+	color:#36C;
+}
+
+.questionItems ul  li{
+	list-style:none;
+	display:inline-block;
+	margin-left:20px;
+	margin-bottom:20px;
+}
+
+.questionItems li{
+	margin-left: 22px;
+	margin-top:10px;
+}
+
+.answerContent{
+	margin-left:20px;
+	margin-top:5px;
+	color: red;
+}
+
+.fillAnswerBox{
+	border:0 solid #09f;
+	border-bottom:1px solid #09f;
+	width:500px;
+}
+
+.submitAnswer{
+	margin-right:5px;
+	width:30%;
+	height:30px;
+	background-color:#6CF;
+	color:#fff;
+	border:0;
+	font-size:24px;
+}
+.submitAnswer:hover{
+	background-color:#30C;
+	color:#fff;
+}
+
+#AddBigQuestionDiv{
+	position:absolute;
+	}
+#AddBigQuestionDiv  button
+{
+	cursor: pointer;
+	font-size: 16px;
+	background-image: url('/Content/Images/TestPaper/add-left-black.png');
+	background-repeat: no-repeat;
+	background-color: white;
+	padding-left: 22px;
+	color: black;
+}
+
+
+#AddBigQuestionDiv  button :hover
+{
+	font-weight: bold;
+	background-image: url('/Content/Images/TestPaper/add-left.png');
+	background-repeat: no-repeat;
+	background-color: white;
+	color: red;
+}
+
+#AddBigQuestionDialog {
+	font-size: 22px;
+}
+
+#AddBigQuestionDialog input[type="text"] {
+	border: 0;
+	border-bottom: 1px solid #09f;
+	width: 80%;
+	color: red;
+	font-size: 22px;
+	height: 25px;
+	padding-bottom: 4px;
+}
+
+
+
+#AddBigQuestionDialog p {
+	margin-top: 8px;
+}
+#AddBigQuestionDialog label {
+	color: #09f;
+	width: 15%;
+	margin-right: 5px;
+	font-size: 22px;
+	margin-bottom: 0;
+}
+
+#AddBigQuestionDialog input[type="button"] {
+	font-size: 25px;
+	width: 30%;
+	margin-right: 3px;
+	border: 0;
+	background-color: #09f;
+	color: white;
+	margin-top: 0px;
+}
+#AddBigQuestionDialog input[type="button"]:hover {
+	background-color: #000080;
+	color: white;
+	cursor: pointer;
+}

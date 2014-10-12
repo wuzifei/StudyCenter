@@ -1,0 +1,235 @@
+﻿@using StudyCenter.Model
+@model StudyCenter.UI.ViewModel.QuestionLists
+<link href="~/Content/CSS/PageLink.css" rel="stylesheet" />
+<link href="~/Content/CSS/QuestionManager.css" rel="stylesheet" />
+    <div class="questionItemContanier">
+        <ul class='questionItems'>
+            @{
+                @*如果选择题不为空*@
+                List<BaseQuestion> question =new List<BaseQuestion>();
+                if (Model.ChoiceQuestions != null)
+                {
+                    foreach (var q in Model.ChoiceQuestions)
+                    {
+                        question.Add(new BaseQuestion()
+                        {
+                            ID = q.ID,
+                            Content = q.Content,
+                            Answers = q.Answers,
+                            SubTime = q.SubTime,
+                            Publisher = q.Publisher,
+                            Difficulty = q.Difficulty,
+                        });
+                    }
+                }
+                if (Model.FillingQuestions != null)
+                {
+                    foreach (var q in Model.FillingQuestions)
+                    {
+                        question.Add(new BaseQuestion()
+                        {
+                            ID = q.ID,
+                            Content = q.Content,
+                            Answers = q.Answers,
+                            SubTime = q.SubTime,
+                            Publisher = q.Publisher,
+                            Difficulty = q.Difficulty,
+                        });
+                    }
+                }
+                if (Model.TrueFalseQuestions != null)
+                {
+                    foreach (var q in Model.TrueFalseQuestions)
+                    {
+                        question.Add(new BaseQuestion()
+                        {
+                            ID = q.ID,
+                            Content = q.Content,
+                            Answers = q.Answers.ToString(),
+                            SubTime = q.SubTime,
+                            Publisher = q.Publisher,
+                            Difficulty = q.Difficulty,
+                        });
+                    }
+                }
+                if (Model.ShortQuestions != null)
+                {
+                    foreach (var q in Model.ShortQuestions)
+                    {
+                        question.Add(new BaseQuestion()
+                        {
+                            ID = q.ID,
+                            Content = q.Content,
+                            Answers = q.Answers,
+                            SubTime = q.SubTime,
+                            Publisher = q.Publisher,
+                            Difficulty = q.Difficulty,
+                        });
+                    }
+                }
+                foreach (var q in question)
+                {
+                    <li class="questionItem">
+                        <div class="questionTiltle">
+                            <div id = "questiontitleContent" class="questiontitleContent">
+                                @ViewData["QuestionType"]
+                            </div>
+                            <div id="questionContent" class="questionContent" >
+                                <div class="question">
+                                    <div>
+                                        @q.Content
+                                        <span style="color: #09f;">
+                                            <a class="questionInfo"  href="javascript:ViewQuestion(@q.ID)">&nbsp;&nbsp;详情...</a>
+                                        </span>
+                                                
+                                        <div style="width: 400px; height: 20px;margin-top:5px; margin-left: 10%; text-align: left;">
+                                            <span style="color: #09f;">By:</span>
+                                            @if(@q.Publisher!=null)
+                                            {
+                                                @q.Publisher.UserName
+                                            }
+                                            else
+                                            {
+                                                <text>佚名</text>
+                                            }&nbsp;&nbsp;
+                                            <span style="color: #09f;">时间:</span>@q.SubTime&nbsp;&nbsp;
+                                            <span style="color: #09f;">难度:</span>
+                                            @{
+                                                for (int i = 0; i <q.Difficulty; i++)
+                                                {
+                                                    <text>&hearts;</text>
+                                                }                                         
+                                            }
+                                        </div>
+                                    </div>
+                                            
+                                </div>
+                                <div class="answer">
+                                    <span style="color: #09f;">答案:</span>
+                                    @q.Answers
+                                </div>
+                            </div>
+                        </div>
+                        <input type="checkbox"  name="q(@q.ID)" onclick="CheckWhatShoudChecked();" class="chooseQuestion"  value="@q.ID" />
+                    </li>
+                }
+            }          
+        </ul>
+        @*分页链接栏 开始*@
+        @{
+            int pageIndex = int.Parse(Request.QueryString["pageIndex"]); 
+            int pageSize = int.Parse(Request.QueryString["pageSize"]); 
+            string questionType = Request.QueryString["questionType"];
+            string  pageUrl = string.Format("javascript:LoadQuestions('/question/list/?pageSize={0}&pageIndex={1}&questionType={2}')", pageSize, pageIndex, questionType);       
+        } 
+        <div style="text-align: center">
+            @{
+                pageUrl = string.Format("javascript:LoadQuestions('/question/list/?pageSize={0}&pageIndex={1}&questionType={2}')", pageSize, 1, questionType); 
+                <span style="font-size: 13px;color:#09f;">共 @ViewBag.TotalRecords 条记录</span>
+                <span style="font-size: 13px;color:#09f;">&nbsp;&nbsp; @pageIndex/@ViewBag.TotalPage 页&nbsp;&nbsp;</span>
+ 
+                <a class="pageLink" href="#" onclick=@pageUrl>
+                    首页
+                </a>   
+                //获取上页页码
+                int forwardPage = ViewBag.PageIndex;
+                if (ViewBag.PageIndex > 1)
+                {
+                    forwardPage = ViewBag.PageIndex - 1;
+                }
+                pageUrl = string.Format("javascript:LoadQuestions('/question/list/?pageSize={0}&pageIndex={1}&questionType={2}')", pageSize, forwardPage, questionType);
+                <a class="pageLink" href="#" onclick=@pageUrl>
+                    上页
+                </a>
+                //总页数不超过10页时
+                int curPage = ViewBag.PageIndex;
+                if(@ViewBag.TotalPage <=10)
+                {
+
+                    for (int i = 1; i <= (int) ViewBag.TotalPage; i++)
+                    {                    
+                        pageIndex = i;
+                        pageUrl =string.Format("javascript:LoadQuestions('/question/list/?pageSize={0}&pageIndex={1}&questionType={2}')",
+                                                    pageSize,pageIndex,questionType);                        
+                        if (curPage == i)
+                        {
+                            <a class="pageLink curPage"href="#"  onclick= "@pageUrl">
+                                @i
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="pageLink" href="#" onclick= "@pageUrl">
+                                @i
+                            </a>
+                        }
+                    }
+                }
+                else
+                {   //总页数超过10页时
+                    var beforeindex = 1;
+                    var afterindex = 10;
+                    if (ViewBag.PageIndex > 5)
+                    {
+                        beforeindex = pageIndex - 5;
+                        afterindex = pageIndex + 5;
+                    }
+                    for (int i = beforeindex; i <= ViewBag.PageIndex; i++)
+                    {
+                        pageIndex = i;
+                        pageUrl = string.Format("javascript:LoadQuestions('/question/list/?pageSize={0}&pageIndex={1}&questionType={2}')", 
+                                                pageSize, pageIndex, questionType);
+                        if (curPage == i)
+                        {
+                            <a class="pageLink curPage" href="#" onclick= "@pageUrl">
+                                @i
+                            </a>
+                        }
+                        else
+                        {              
+                            <a class="pageLink" href="#"  onclick= "@pageUrl">
+                                @i
+                            </a> 
+                        }
+                     }
+                    for (int i = ViewBag.PageIndex+1; i <= (int)ViewBag.TotalPage && i <= afterindex; i++)
+                    {
+                        pageIndex = i;
+                        pageUrl = string.Format("javascript:LoadQuestions('/question/list/?pageSize={0}&pageIndex={1}&questionType={2}')", 
+                                                                           pageSize, pageIndex, questionType);
+                        if (curPage == i)
+                        {
+                            <a class="pageLink curPage" href="#" onclick= "@pageUrl">
+                                @i
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="pageLink" href="#" onclick= "@pageUrl">
+                                @i
+                            </a>                   
+                        }
+                    } 
+                } 
+                //获取下页页码  
+                int nextPage = ViewBag.PageIndex;
+                if (ViewBag.PageIndex < ViewBag.TotalPage)
+                {
+                    nextPage = ViewBag.PageIndex + 1;
+                }
+                pageUrl = string.Format("javascript:LoadQuestions('/question/list/?pageSize={0}&pageIndex={1}&questionType={2}')",
+                                                                    pageSize, nextPage, questionType);
+                <a class="pageLink"  onclick= "@pageUrl" href="#">
+                    下页
+                </a>
+                pageUrl = string.Format("javascript:LoadQuestions('/question/list/?pageSize={0}&pageIndex={1}&questionType={2}')",
+                                                                    pageSize, ViewBag.TotalPage, questionType);
+                <a class="pageLink" href="#" onclick= "@pageUrl">
+                    尾页
+                </a>
+            }
+        </div>
+        @*分页链接栏 结束*@
+
+
+    </div>

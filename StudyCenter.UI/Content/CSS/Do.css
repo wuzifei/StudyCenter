@@ -1,0 +1,94 @@
+﻿#TestpaperForm {
+	text-align: center;
+	border: 1px #09f solid;
+}
+
+div {
+	margin: 0 auto;
+}
+
+.TestPaperTitle{
+}
+
+.TestPaperTitle h1{
+	color: #09f;
+	margin: 10px auto;
+}
+
+.BigQuestion {
+	border-top: 0;
+	/*border: 1px #09f solid;*/
+	text-align: left;
+	margin-top: 10px;
+}
+.BigTitle .Title {
+	width: 94%;
+	background-color: #09f;
+	padding-left:1%;
+	font-size: 22px;
+	color: white;
+	float: left;
+}
+.BigQuestionInfo {
+	font-size: 15px;
+}
+.ShowHideBtn input {
+	width: 5%;
+	height: 25px;
+	background-color: #09f;
+	color: white;
+	border: 0;
+}
+.ShowHideBtn input:hover {
+	font-weight: bold;
+	cursor: pointer;
+}
+.SmallQuestion {
+	margin-top: 5px;
+	margin-left:3%;
+	margin-right:3%;
+	width: 94%;
+	background-color: #f0f8ff;
+}
+.SmallTitle {
+	color: green;
+}
+
+.SmallQuestionAnswer , .UserAnswer {
+	/*margin-bottom: 5px;*/
+	margin-top: 5px;
+	margin-left: 1.5%;
+	width: 94%;
+	font-size: 14px;
+	color: #000080;
+}
+.SmallQuestionAnswer p{
+	margin-bottom: 3px;
+}
+
+.UserAnswer textarea{
+	width: 100%;
+	border:1px #000080 double;
+	padding: 5px;
+	max-width: 700px;
+}
+
+.UserAnswer input[type="text"] {
+	border: 0;
+	border-bottom: 1px solid #09f;
+}
+
+.submitBar input[type="submit"] {
+	border: 0;
+	background-color: #09f;
+	color:white;
+	font-size: 25px;
+	width: 90%;
+	margin: 5px;
+}
+
+.submitBar input[type="submit"]:hover{
+	background-color: #000080;
+	cursor: pointer;
+}
+

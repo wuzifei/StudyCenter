@@ -1,0 +1,52 @@
+ range 0 to 23 (24h format)
+	s["%l"] = ir;		// hour, range 1 to 12 (12h format)
+	s["%m"] = (m < 9) ? ("0" + (1+m)) : (1+m); // month, range 01 to 12
+	s["%M"] = (min < 10) ? ("0" + min) : min; // minute, range 00 to 59
+	s["%n"] = "\n";		// a newline character
+	s["%p"] = pm ? "PM" : "AM";
+	s["%P"] = pm ? "pm" : "am";
+	// FIXME: %r : the time in am/pm notation %I:%M:%S %p
+	// FIXME: %R : the time in 24-hour notation %H:%M
+	s["%s"] = Math.floor(this.getTime() / 1000);
+	s["%S"] = (sec < 10) ? ("0" + sec) : sec; // seconds, range 00 to 59
+	s["%t"] = "\t";		// a tab character
+	// FIXME: %T : the time in 24-hour notation (%H:%M:%S)
+	s["%U"] = s["%W"] = s["%V"] = (wn < 10) ? ("0" + wn) : wn;
+	s["%u"] = w + 1;	// the day of the week (range 1 to 7, 1 = MON)
+	s["%w"] = w;		// the day of the week (range 0 to 6, 0 = SUN)
+	// FIXME: %x : preferred date representation for the current locale without the time
+	// FIXME: %X : preferred time representation for the current locale without the date
+	s["%y"] = ('' + y).substr(2, 2); // year without the century (range 00 to 99)
+	s["%Y"] = y;		// year with the century
+	s["%%"] = "%";		// a literal '%' character
+
+	var re = /%./g;
+	if (!Calendar.is_ie5 && !Calendar.is_khtml)
+		return str.replace(re, function (par) { return s[par] || par; });
+
+	var a = str.match(re);
+	for (var i = 0; i < a.length; i++) {
+		var tmp = s[a[i]];
+		if (tmp) {
+			re = new RegExp(a[i], 'g');
+			str = str.replace(re, tmp);
+		}
+	}
+
+	return str;
+};
+
+Date.prototype.__msh_oldSetFullYear = Date.prototype.setFullYear;
+Date.prototype.setFullYear = function(y) {
+	var d = new Date(this);
+	d.__msh_oldSetFullYear(y);
+	if (d.getMonth() != this.getMonth())
+		this.setDate(28);
+	this.__msh_oldSetFullYear(y);
+};
+
+// END: DATE OBJECT PATCHES
+
+
+// global object that remembers the calendar
+window._dyna

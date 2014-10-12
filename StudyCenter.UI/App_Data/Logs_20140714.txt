@@ -1,0 +1,638 @@
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2014-07-14 11:09:40,720 [80] ERROR DefaultErrorHandle - System.Data.Entity.Infrastructure.DbUpdateConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。 ---> System.Data.OptimisticConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.ValidateRowsAffected(Int64 rowsAffected, UpdateCommand source)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 StudyCenter.DalFactory.DbSessionFactory.SaveChanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.DalFactory\DbSessionFactory.cs:行号 31
+   在 StudyCenter.BLL.BaseService`1.Savechanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.BLL\BaseService.cs:行号 106
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 286
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 109
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 11:09:41,182 [80] DEBUG DefaultErrorHandle - System.Data.Entity.Infrastructure.DbUpdateConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。 ---> System.Data.OptimisticConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.ValidateRowsAffected(Int64 rowsAffected, UpdateCommand source)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 StudyCenter.DalFactory.DbSessionFactory.SaveChanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.DalFactory\DbSessionFactory.cs:行号 31
+   在 StudyCenter.BLL.BaseService`1.Savechanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.BLL\BaseService.cs:行号 106
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 286
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 109
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2014-07-14 11:46:57,349 [88] ERROR DefaultErrorHandle - System.Data.Entity.Infrastructure.DbUpdateConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。 ---> System.Data.OptimisticConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.ValidateRowsAffected(Int64 rowsAffected, UpdateCommand source)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 StudyCenter.DalFactory.DbSessionFactory.SaveChanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.DalFactory\DbSessionFactory.cs:行号 31
+   在 StudyCenter.BLL.BaseService`1.Savechanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.BLL\BaseService.cs:行号 106
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 320
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 109
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 11:46:57,494 [88] DEBUG DefaultErrorHandle - System.Data.Entity.Infrastructure.DbUpdateConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。 ---> System.Data.OptimisticConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.ValidateRowsAffected(Int64 rowsAffected, UpdateCommand source)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 StudyCenter.DalFactory.DbSessionFactory.SaveChanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.DalFactory\DbSessionFactory.cs:行号 31
+   在 StudyCenter.BLL.BaseService`1.Savechanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.BLL\BaseService.cs:行号 106
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 320
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 109
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 11:47:05,628 [76] ERROR DefaultErrorHandle - System.Data.Entity.Infrastructure.DbUpdateConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。 ---> System.Data.OptimisticConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.ValidateRowsAffected(Int64 rowsAffected, UpdateCommand source)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 StudyCenter.DalFactory.DbSessionFactory.SaveChanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.DalFactory\DbSessionFactory.cs:行号 31
+   在 StudyCenter.BLL.BaseService`1.Savechanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.BLL\BaseService.cs:行号 106
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 320
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 109
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 11:47:05,650 [76] DEBUG DefaultErrorHandle - System.Data.Entity.Infrastructure.DbUpdateConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。 ---> System.Data.OptimisticConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.ValidateRowsAffected(Int64 rowsAffected, UpdateCommand source)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 StudyCenter.DalFactory.DbSessionFactory.SaveChanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.DalFactory\DbSessionFactory.cs:行号 31
+   在 StudyCenter.BLL.BaseService`1.Savechanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.BLL\BaseService.cs:行号 106
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 320
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 109
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 11:47:11,248 [76] ERROR DefaultErrorHandle - System.Data.Entity.Infrastructure.DbUpdateConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。 ---> System.Data.OptimisticConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.ValidateRowsAffected(Int64 rowsAffected, UpdateCommand source)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 StudyCenter.DalFactory.DbSessionFactory.SaveChanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.DalFactory\DbSessionFactory.cs:行号 31
+   在 StudyCenter.BLL.BaseService`1.Savechanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.BLL\BaseService.cs:行号 106
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 320
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 109
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 11:47:11,250 [76] DEBUG DefaultErrorHandle - System.Data.Entity.Infrastructure.DbUpdateConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。 ---> System.Data.OptimisticConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.ValidateRowsAffected(Int64 rowsAffected, UpdateCommand source)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 StudyCenter.DalFactory.DbSessionFactory.SaveChanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.DalFactory\DbSessionFactory.cs:行号 31
+   在 StudyCenter.BLL.BaseService`1.Savechanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.BLL\BaseService.cs:行号 106
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 320
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 109
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 11:47:32,930 [83] ERROR DefaultErrorHandle - System.Data.Entity.Infrastructure.DbUpdateConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。 ---> System.Data.OptimisticConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.ValidateRowsAffected(Int64 rowsAffected, UpdateCommand source)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 StudyCenter.DalFactory.DbSessionFactory.SaveChanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.DalFactory\DbSessionFactory.cs:行号 31
+   在 StudyCenter.BLL.BaseService`1.Savechanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.BLL\BaseService.cs:行号 106
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 320
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 109
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 11:47:32,933 [83] DEBUG DefaultErrorHandle - System.Data.Entity.Infrastructure.DbUpdateConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。 ---> System.Data.OptimisticConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.ValidateRowsAffected(Int64 rowsAffected, UpdateCommand source)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 StudyCenter.DalFactory.DbSessionFactory.SaveChanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.DalFactory\DbSessionFactory.cs:行号 31
+   在 StudyCenter.BLL.BaseService`1.Savechanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.BLL\BaseService.cs:行号 106
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 320
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 109
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 11:48:25,153 [83] ERROR DefaultErrorHandle - System.Data.Entity.Infrastructure.DbUpdateConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。 ---> System.Data.OptimisticConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.ValidateRowsAffected(Int64 rowsAffected, UpdateCommand source)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 StudyCenter.DalFactory.DbSessionFactory.SaveChanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.DalFactory\DbSessionFactory.cs:行号 31
+   在 StudyCenter.BLL.BaseService`1.Savechanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.BLL\BaseService.cs:行号 106
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 320
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 109
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 11:48:25,155 [83] DEBUG DefaultErrorHandle - System.Data.Entity.Infrastructure.DbUpdateConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。 ---> System.Data.OptimisticConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.ValidateRowsAffected(Int64 rowsAffected, UpdateCommand source)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 StudyCenter.DalFactory.DbSessionFactory.SaveChanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.DalFactory\DbSessionFactory.cs:行号 31
+   在 StudyCenter.BLL.BaseService`1.Savechanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.BLL\BaseService.cs:行号 106
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 320
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 109
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 11:48:32,960 [88] ERROR DefaultErrorHandle - System.Data.Entity.Infrastructure.DbUpdateConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。 ---> System.Data.OptimisticConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.ValidateRowsAffected(Int64 rowsAffected, UpdateCommand source)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 StudyCenter.DalFactory.DbSessionFactory.SaveChanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.DalFactory\DbSessionFactory.cs:行号 31
+   在 StudyCenter.BLL.BaseService`1.Savechanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.BLL\BaseService.cs:行号 106
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 320
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 109
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 11:48:32,963 [88] DEBUG DefaultErrorHandle - System.Data.Entity.Infrastructure.DbUpdateConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。 ---> System.Data.OptimisticConcurrencyException: 存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。刷新 ObjectStateManager 项。
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.ValidateRowsAffected(Int64 rowsAffected, UpdateCommand source)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 StudyCenter.DalFactory.DbSessionFactory.SaveChanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.DalFactory\DbSessionFactory.cs:行号 31
+   在 StudyCenter.BLL.BaseService`1.Savechanges() 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.BLL\BaseService.cs:行号 106
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 320
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 109
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2014-07-14 14:08:48,117 [84] ERROR DefaultErrorHandle - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 364
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 111
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 14:08:48,248 [84] DEBUG DefaultErrorHandle - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 364
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 111
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2014-07-14 23:35:58,756 [49] ERROR DefaultErrorHandle - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 272
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 125
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 23:35:59,353 [49] DEBUG DefaultErrorHandle - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 StudyCenter.UI.Controllers.QuestionController.AddOrUpdateQuestion(String qType, String qOperateType, NameValueCollection model) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 272
+   在 StudyCenter.UI.Controllers.QuestionController.Operate(String qType, String qId, String qOperateType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 125
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 23:36:11,865 [5] ERROR DefaultErrorHandle - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 StudyCenter.UI.Controllers.QuestionController.List(Int32 pageSize, Int32 pageIndex, String questionType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 53
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 23:36:11,900 [5] DEBUG DefaultErrorHandle - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 StudyCenter.UI.Controllers.QuestionController.List(Int32 pageSize, Int32 pageIndex, String questionType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 53
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2014-07-14 23:53:40,442 [6] ERROR DefaultErrorHandle - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 StudyCenter.UI.Controllers.QuestionController.List(Int32 pageSize, Int32 pageIndex, String questionType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 54
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 23:53:40,442 [49] ERROR DefaultErrorHandle - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 StudyCenter.UI.Controllers.QuestionController.List(Int32 pageSize, Int32 pageIndex, String questionType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 0
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 23:53:40,959 [6] DEBUG DefaultErrorHandle - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 StudyCenter.UI.Controllers.QuestionController.List(Int32 pageSize, Int32 pageIndex, String questionType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 54
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2014-07-14 23:53:40,963 [49] DEBUG DefaultErrorHandle - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 StudyCenter.UI.Controllers.QuestionController.List(Int32 pageSize, Int32 pageIndex, String questionType) 位置 f:\SkyDrive\项目\SmartStudyCenter\StudyCenter\StudyCenter.UI\Controllers\QuestionController.cs:行号 54
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------

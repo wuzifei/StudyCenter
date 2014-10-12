@@ -1,0 +1,120 @@
+﻿@model StudyCenter.Model.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>User</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NickName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NickName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserPwd)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserPwd)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Experiences)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Experiences)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Golds)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Golds)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastLoginTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastLoginTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SafeQuestion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SafeQuestion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SafeAnswer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SafeAnswer)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsDeleted)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsDeleted)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Remark)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Remark)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SubTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SubTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsLocked)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsLocked)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ClassInfoID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ClassInfoID)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

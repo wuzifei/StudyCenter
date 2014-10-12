@@ -1,0 +1,15 @@
+﻿.pageLink {
+   margin-left: 30px; 
+   padding:2px;
+   text-decoration: none;
+   display: inline-block;
+   margin: 3px;
+	border: thin solid #0099ff;
+	font-size: 12px;
+}
+
+.pageLink:hover , .curPage  {
+    color: white;
+    background-color: #09f;
+	cursor: pointer;
+}

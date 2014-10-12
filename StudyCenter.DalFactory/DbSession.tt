@@ -1,0 +1,52 @@
+﻿<#@ template language="C#" debug="true" hostSpecific="true" #>
+<#@ Assembly Name="System.Core" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Linq" #>
+<#@ include file="EF.Utility.CS.ttinclude"#>
+<#@ output extension=".cs"#>
+<#
+
+	CodeGenerationTools code = new CodeGenerationTools(this);
+	MetadataLoader loader = new MetadataLoader(this);
+	CodeRegion region = new CodeRegion(this, 1);
+	MetadataTools ef = new MetadataTools(this);
+
+	//选择要操作的edmx路径
+	string inputFile = @"..\\StudyCenter.Model\\Model.edmx";
+
+	EdmItemCollection ItemCollection = loader.CreateEdmItemCollection(inputFile);
+	string namespaceName = code.VsNamespaceSuggestion();
+	EntityFrameworkTemplateFileManager fileManager = EntityFrameworkTemplateFileManager.Create(this);
+
+#>
+using StudyCenter.IDAL;
+using StudyCenter.EFDAL;
+
+namespace StudyCenter.DalFactory
+{
+	/// <summary>
+	/// 数据仓储类，所有实体的数据操作都可以从这里获取
+	/// </summary>
+	public partial class DbSession:IDbSession
+	{
+	<#
+	foreach (EntityType entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
+	{
+		//fileManager.StartNewFile(entity.Name + "RepositoryExt.cs");
+		//BeginNamespace(namespaceName, code);    
+	#>
+
+		private I<#=entity.Name#>Dal _<#=entity.Name.ToLower()#>Dal;
+		public  I<#=entity.Name#>Dal <#=entity.Name#> 
+		{
+			get
+			{
+				if(_<#=entity.Name.ToLower()#>Dal != null)
+					return _<#=entity.Name.ToLower()#>Dal;
+				_<#=entity.Name.ToLower()#>Dal = new <#=entity.Name#>Dal();
+				return _<#=entity.Name.ToLower()#>Dal;
+			}
+		}
+	<#}#>
+	}
+}

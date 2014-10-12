@@ -1,0 +1,68 @@
+﻿
+*{
+	margin:0px;
+	padding:0px;
+}
+body {
+    text-align: center;
+}
+.TaskContent {
+	width: 740px;
+    margin:0 auto;
+
+}
+
+.taskItems{
+	width:100%;
+    margin-left: 20px;
+	margin-top:15px;
+	height:60px; 
+}
+.taskStatus {
+	float: left;
+	height: 100%;
+	width: 100px;
+	border:thin solid #09F;
+}
+
+.taskComplete{
+	font-size:22px;	
+	color: #FFF;
+	background-color: #09F;
+	height:50%;
+	text-align:center;
+}
+.taskScore{
+	font-size: 30px;
+	height:50%;
+	color: #09f;
+	background-color: #fff;
+	text-align:center;
+
+}
+.taskDetail{
+	float: left;
+	width: 590px;
+	height: 100%;
+	border:thin solid #09F;
+}
+
+.taskTitle:hover {
+    font-style: italic;
+}
+
+.pageLink {
+   margin-left: 40px; 
+   padding:5px;
+   text-decoration: none;
+   display: inline-block;
+   margin: 3px;
+   border: thin solid #0099ff        
+}
+
+.pageLink:hover , .curPage  {
+    color: white;
+    background-color: #09f;   
+}
+
+

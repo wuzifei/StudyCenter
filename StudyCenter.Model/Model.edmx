@@ -1,0 +1,3380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="User" EntityType="Model.Store.User" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserInfo" EntityType="Model.Store.UserInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChoiceQuestion" EntityType="Model.Store.ChoiceQuestion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FillingQuestion" EntityType="Model.Store.FillingQuestion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TrueFalseQuestion" EntityType="Model.Store.TrueFalseQuestion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TestPaper" EntityType="Model.Store.TestPaper" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ShortQuestion" EntityType="Model.Store.ShortQuestion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StudentPaper" EntityType="Model.Store.StudentPaper" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Department" EntityType="Model.Store.Department" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Course" EntityType="Model.Store.Course" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ClassInfo" EntityType="Model.Store.ClassInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Academy" EntityType="Model.Store.Academy" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Permission" EntityType="Model.Store.Permission" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Role" EntityType="Model.Store.Role" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SpecialPermission" EntityType="Model.Store.SpecialPermission" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Friend" EntityType="Model.Store.Friend" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Article" EntityType="Model.Store.Article" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="File" EntityType="Model.Store.File" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Voted" EntityType="Model.Store.Voted" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vote" EntityType="Model.Store.Vote" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VoteClass" EntityType="Model.Store.VoteClass" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Item" EntityType="Model.Store.Item" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserItem" EntityType="Model.Store.UserItem" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Comment" EntityType="Model.Store.Comment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BigQuestion" EntityType="Model.Store.BigQuestion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Answer" EntityType="Model.Store.Answer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SmallQuestion" EntityType="Model.Store.SmallQuestion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Log" EntityType="Model.Store.Log" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PaperCategory" EntityType="Model.Store.PaperCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TestpaperTarget" EntityType="Model.Store.TestpaperTarget" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserDepartment" EntityType="Model.Store.UserDepartment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserRole" EntityType="Model.Store.UserRole" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PermissionRole" EntityType="Model.Store.PermissionRole" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TeacherVerifyUserPaper" EntityType="Model.Store.TeacherVerifyUserPaper" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TestPaperUserCheck" EntityType="Model.Store.TestPaperUserCheck" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserFavoritesArticle" EntityType="Model.Store.UserFavoritesArticle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CourseAcademy" EntityType="Model.Store.CourseAcademy" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="StudentPaperUser" Association="Model.Store.StudentPaperUser">
+      <End Role="StudentPaper" EntitySet="StudentPaper" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="UserClassInfo" Association="Model.Store.UserClassInfo">
+      <End Role="User" EntitySet="User" />
+      <End Role="ClassInfo" EntitySet="ClassInfo" />
+    </AssociationSet>
+    <AssociationSet Name="AcademyUser" Association="Model.Store.AcademyUser">
+      <End Role="Academy" EntitySet="Academy" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDepartment_User" Association="Model.Store.FK_UserDepartment_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserDepartment" EntitySet="UserDepartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDepartment_Department" Association="Model.Store.FK_UserDepartment_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="UserDepartment" EntitySet="UserDepartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_User" Association="Model.Store.FK_UserRole_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_Role" Association="Model.Store.FK_UserRole_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermissionRole_Permission" Association="Model.Store.FK_PermissionRole_Permission">
+      <End Role="Permission" EntitySet="Permission" />
+      <End Role="PermissionRole" EntitySet="PermissionRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermissionRole_Role" Association="Model.Store.FK_PermissionRole_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="PermissionRole" EntitySet="PermissionRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeacherVerifyUserPaper_TestPaper" Association="Model.Store.FK_TeacherVerifyUserPaper_TestPaper">
+      <End Role="TestPaper" EntitySet="TestPaper" />
+      <End Role="TeacherVerifyUserPaper" EntitySet="TeacherVerifyUserPaper" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeacherVerifyUserPaper_User" Association="Model.Store.FK_TeacherVerifyUserPaper_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="TeacherVerifyUserPaper" EntitySet="TeacherVerifyUserPaper" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestPaperUserCheck_TestPaper" Association="Model.Store.FK_TestPaperUserCheck_TestPaper">
+      <End Role="TestPaper" EntitySet="TestPaper" />
+      <End Role="TestPaperUserCheck" EntitySet="TestPaperUserCheck" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestPaperUserCheck_User" Association="Model.Store.FK_TestPaperUserCheck_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="TestPaperUserCheck" EntitySet="TestPaperUserCheck" />
+    </AssociationSet>
+    <AssociationSet Name="FillingQuestionUser" Association="Model.Store.FillingQuestionUser">
+      <End Role="FillingQuestion" EntitySet="FillingQuestion" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="ShortQuestionUser" Association="Model.Store.ShortQuestionUser">
+      <End Role="ShortQuestion" EntitySet="ShortQuestion" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="TrueFalseQuestionUser" Association="Model.Store.TrueFalseQuestionUser">
+      <End Role="TrueFalseQuestion" EntitySet="TrueFalseQuestion" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="ClassInfoAcademy" Association="Model.Store.ClassInfoAcademy">
+      <End Role="ClassInfo" EntitySet="ClassInfo" />
+      <End Role="Academy" EntitySet="Academy" />
+    </AssociationSet>
+    <AssociationSet Name="StudentPaperTestPaper" Association="Model.Store.StudentPaperTestPaper">
+      <End Role="StudentPaper" EntitySet="StudentPaper" />
+      <End Role="TestPaper" EntitySet="TestPaper" />
+    </AssociationSet>
+    <AssociationSet Name="SpecialPermissionUser" Association="Model.Store.SpecialPermissionUser">
+      <End Role="SpecialPermission" EntitySet="SpecialPermission" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="SpecialPermissionPermission" Association="Model.Store.SpecialPermissionPermission">
+      <End Role="SpecialPermission" EntitySet="SpecialPermission" />
+      <End Role="Permission" EntitySet="Permission" />
+    </AssociationSet>
+    <AssociationSet Name="ArticleUser" Association="Model.Store.ArticleUser">
+      <End Role="Article" EntitySet="Article" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="AttachmentArticle" Association="Model.Store.AttachmentArticle">
+      <End Role="File" EntitySet="File" />
+      <End Role="Article" EntitySet="Article" />
+    </AssociationSet>
+    <AssociationSet Name="FileUser" Association="Model.Store.FileUser">
+      <End Role="File" EntitySet="File" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserFavoritesArticle_Article" Association="Model.Store.FK_UserFavoritesArticle_Article">
+      <End Role="Article" EntitySet="Article" />
+      <End Role="UserFavoritesArticle" EntitySet="UserFavoritesArticle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserFavoritesArticle_User" Association="Model.Store.FK_UserFavoritesArticle_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserFavoritesArticle" EntitySet="UserFavoritesArticle" />
+    </AssociationSet>
+    <AssociationSet Name="VotedVote" Association="Model.Store.VotedVote">
+      <End Role="Vote" EntitySet="Vote" />
+      <End Role="Voted" EntitySet="Voted" />
+    </AssociationSet>
+    <AssociationSet Name="VoteClassVote" Association="Model.Store.VoteClassVote">
+      <End Role="VoteClass" EntitySet="VoteClass" />
+      <End Role="Vote" EntitySet="Vote" />
+    </AssociationSet>
+    <AssociationSet Name="UserItemUser" Association="Model.Store.UserItemUser">
+      <End Role="UserItem" EntitySet="UserItem" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="ItemUserItem" Association="Model.Store.ItemUserItem">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="UserItem" EntitySet="UserItem" />
+    </AssociationSet>
+    <AssociationSet Name="CommentArticle" Association="Model.Store.CommentArticle">
+      <End Role="Comment" EntitySet="Comment" />
+      <End Role="Article" EntitySet="Article" />
+    </AssociationSet>
+    <AssociationSet Name="TestPaperBigQuestion" Association="Model.Store.TestPaperBigQuestion">
+      <End Role="TestPaper" EntitySet="TestPaper" />
+      <End Role="BigQuestion" EntitySet="BigQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="TestPaperUser" Association="Model.Store.TestPaperUser">
+      <End Role="TestPaper" EntitySet="TestPaper" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="TestPaperCourse" Association="Model.Store.TestPaperCourse">
+      <End Role="TestPaper" EntitySet="TestPaper" />
+      <End Role="Course" EntitySet="Course" />
+    </AssociationSet>
+    <AssociationSet Name="UserChoiceQuestion" Association="Model.Store.UserChoiceQuestion">
+      <End Role="User" EntitySet="User" />
+      <End Role="ChoiceQuestion" EntitySet="ChoiceQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="CourseChoiceQuestion" Association="Model.Store.CourseChoiceQuestion">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="ChoiceQuestion" EntitySet="ChoiceQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="CourseFillingQuestion" Association="Model.Store.CourseFillingQuestion">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="FillingQuestion" EntitySet="FillingQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="CourseShortQuestion" Association="Model.Store.CourseShortQuestion">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="ShortQuestion" EntitySet="ShortQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="CourseTrueFalseQuestion" Association="Model.Store.CourseTrueFalseQuestion">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="TrueFalseQuestion" EntitySet="TrueFalseQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseAcademy_Course" Association="Model.Store.FK_CourseAcademy_Course">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="CourseAcademy" EntitySet="CourseAcademy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseAcademy_Academy" Association="Model.Store.FK_CourseAcademy_Academy">
+      <End Role="Academy" EntitySet="Academy" />
+      <End Role="CourseAcademy" EntitySet="CourseAcademy" />
+    </AssociationSet>
+    <AssociationSet Name="UserInfoUser" Association="Model.Store.UserInfoUser">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="AnswerUser" Association="Model.Store.AnswerUser">
+      <End Role="Answer" EntitySet="Answer" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="VotedUser" Association="Model.Store.VotedUser">
+      <End Role="Voted" EntitySet="Voted" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="VoteUser" Association="Model.Store.VoteUser">
+      <End Role="Vote" EntitySet="Vote" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NickName" Type="nvarchar(max)" Nullable="false" DefaultValue="NewUser" />
+    <Property Name="UserPwd" Type="nvarchar" Nullable="false" DefaultValue="123456" MaxLength="20" />
+    <Property Name="Experiences" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="Golds" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="LastLoginTime" Type="datetime" Nullable="true" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SafeQuestion" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="SafeAnswer" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="false" DefaultValue="请填写您的说明信息" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="IsLocked" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="ClassInfoID" Type="int" Nullable="false" />
+    <Property Name="IsItemUsedToNickName" Type="bit" Nullable="true" DefaultValue="false" />
+    <Property Name="AcademyID" Type="int" Nullable="false" />
+    <Property Name="VoteID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar(max)" Nullable="true" DefaultValue="未知" />
+    <Property Name="Birthday" Type="datetime" Nullable="true" />
+    <Property Name="Interest" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Height" Type="int" Nullable="true" />
+    <Property Name="Weight" Type="int" Nullable="true" DefaultValue="50" />
+    <Property Name="BlogUrl" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MicroBlogUrl" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="WeChatAccount" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="LivePlace" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="GovFace" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IdNumber" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TelNumber" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写您的说明信息" />
+    <Property Name="QqNumber" Type="real" Nullable="true" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写您的说明信息" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="HeadImageUrl" Type="nvarchar" Nullable="true" DefaultValue="/content/images/head/default.jpg" MaxLength="300" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChoiceQuestion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写说明信息" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" DefaultValue="试题内容" />
+    <Property Name="SelectA" Type="nvarchar(max)" Nullable="false" DefaultValue="" />
+    <Property Name="SelectB" Type="nvarchar(max)" Nullable="false" DefaultValue="" />
+    <Property Name="SelectC" Type="nvarchar(max)" Nullable="true" DefaultValue="" />
+    <Property Name="SelectD" Type="nvarchar(max)" Nullable="true" DefaultValue="" />
+    <Property Name="SelectE" Type="nvarchar(max)" Nullable="true" DefaultValue="" />
+    <Property Name="SelectF" Type="nvarchar(max)" Nullable="true" DefaultValue="" />
+    <Property Name="Answers" Type="nvarchar(max)" Nullable="false" DefaultValue="答案" />
+    <Property Name="IsMultiSelect" Type="bit" Nullable="true" DefaultValue="false" />
+    <Property Name="IsPublic" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="Difficulty" Type="smallint" Nullable="true" DefaultValue="3" />
+    <Property Name="PublisherID" Type="int" Nullable="false" />
+    <Property Name="CourseID" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="FillingQuestion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写说明信息" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" DefaultValue="试题内容" />
+    <Property Name="Answers" Type="nvarchar(max)" Nullable="false" DefaultValue="答案" />
+    <Property Name="IsPublic" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="IsMultiFilling" Type="bit" Nullable="true" DefaultValue="false" />
+    <Property Name="Difficulty" Type="smallint" Nullable="true" DefaultValue="3" />
+    <Property Name="CourseID" Type="int" Nullable="false" />
+    <Property Name="PublisherID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TrueFalseQuestion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Difficulty" Type="smallint" Nullable="true" DefaultValue="3" />
+    <Property Name="IsPublic" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="Answers" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" DefaultValue="试题内容" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写说明信息" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="CourseID" Type="int" Nullable="false" />
+    <Property Name="PublisherID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TestPaper">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写说明信息" />
+    <Property Name="PaperName" Type="nvarchar(max)" Nullable="false" DefaultValue="试卷" />
+    <Property Name="PaperDescription" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写试卷说明信息" />
+    <Property Name="PaperDate" Type="datetime" Nullable="false" />
+    <Property Name="StartTime" Type="datetime" Nullable="false" />
+    <Property Name="EndTime" Type="datetime" Nullable="false" />
+    <Property Name="PaperScore" Type="smallint" Nullable="false" DefaultValue="100" />
+    <Property Name="PaperType" Type="smallint" Nullable="true" />
+    <Property Name="PublisherID" Type="int" Nullable="false" />
+    <Property Name="CourseID" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="true" />
+    <Property Name="Knowledge" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TestMinutes" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ShortQuestion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Difficulty" Type="smallint" Nullable="true" DefaultValue="3" />
+    <Property Name="IsPublic" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="Answers" Type="nvarchar(max)" Nullable="false" DefaultValue="答案" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" DefaultValue="试题内容" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写说明信息" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="CourseID" Type="int" Nullable="false" />
+    <Property Name="PublisherID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudentPaper">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaperScore" Type="smallint" Nullable="false" DefaultValue="100" />
+    <Property Name="SubmitTime" Type="datetime" Nullable="false" />
+    <Property Name="StartTime" Type="datetime" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写您的说明信息" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="TeacherWords" Type="nvarchar(max)" Nullable="true" DefaultValue="请在这里填写您的评语" />
+    <Property Name="TestPaperID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Population" Type="int" Nullable="true" DefaultValue="0" />
+    <Property Name="SubTime" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Boss" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SiteUrl" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IconUrl" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="Number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ParentId" Type="int" Nullable="true" DefaultValue="0" />
+    <Property Name="IsLeaf" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="Level" Type="smallint" Nullable="true" DefaultValue="0" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写您的说明信息" />
+    <Property Name="CourseName" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写您的说明信息" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写您的说明信息" />
+  </EntityType>
+  <EntityType Name="ClassInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClassName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Population" Type="smallint" Nullable="true" DefaultValue="0" />
+    <Property Name="SiteUrl" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ClassIcon" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="false" DefaultValue="请填写您的说明信息" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="AcademyID" Type="int" Nullable="false" />
+    <Property Name="MonitorID" Type="int" Nullable="true" />
+    <Property Name="TeacherID" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Academy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Population" Type="int" Nullable="true" DefaultValue="0" />
+    <Property Name="President" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SiteUrl" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IconUrl" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="true" DefaultValue="0" />
+    <Property Name="SubTime" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="VicePresidentA" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="VicePresidentB" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="VicePresidentC" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="VicePresidentD" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Url" Type="nvarchar" Nullable="false" MaxLength="512" />
+    <Property Name="HttpMethod" Type="varchar" Nullable="false" DefaultValue="get" MaxLength="32" />
+    <Property Name="Action" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="128" />
+    <Property Name="Controoller" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Area" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="false" DefaultValue="请填写您的说明信息" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="SpecialPermission">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="false" DefaultValue="请填写您的说明信息" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="PermissionID" Type="int" Nullable="false" />
+    <Property Name="IsPass" Type="bit" Nullable="false" DefaultValue="true" />
+  </EntityType>
+  <EntityType Name="Friend">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写您的说明信息" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="FriendId" Type="int" Nullable="false" />
+    <Property Name="AddTime" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写您的说明信息" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" DefaultValue="标题" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="true" DefaultValue="内容" />
+    <Property Name="EndTime" Type="datetime" Nullable="true" />
+    <Property Name="PublishTime" Type="datetime" Nullable="true" />
+    <Property Name="ArticleType" Type="smallint" Nullable="false" />
+    <Property Name="LikePoint" Type="int" Nullable="true" DefaultValue="0" />
+    <Property Name="RecommendPoint" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="DislikePoint" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="ReadTimes" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="Tips" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsItemUseToTitle" Type="bit" Nullable="false" DefaultValue="false" />
+    <Property Name="IsItemUseToContent" Type="bit" Nullable="true" DefaultValue="false" />
+    <Property Name="PublisherID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="File">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写您的说明信息" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="FileName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FileType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FileSize" Type="int" Nullable="true" DefaultValue="0" />
+    <Property Name="FileUrl" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DownloadTimes" Type="int" Nullable="true" DefaultValue="0" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="ArticleID" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Voted">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写您的说明信息" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="Reason" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SelectOptions" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PostTime" Type="datetime" Nullable="true" />
+    <Property Name="VoteID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vote">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写您的说明信息" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="ClassName" Type="nvarchar(max)" Nullable="false" DefaultValue="无" />
+    <Property Name="VoteTitle" Type="nvarchar(max)" Nullable="false" DefaultValue="投票标题" />
+    <Property Name="VoteContent" Type="nvarchar(max)" Nullable="false" DefaultValue="投票内容" />
+    <Property Name="Option1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Option2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Option3" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Option4" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Option5" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Option6" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Option7" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Option8" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Option9" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Option10" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ParentId" Type="int" Nullable="true" DefaultValue="0" />
+    <Property Name="MoreInfo" Type="nvarchar(max)" Nullable="true" DefaultValue="无说明信息" />
+    <Property Name="IsEnded" Type="bit" Nullable="true" DefaultValue="false" />
+    <Property Name="IsMutilSelect" Type="bit" Nullable="false" DefaultValue="false" />
+    <Property Name="MutilSelectCount" Type="smallint" Nullable="false" DefaultValue="1" />
+    <Property Name="StartTime" Type="datetime" Nullable="true" />
+    <Property Name="EndTime" Type="datetime" Nullable="true" />
+    <Property Name="VoteImageUrl" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="VoteClassID" Type="int" Nullable="true" />
+    <Property Name="PublisherID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VoteClass">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="true" DefaultValue="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="false" DefaultValue="无说明" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Effect" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Target" Type="smallint" Nullable="true" />
+    <Property Name="Price" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="EffectDays" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写您的说明信息" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="ItemEffectType" Type="smallint" Nullable="false" />
+    <Property Name="ImageUrl" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="EntTIme" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="UserItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="true" DefaultValue="0" />
+    <Property Name="StartUseTime" Type="datetime" Nullable="true" />
+    <Property Name="UsedCount" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="EndUseTime" Type="datetime" Nullable="true" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写您的说明信息" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ImageUrl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsHidedByItem" Type="bit" Nullable="true" DefaultValue="false" />
+    <Property Name="IsDeleted" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" DefaultValue="请填写您的说明信息" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="IsItemUsedToComent" Type="bit" Nullable="true" DefaultValue="false" />
+    <Property Name="ArticleID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BigQuestion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="Score" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" DefaultValue="false" />
+    <Property Name="TestPaperID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="QuestionID" Type="int" Nullable="true" />
+    <Property Name="BigQuestionID" Type="int" Nullable="false" />
+    <Property Name="QuestionType" Type="smallint" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="Score" Type="smallint" Nullable="true" />
+    <Property Name="AnswerContent" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="SmallQuestion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BigQuestionID" Type="int" Nullable="false" />
+    <Property Name="QuestionID" Type="int" Nullable="false" />
+    <Property Name="QuestionType" Type="smallint" Nullable="false" />
+    <Property Name="Score" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Application" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Thread" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Level" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Logger" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Server" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Location" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Exception" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="PaperCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ParentID" Type="int" Nullable="true" />
+    <Property Name="SubTime" Type="datetime" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="true" DefaultValue="false" />
+  </EntityType>
+  <EntityType Name="TestpaperTarget">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TestPaperID" Type="int" Nullable="true" />
+    <Property Name="TargetType" Type="smallint" Nullable="true" />
+    <Property Name="TargetID" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="UserDepartment">
+    <Key>
+      <PropertyRef Name="User_ID" />
+      <PropertyRef Name="Department_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="Department_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="User_ID" />
+      <PropertyRef Name="Role_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="Role_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PermissionRole">
+    <Key>
+      <PropertyRef Name="Permission_ID" />
+      <PropertyRef Name="Role_ID" />
+    </Key>
+    <Property Name="Permission_ID" Type="int" Nullable="false" />
+    <Property Name="Role_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TeacherVerifyUserPaper">
+    <Key>
+      <PropertyRef Name="VerifyPaper_ID" />
+      <PropertyRef Name="VerifyBy_ID" />
+    </Key>
+    <Property Name="VerifyPaper_ID" Type="int" Nullable="false" />
+    <Property Name="VerifyBy_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TestPaperUserCheck">
+    <Key>
+      <PropertyRef Name="CheckPaper_ID" />
+      <PropertyRef Name="CheckBy_ID" />
+    </Key>
+    <Property Name="CheckPaper_ID" Type="int" Nullable="false" />
+    <Property Name="CheckBy_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserFavoritesArticle">
+    <Key>
+      <PropertyRef Name="FavoriteArticle_ID" />
+      <PropertyRef Name="CollectUser_ID" />
+    </Key>
+    <Property Name="FavoriteArticle_ID" Type="int" Nullable="false" />
+    <Property Name="CollectUser_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CourseAcademy">
+    <Key>
+      <PropertyRef Name="Course_ID" />
+      <PropertyRef Name="Academy_ID" />
+    </Key>
+    <Property Name="Course_ID" Type="int" Nullable="false" />
+    <Property Name="Academy_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="StudentPaperUser">
+    <End Role="StudentPaper" Type="Model.Store.StudentPaper" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StudentPaper">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserClassInfo">
+    <End Role="User" Type="Model.Store.User" Multiplicity="*" />
+    <End Role="ClassInfo" Type="Model.Store.ClassInfo" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="ClassInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="ClassInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AcademyUser">
+    <End Role="Academy" Type="Model.Store.Academy" Multiplicity="1" />
+    <End Role="User" Type="Model.Store.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Academy">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="AcademyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FillingQuestionUser">
+    <End Role="FillingQuestion" Type="Model.Store.FillingQuestion" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FillingQuestion">
+        <PropertyRef Name="PublisherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ShortQuestionUser">
+    <End Role="ShortQuestion" Type="Model.Store.ShortQuestion" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ShortQuestion">
+        <PropertyRef Name="PublisherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TrueFalseQuestionUser">
+    <End Role="TrueFalseQuestion" Type="Model.Store.TrueFalseQuestion" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TrueFalseQuestion">
+        <PropertyRef Name="PublisherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ClassInfoAcademy">
+    <End Role="ClassInfo" Type="Model.Store.ClassInfo" Multiplicity="*" />
+    <End Role="Academy" Type="Model.Store.Academy" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Academy">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ClassInfo">
+        <PropertyRef Name="AcademyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StudentPaperTestPaper">
+    <End Role="StudentPaper" Type="Model.Store.StudentPaper" Multiplicity="*" />
+    <End Role="TestPaper" Type="Model.Store.TestPaper" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="TestPaper">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StudentPaper">
+        <PropertyRef Name="TestPaperID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SpecialPermissionUser">
+    <End Role="SpecialPermission" Type="Model.Store.SpecialPermission" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SpecialPermission">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SpecialPermissionPermission">
+    <End Role="SpecialPermission" Type="Model.Store.SpecialPermission" Multiplicity="*" />
+    <End Role="Permission" Type="Model.Store.Permission" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Permission">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SpecialPermission">
+        <PropertyRef Name="PermissionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArticleUser">
+    <End Role="Article" Type="Model.Store.Article" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="PublisherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AttachmentArticle">
+    <End Role="File" Type="Model.Store.File" Multiplicity="*" />
+    <End Role="Article" Type="Model.Store.Article" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="File">
+        <PropertyRef Name="ArticleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FileUser">
+    <End Role="File" Type="Model.Store.File" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="File">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VotedVote">
+    <End Role="Vote" Type="Model.Store.Vote" Multiplicity="1" />
+    <End Role="Voted" Type="Model.Store.Voted" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vote">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Voted">
+        <PropertyRef Name="VoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VoteClassVote">
+    <End Role="VoteClass" Type="Model.Store.VoteClass" Multiplicity="0..1" />
+    <End Role="Vote" Type="Model.Store.Vote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VoteClass">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Vote">
+        <PropertyRef Name="VoteClassID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserItemUser">
+    <End Role="UserItem" Type="Model.Store.UserItem" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserItem">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemUserItem">
+    <End Role="Item" Type="Model.Store.Item" Multiplicity="1" />
+    <End Role="UserItem" Type="Model.Store.UserItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserItem">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CommentArticle">
+    <End Role="Comment" Type="Model.Store.Comment" Multiplicity="*" />
+    <End Role="Article" Type="Model.Store.Article" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="ArticleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TestPaperBigQuestion">
+    <End Role="TestPaper" Type="Model.Store.TestPaper" Multiplicity="1" />
+    <End Role="BigQuestion" Type="Model.Store.BigQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TestPaper">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BigQuestion">
+        <PropertyRef Name="TestPaperID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TestPaperUser">
+    <End Role="TestPaper" Type="Model.Store.TestPaper" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TestPaper">
+        <PropertyRef Name="PublisherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TestPaperCourse">
+    <End Role="TestPaper" Type="Model.Store.TestPaper" Multiplicity="*" />
+    <End Role="Course" Type="Model.Store.Course" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TestPaper">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserChoiceQuestion">
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <End Role="ChoiceQuestion" Type="Model.Store.ChoiceQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ChoiceQuestion">
+        <PropertyRef Name="PublisherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CourseChoiceQuestion">
+    <End Role="Course" Type="Model.Store.Course" Multiplicity="0..1" />
+    <End Role="ChoiceQuestion" Type="Model.Store.ChoiceQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ChoiceQuestion">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CourseFillingQuestion">
+    <End Role="Course" Type="Model.Store.Course" Multiplicity="1" />
+    <End Role="FillingQuestion" Type="Model.Store.FillingQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FillingQuestion">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CourseShortQuestion">
+    <End Role="Course" Type="Model.Store.Course" Multiplicity="1" />
+    <End Role="ShortQuestion" Type="Model.Store.ShortQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ShortQuestion">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CourseTrueFalseQuestion">
+    <End Role="Course" Type="Model.Store.Course" Multiplicity="1" />
+    <End Role="TrueFalseQuestion" Type="Model.Store.TrueFalseQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TrueFalseQuestion">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserInfoUser">
+    <End Role="UserInfo" Type="Model.Store.UserInfo" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AnswerUser">
+    <End Role="Answer" Type="Model.Store.Answer" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VotedUser">
+    <End Role="Voted" Type="Model.Store.Voted" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Voted">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VoteUser">
+    <End Role="Vote" Type="Model.Store.Vote" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Vote">
+        <PropertyRef Name="PublisherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDepartment_User">
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <End Role="UserDepartment" Type="Model.Store.UserDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserDepartment">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDepartment_Department">
+    <End Role="UserDepartment" Type="Model.Store.UserDepartment" Multiplicity="*" />
+    <End Role="Department" Type="Model.Store.Department" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserDepartment">
+        <PropertyRef Name="Department_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_User">
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <End Role="UserRole" Type="Model.Store.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_Role">
+    <End Role="UserRole" Type="Model.Store.UserRole" Multiplicity="*" />
+    <End Role="Role" Type="Model.Store.Role" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="Role_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermissionRole_Permission">
+    <End Role="Permission" Type="Model.Store.Permission" Multiplicity="1" />
+    <End Role="PermissionRole" Type="Model.Store.PermissionRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permission">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PermissionRole">
+        <PropertyRef Name="Permission_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermissionRole_Role">
+    <End Role="PermissionRole" Type="Model.Store.PermissionRole" Multiplicity="*" />
+    <End Role="Role" Type="Model.Store.Role" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PermissionRole">
+        <PropertyRef Name="Role_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeacherVerifyUserPaper_TestPaper">
+    <End Role="TestPaper" Type="Model.Store.TestPaper" Multiplicity="1" />
+    <End Role="TeacherVerifyUserPaper" Type="Model.Store.TeacherVerifyUserPaper" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TestPaper">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TeacherVerifyUserPaper">
+        <PropertyRef Name="VerifyPaper_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeacherVerifyUserPaper_User">
+    <End Role="TeacherVerifyUserPaper" Type="Model.Store.TeacherVerifyUserPaper" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TeacherVerifyUserPaper">
+        <PropertyRef Name="VerifyBy_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestPaperUserCheck_TestPaper">
+    <End Role="TestPaper" Type="Model.Store.TestPaper" Multiplicity="1" />
+    <End Role="TestPaperUserCheck" Type="Model.Store.TestPaperUserCheck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TestPaper">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TestPaperUserCheck">
+        <PropertyRef Name="CheckPaper_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestPaperUserCheck_User">
+    <End Role="TestPaperUserCheck" Type="Model.Store.TestPaperUserCheck" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TestPaperUserCheck">
+        <PropertyRef Name="CheckBy_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserFavoritesArticle_Article">
+    <End Role="Article" Type="Model.Store.Article" Multiplicity="1" />
+    <End Role="UserFavoritesArticle" Type="Model.Store.UserFavoritesArticle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserFavoritesArticle">
+        <PropertyRef Name="FavoriteArticle_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserFavoritesArticle_User">
+    <End Role="UserFavoritesArticle" Type="Model.Store.UserFavoritesArticle" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserFavoritesArticle">
+        <PropertyRef Name="CollectUser_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseAcademy_Course">
+    <End Role="Course" Type="Model.Store.Course" Multiplicity="1" />
+    <End Role="CourseAcademy" Type="Model.Store.CourseAcademy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CourseAcademy">
+        <PropertyRef Name="Course_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseAcademy_Academy">
+    <End Role="CourseAcademy" Type="Model.Store.CourseAcademy" Multiplicity="*" />
+    <End Role="Academy" Type="Model.Store.Academy" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Academy">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CourseAcademy">
+        <PropertyRef Name="Academy_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="User" EntityType="Model.User" />
+          <EntitySet Name="UserInfo" EntityType="Model.UserInfo" />
+          <EntitySet Name="ChoiceQuestion" EntityType="Model.ChoiceQuestion" />
+          <EntitySet Name="FillingQuestion" EntityType="Model.FillingQuestion" />
+          <EntitySet Name="TrueFalseQuestion" EntityType="Model.TrueFalseQuestion" />
+          <EntitySet Name="TestPaper" EntityType="Model.TestPaper" />
+          <EntitySet Name="ShortQuestion" EntityType="Model.ShortQuestion" />
+          <EntitySet Name="StudentPaper" EntityType="Model.StudentPaper" />
+          <EntitySet Name="Department" EntityType="Model.Department" />
+          <EntitySet Name="Course" EntityType="Model.Course" />
+          <EntitySet Name="ClassInfo" EntityType="Model.ClassInfo" />
+          <EntitySet Name="Academy" EntityType="Model.Academy" />
+          <AssociationSet Name="StudentPaperUser" Association="Model.StudentPaperUser">
+            <End Role="StudentPaper" EntitySet="StudentPaper" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="UserClassInfo" Association="Model.UserClassInfo">
+            <End Role="User" EntitySet="User" />
+            <End Role="ClassInfo" EntitySet="ClassInfo" />
+          </AssociationSet>
+          <AssociationSet Name="AcademyUser" Association="Model.AcademyUser">
+            <End Role="Academy" EntitySet="Academy" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="UserDepartment" Association="Model.UserDepartment">
+            <End Role="User" EntitySet="User" />
+            <End Role="Department" EntitySet="Department" />
+          </AssociationSet>
+          <EntitySet Name="Permission" EntityType="Model.Permission" />
+          <EntitySet Name="Role" EntityType="Model.Role" />
+          <AssociationSet Name="UserRole" Association="Model.UserRole">
+            <End Role="User" EntitySet="User" />
+            <End Role="Role" EntitySet="Role" />
+          </AssociationSet>
+          <AssociationSet Name="PermissionRole" Association="Model.PermissionRole">
+            <End Role="Permission" EntitySet="Permission" />
+            <End Role="Role" EntitySet="Role" />
+          </AssociationSet>
+          <AssociationSet Name="TeacherVerifyUserPaper" Association="Model.TeacherVerifyUserPaper">
+            <End Role="TestPaper" EntitySet="TestPaper" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="TestPaperUserCheck" Association="Model.TestPaperUserCheck">
+            <End Role="TestPaper" EntitySet="TestPaper" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FillingQuestionUser" Association="Model.FillingQuestionUser">
+            <End Role="FillingQuestion" EntitySet="FillingQuestion" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="ShortQuestionUser" Association="Model.ShortQuestionUser">
+            <End Role="ShortQuestion" EntitySet="ShortQuestion" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="TrueFalseQuestionUser" Association="Model.TrueFalseQuestionUser">
+            <End Role="TrueFalseQuestion" EntitySet="TrueFalseQuestion" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="ClassInfoAcademy" Association="Model.ClassInfoAcademy">
+            <End Role="ClassInfo" EntitySet="ClassInfo" />
+            <End Role="Academy" EntitySet="Academy" />
+          </AssociationSet>
+          <AssociationSet Name="StudentPaperTestPaper" Association="Model.StudentPaperTestPaper">
+            <End Role="StudentPaper" EntitySet="StudentPaper" />
+            <End Role="TestPaper" EntitySet="TestPaper" />
+          </AssociationSet>
+          <EntitySet Name="SpecialPermission" EntityType="Model.SpecialPermission" />
+          <AssociationSet Name="SpecialPermissionUser" Association="Model.SpecialPermissionUser">
+            <End Role="SpecialPermission" EntitySet="SpecialPermission" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="SpecialPermissionPermission" Association="Model.SpecialPermissionPermission">
+            <End Role="SpecialPermission" EntitySet="SpecialPermission" />
+            <End Role="Permission" EntitySet="Permission" />
+          </AssociationSet>
+          <EntitySet Name="Friend" EntityType="Model.Friend" />
+          <EntitySet Name="Article" EntityType="Model.Article" />
+          <AssociationSet Name="ArticleUser" Association="Model.ArticleUser">
+            <End Role="Article" EntitySet="Article" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <EntitySet Name="File" EntityType="Model.File" />
+          <AssociationSet Name="AttachmentArticle" Association="Model.AttachmentArticle">
+            <End Role="File" EntitySet="File" />
+            <End Role="Article" EntitySet="Article" />
+          </AssociationSet>
+          <AssociationSet Name="FileUser" Association="Model.FileUser">
+            <End Role="File" EntitySet="File" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <EntitySet Name="Voted" EntityType="Model.Voted" />
+          <AssociationSet Name="UserFavoritesArticle" Association="Model.UserFavoritesArticle">
+            <End Role="Article" EntitySet="Article" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <EntitySet Name="Vote" EntityType="Model.Vote" />
+          <AssociationSet Name="VotedVote" Association="Model.VotedVote">
+            <End Role="Vote" EntitySet="Vote" />
+            <End Role="Voted" EntitySet="Voted" />
+          </AssociationSet>
+          <EntitySet Name="VoteClass" EntityType="Model.VoteClass" />
+          <AssociationSet Name="VoteClassVote" Association="Model.VoteClassVote">
+            <End Role="VoteClass" EntitySet="VoteClass" />
+            <End Role="Vote" EntitySet="Vote" />
+          </AssociationSet>
+          <EntitySet Name="Item" EntityType="Model.Item" />
+          <EntitySet Name="UserItem" EntityType="Model.UserItem" />
+          <AssociationSet Name="UserItemUser" Association="Model.UserItemUser">
+            <End Role="UserItem" EntitySet="UserItem" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="ItemUserItem" Association="Model.ItemUserItem">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="UserItem" EntitySet="UserItem" />
+          </AssociationSet>
+          <EntitySet Name="Comment" EntityType="Model.Comment" />
+          <AssociationSet Name="CommentArticle" Association="Model.CommentArticle">
+            <End Role="Comment" EntitySet="Comment" />
+            <End Role="Article" EntitySet="Article" />
+          </AssociationSet>
+          <EntitySet Name="BigQuestion" EntityType="Model.BigQuestion" />
+          <AssociationSet Name="TestPaperBigQuestion" Association="Model.TestPaperBigQuestion">
+            <End Role="TestPaper" EntitySet="TestPaper" />
+            <End Role="BigQuestion" EntitySet="BigQuestion" />
+          </AssociationSet>
+          <AssociationSet Name="TestPaperUser" Association="Model.TestPaperUser">
+            <End Role="TestPaper" EntitySet="TestPaper" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="TestPaperCourse" Association="Model.TestPaperCourse">
+            <End Role="TestPaper" EntitySet="TestPaper" />
+            <End Role="Course" EntitySet="Course" />
+          </AssociationSet>
+          <AssociationSet Name="UserChoiceQuestion" Association="Model.UserChoiceQuestion">
+            <End Role="User" EntitySet="User" />
+            <End Role="ChoiceQuestion" EntitySet="ChoiceQuestion" />
+          </AssociationSet>
+          <AssociationSet Name="CourseChoiceQuestion" Association="Model.CourseChoiceQuestion">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="ChoiceQuestion" EntitySet="ChoiceQuestion" />
+          </AssociationSet>
+          <AssociationSet Name="CourseFillingQuestion" Association="Model.CourseFillingQuestion">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="FillingQuestion" EntitySet="FillingQuestion" />
+          </AssociationSet>
+          <AssociationSet Name="CourseShortQuestion" Association="Model.CourseShortQuestion">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="ShortQuestion" EntitySet="ShortQuestion" />
+          </AssociationSet>
+          <AssociationSet Name="CourseTrueFalseQuestion" Association="Model.CourseTrueFalseQuestion">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="TrueFalseQuestion" EntitySet="TrueFalseQuestion" />
+          </AssociationSet>
+          <AssociationSet Name="CourseAcademy" Association="Model.CourseAcademy">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="Academy" EntitySet="Academy" />
+          </AssociationSet>
+          <AssociationSet Name="UserInfoUser" Association="Model.UserInfoUser">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <EntitySet Name="Answer" EntityType="Model.Answer" />
+          <AssociationSet Name="AnswerUser" Association="Model.AnswerUser">
+            <End Role="Answer" EntitySet="Answer" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="VotedUser" Association="Model.VotedUser">
+            <End Role="Voted" EntitySet="Voted" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="VoteUser" Association="Model.VoteUser">
+            <End Role="Vote" EntitySet="Vote" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <EntitySet Name="SmallQuestion" EntityType="Model.SmallQuestion" />
+          <EntitySet Name="Log" EntityType="Model.Log" />
+          <EntitySet Name="PaperCategory" EntityType="Model.PaperCategory" />
+          <EntitySet Name="TestpaperTarget" EntityType="Model.TestpaperTarget" />
+        </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="StudentPaper" Relationship="Model.StudentPaperUser" FromRole="User" ToRole="StudentPaper" />
+          <NavigationProperty Name="ClassInfo" Relationship="Model.UserClassInfo" FromRole="User" ToRole="ClassInfo" />
+          <NavigationProperty Name="Academy" Relationship="Model.AcademyUser" FromRole="User" ToRole="Academy" />
+          <NavigationProperty Name="Department" Relationship="Model.UserDepartment" FromRole="User" ToRole="Department" />
+          <Property Type="String" Name="UserNumber" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>用户编号（学号/工号）</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>用户姓名</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="NickName" DefaultValue="NewUser" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>用户昵称</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="UserPwd" MaxLength="20" Nullable="false" DefaultValue="123456" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>密码</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="Int32" Name="Experiences" Nullable="false" DefaultValue="0" >
+            <Documentation>
+              <LongDescription>经验数</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="Int32" Name="Golds" Nullable="false" DefaultValue="0" >
+            <Documentation>
+              <LongDescription>金币数</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="DateTime" Name="LastLoginTime" Nullable="true" Precision="3" >
+            <Documentation>
+              <LongDescription>上次登录时间</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>登录邮箱</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="SafeQuestion" MaxLength="100" Nullable="true" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>安全问题</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="SafeAnswer" MaxLength="100" Nullable="true" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>安全问题答案</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="Int16" Name="IsDeleted" Nullable="false" DefaultValue="0" >
+            <Documentation>
+              <Summary>0未删除，1删除</Summary>
+              <LongDescription>是否标记为删除</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="Remark" Nullable="false" DefaultValue="请填写您的说明信息" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>说明</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="DateTime" Name="SubTime" Nullable="true" Precision="3" >
+            <Documentation>
+              <LongDescription>添加时间</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="Int16" Name="IsLocked" Nullable="false" DefaultValue="0" >
+            <Documentation>
+              <Summary>0未锁定，1锁定</Summary>
+              <LongDescription>是否被锁定</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Role" Relationship="Model.UserRole" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="VerifyPaper" Relationship="Model.TeacherVerifyUserPaper" FromRole="User" ToRole="TestPaper" />
+          <NavigationProperty Name="CheckPaper" Relationship="Model.TestPaperUserCheck" FromRole="User" ToRole="TestPaper" />
+          <NavigationProperty Name="FillingQuestion" Relationship="Model.FillingQuestionUser" FromRole="User" ToRole="FillingQuestion" />
+          <NavigationProperty Name="ShortQuestion" Relationship="Model.ShortQuestionUser" FromRole="User" ToRole="ShortQuestion" />
+          <NavigationProperty Name="TrueFalseQuestion" Relationship="Model.TrueFalseQuestionUser" FromRole="User" ToRole="TrueFalseQuestion" />
+          <Property Type="Int32" Name="ClassInfoID" Nullable="false" />
+          <NavigationProperty Name="SpecialPermission" Relationship="Model.SpecialPermissionUser" FromRole="User" ToRole="SpecialPermission" />
+          <NavigationProperty Name="Article" Relationship="Model.ArticleUser" FromRole="User" ToRole="Article" />
+          <NavigationProperty Name="File" Relationship="Model.FileUser" FromRole="User" ToRole="File" />
+          <NavigationProperty Name="FavoriteArticle" Relationship="Model.UserFavoritesArticle" FromRole="User" ToRole="Article" />
+          <NavigationProperty Name="UserItem" Relationship="Model.UserItemUser" FromRole="User" ToRole="UserItem" />
+          <Property Name="IsItemUsedToNickName" Type="Boolean" Nullable="true" DefaultValue="false" />
+          <NavigationProperty Name="TestPaper" Relationship="Model.TestPaperUser" FromRole="User" ToRole="TestPaper" />
+          <NavigationProperty Name="ChoiceQuestion" Relationship="Model.UserChoiceQuestion" FromRole="User" ToRole="ChoiceQuestion" />
+          <Property Type="Int32" Name="AcademyID" Nullable="false" />
+          <NavigationProperty Name="UserInfo" Relationship="Model.UserInfoUser" FromRole="User" ToRole="UserInfo" />
+          <NavigationProperty Name="Answer" Relationship="Model.AnswerUser" FromRole="User" ToRole="Answer" />
+          <NavigationProperty Name="Voted" Relationship="Model.VotedUser" FromRole="User" ToRole="Voted" />
+          <NavigationProperty Name="Vote" Relationship="Model.VoteUser" FromRole="User" ToRole="Vote" />
+          <Property Type="Int32" Name="VoteID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Gender" Nullable="true" DefaultValue="未知" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>性别</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="DateTime" Name="Birthday" Nullable="true" Precision="3" >
+            <Documentation>
+              <LongDescription>生日</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="Interest" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>爱好</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="Int32" Name="Height" Nullable="true" >
+            <Documentation>
+              <LongDescription>身高</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="Int32" Name="Weight" Nullable="true" DefaultValue="50" >
+            <Documentation>
+              <LongDescription>体重</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="BlogUrl" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>博客地址</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="MicroBlogUrl" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>微博地址</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="WeChatAccount" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>微信账号</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="LivePlace" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>现局地</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="GovFace" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="IdNumber" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="TelNumber" DefaultValue="请填写您的说明信息" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Single" Name="QqNumber" Nullable="true" />
+          <Property Type="Int16" Name="IsDeleted" Nullable="false" DefaultValue="0" />
+          <Property Type="DateTime" Name="SubTime" Nullable="true" Precision="3" />
+          <Property Type="String" Name="Remark" DefaultValue="请填写您的说明信息" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="HeadImageUrl" Type="String" MaxLength="300" FixedLength="false" Unicode="true" DefaultValue="/content/images/head/default.jpg" />
+          <NavigationProperty Name="User" Relationship="Model.UserInfoUser" FromRole="UserInfo" ToRole="User" />
+          </EntityType>
+        <EntityType Name="ChoiceQuestion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="IsDeleted" Nullable="false" DefaultValue="0" />
+          <Property Type="String" Name="Remark" Nullable="true" DefaultValue="请填写说明信息" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>说明</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="DateTime" Name="SubTime" Nullable="true" Precision="3" >
+            <Documentation>
+              <LongDescription>添加时间</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="Content" DefaultValue="试题内容" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>试题内容</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="SelectA" Nullable="false" DefaultValue="" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>选项A</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="SelectB" Nullable="false" DefaultValue="" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>选项B</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="SelectC" Nullable="true" DefaultValue="" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>选项C</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="SelectD" Nullable="true" DefaultValue="" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>选项D</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="SelectE" Nullable="true" DefaultValue="" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>选项E</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="SelectF" Nullable="true" DefaultValue="" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>选项F</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="Answers" Nullable="false" DefaultValue="答案" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>答案</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="IsMultiSelect" Nullable="true" DefaultValue="false" >
+            <Documentation>
+              <LongDescription>是否多选</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="IsPublic" Nullable="true" DefaultValue="true" >
+            <Documentation>
+              <LongDescription>是否公开</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="Int16" Name="Difficulty" Nullable="true" DefaultValue="3" >
+            <Documentation>
+              <LongDescription>1-5不等</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Publisher" Relationship="Model.UserChoiceQuestion" FromRole="ChoiceQuestion" ToRole="User" />
+          <Property Type="Int32" Name="PublisherID" Nullable="false" />
+          <NavigationProperty Name="Course" Relationship="Model.CourseChoiceQuestion" FromRole="ChoiceQuestion" ToRole="Course" />
+          <Property Type="Int32" Name="CourseID" Nullable="true" />
+        </EntityType>
+        <EntityType Name="FillingQuestion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="IsDeleted" Nullable="false" DefaultValue="0" />
+          <Property Type="String" Name="Remark" Nullable="true" DefaultValue="请填写说明信息" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="DateTime" Name="SubTime" Nullable="true" Precision="3" />
+          <Property Type="String" Name="Content" Nullable="false" DefaultValue="试题内容" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Answers" Nullable="false" DefaultValue="答案" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Boolean" Name="IsPublic" Nullable="true" DefaultValue="true" />
+          <Property Type="Boolean" Name="IsMultiFilling" Nullable="true" DefaultValue="false" >
+            <Documentation>
+              <LongDescription>是否多空</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="Int16" Name="Difficulty" Nullable="true" DefaultValue="3" />
+          <NavigationProperty Name="Publisher" Relationship="Model.FillingQuestionUser" FromRole="FillingQuestion" ToRole="User" />
+          <NavigationProperty Name="Course" Relationship="Model.CourseFillingQuestion" FromRole="FillingQuestion" ToRole="Course" />
+          <Property Type="Int32" Name="CourseID" Nullable="false" />
+          <Property Type="Int32" Name="PublisherID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TrueFalseQuestion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="Difficulty" Nullable="true" DefaultValue="3" />
+          <Property Type="Boolean" Name="IsPublic" Nullable="true" DefaultValue="true" />
+          <Property Type="Boolean" Name="Answers" Nullable="true" DefaultValue="true" >
+            <Documentation>
+              <LongDescription>对或错</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="Content" DefaultValue="试题内容" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="DateTime" Name="SubTime" Nullable="true" Precision="3" />
+          <Property Type="String" Name="Remark" Nullable="true" DefaultValue="请填写说明信息" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int16" Name="IsDeleted" Nullable="false" DefaultValue="0" />
+          <NavigationProperty Name="Publisher" Relationship="Model.TrueFalseQuestionUser" FromRole="TrueFalseQuestion" ToRole="User" />
+          <NavigationProperty Name="Course" Relationship="Model.CourseTrueFalseQuestion" FromRole="TrueFalseQuestion" ToRole="Course" />
+          <Property Type="Int32" Name="CourseID" Nullable="false" />
+          <Property Type="Int32" Name="PublisherID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TestPaper">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="IsDeleted" DefaultValue="0" Nullable="false" />
+          <Property Type="DateTime" Name="SubTime" Nullable="true" Precision="3" />
+          <Property Type="String" Name="Remark" Nullable="true" DefaultValue="请填写说明信息" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="PaperName" DefaultValue="试卷" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>试卷名</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="PaperDescription" Nullable="true" DefaultValue="请填写试卷说明信息" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>试卷说明信息</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="DateTime" Name="PaperDate" Nullable="false" Precision="3" >
+            <Documentation>
+              <LongDescription>出卷日期</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="DateTime" Name="StartTime" Nullable="false" Precision="3" >
+            <Documentation>
+              <LongDescription>试卷考试时间</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="DateTime" Name="EndTime" Nullable="false" Precision="3" >
+            <Documentation>
+              <LongDescription>考试截至时间</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="Int16" Name="PaperScore" Nullable="false" DefaultValue="100" >
+            <Documentation>
+              <LongDescription>试卷总分</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="VerifyBy" Relationship="Model.TeacherVerifyUserPaper" FromRole="TestPaper" ToRole="User" >
+            <Documentation>
+              <LongDescription>审核人（多个）</LongDescription>
+            </Documentation>
+          </NavigationProperty>
+          <NavigationProperty Name="CheckBy" Relationship="Model.TestPaperUserCheck" FromRole="TestPaper" ToRole="User" >
+            <Documentation>
+              <LongDescription>批改人（多个）</LongDescription>
+            </Documentation>
+          </NavigationProperty>
+          <NavigationProperty Name="StudentPaper" Relationship="Model.StudentPaperTestPaper" FromRole="TestPaper" ToRole="StudentPaper" />
+          <Property Type="Model.PaperType" Name="PaperType" Nullable="true" >
+            <Documentation>
+              <Summary>0试卷 1作业 2公开 3私有（草稿）</Summary>
+              <LongDescription>试卷类型</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="BigQuestion" Relationship="Model.TestPaperBigQuestion" FromRole="TestPaper" ToRole="BigQuestion" />
+          <NavigationProperty Name="Publisher" Relationship="Model.TestPaperUser" FromRole="TestPaper" ToRole="User" />
+          <Property Type="Int32" Name="PublisherID" Nullable="false" />
+          <NavigationProperty Name="Course" Relationship="Model.TestPaperCourse" FromRole="TestPaper" ToRole="Course" />
+          <Property Type="Int32" Name="CourseID" Nullable="false" />
+          <Property Type="Int32" Name="CategoryID" />
+          <Property Type="String" Name="Knowledge" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TestMinutes" />
+        </EntityType>
+        <EntityType Name="ShortQuestion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="Difficulty" Nullable="true" DefaultValue="3" />
+          <Property Type="Boolean" Name="IsPublic" Nullable="true" DefaultValue="true" />
+          <Property Type="String" Name="Answers" DefaultValue="答案" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Content" Nullable="false" DefaultValue="试题内容" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="DateTime" Name="SubTime" Nullable="true" Precision="3" />
+          <Property Type="String" Name="Remark" Nullable="true" DefaultValue="请填写说明信息" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int16" Name="IsDeleted" Nullable="false" DefaultValue="0" />
+          <NavigationProperty Name="Publisher" Relationship="Model.ShortQuestionUser" FromRole="ShortQuestion" ToRole="User" />
+          <NavigationProperty Name="Course" Relationship="Model.CourseShortQuestion" FromRole="ShortQuestion" ToRole="Course" />
+          <Property Type="Int32" Name="CourseID" Nullable="false" />
+          <Property Type="Int32" Name="PublisherID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StudentPaper">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="PaperScore" Nullable="false" DefaultValue="100" />
+          <Property Type="DateTime" Name="SubmitTime" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="StartTime" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Remark" DefaultValue="请填写您的说明信息" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int16" Name="IsDeleted" Nullable="false" DefaultValue="0" />
+          <NavigationProperty Name="User" Relationship="Model.StudentPaperUser" FromRole="StudentPaper" ToRole="User" />
+          <NavigationProperty Name="TestPaper" Relationship="Model.StudentPaperTestPaper" FromRole="StudentPaper" ToRole="TestPaper" />
+          <Property Type="String" Name="TeacherWords" DefaultValue="请在这里填写您的评语" MaxLength="Max" Nullable="true" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="TestPaperID" Nullable="false" />
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="User" Relationship="Model.UserDepartment" FromRole="Department" ToRole="User" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="Population" DefaultValue="0" Nullable="true" >
+            <Documentation>
+              <LongDescription>人数</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="SubTime" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Boss" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Phone" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="SiteUrl" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="IconUrl" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int16" Name="IsDeleted" Nullable="false" DefaultValue="0" />
+          <Property Type="String" Name="Number" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="ParentId" DefaultValue="0" Nullable="true" >
+            <Documentation>
+              <LongDescription>父节点Id</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="IsLeaf" DefaultValue="true" Nullable="true" >
+            <Documentation>
+              <LongDescription>是否为叶子节点</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="Int16" Name="Level" DefaultValue="0" Nullable="true" >
+            <Documentation>
+              <LongDescription>在树中节点深度</LongDescription>
+            </Documentation>
+          </Property>
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="IsDeleted" Nullable="false" DefaultValue="0" />
+          <Property Type="DateTime" Name="SubTime" Nullable="true" Precision="3" />
+          <Property Type="String" Name="Remark" Nullable="true" DefaultValue="请填写您的说明信息" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="CourseName" Nullable="true" DefaultValue="请填写您的说明信息" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Description" Nullable="true" DefaultValue="请填写您的说明信息" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="TestPaper" Relationship="Model.TestPaperCourse" FromRole="Course" ToRole="TestPaper" />
+          <NavigationProperty Name="ChoiceQuestion" Relationship="Model.CourseChoiceQuestion" FromRole="Course" ToRole="ChoiceQuestion" />
+          <NavigationProperty Name="FillingQuestion" Relationship="Model.CourseFillingQuestion" FromRole="Course" ToRole="FillingQuestion" />
+          <NavigationProperty Name="ShortQuestion" Relationship="Model.CourseShortQuestion" FromRole="Course" ToRole="ShortQuestion" />
+          <NavigationProperty Name="TrueFalseQuestion" Relationship="Model.CourseTrueFalseQuestion" FromRole="Course" ToRole="TrueFalseQuestion" />
+          <NavigationProperty Name="Academy" Relationship="Model.CourseAcademy" FromRole="Course" ToRole="Academy" />
+        </EntityType>
+        <EntityType Name="ClassInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Student" Relationship="Model.UserClassInfo" FromRole="ClassInfo" ToRole="User" />
+          <Property Type="String" Name="ClassName" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int16" Name="Population" DefaultValue="0" Nullable="true" />
+          <Property Type="String" Name="SiteUrl" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="ClassIcon" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="DateTime" Name="SubTime" Nullable="true" Precision="3" />
+          <Property Type="String" Name="Remark" Nullable="false" DefaultValue="请填写您的说明信息" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int16" Name="IsDeleted" Nullable="false" DefaultValue="0" />
+          <NavigationProperty Name="Academy" Relationship="Model.ClassInfoAcademy" FromRole="ClassInfo" ToRole="Academy" />
+          <Property Type="Int32" Name="AcademyID" Nullable="false" />
+          <Property Type="Int32" Name="MonitorID" Nullable="true" />
+          <Property Type="Int32" Name="TeacherID" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Academy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="Population" Nullable="true" DefaultValue="0" />
+          <Property Type="String" Name="President" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>院长Id</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="SiteUrl" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="IconUrl" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int16" Name="IsDeleted" DefaultValue="0" Nullable="true" />
+          <Property Type="String" Name="SubTime" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="User" Relationship="Model.AcademyUser" FromRole="Academy" ToRole="User" />
+          <NavigationProperty Name="ClassInfo" Relationship="Model.ClassInfoAcademy" FromRole="Academy" ToRole="ClassInfo" />
+          <Property Type="String" Name="VicePresidentA" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>副院长AID</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="VicePresidentB" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="VicePresidentC" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="VicePresidentD" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Course" Relationship="Model.CourseAcademy" FromRole="Academy" ToRole="Course" />
+        </EntityType>
+        <Association Name="StudentPaperUser">
+          <End Type="Model.StudentPaper" Role="StudentPaper" Multiplicity="*" />
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StudentPaper">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserClassInfo">
+          <End Type="Model.User" Role="User" Multiplicity="*" />
+          <End Type="Model.ClassInfo" Role="ClassInfo" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="ClassInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="ClassInfoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AcademyUser">
+          <End Type="Model.Academy" Role="Academy" Multiplicity="1" />
+          <End Type="Model.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Academy">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="AcademyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserDepartment">
+          <End Type="Model.User" Role="User" Multiplicity="*" />
+          <End Type="Model.Department" Role="Department" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Url" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="HttpMethod" Nullable="false" MaxLength="32" Unicode="false" DefaultValue="get" FixedLength="false" >
+            <Documentation>
+              <LongDescription>post/get/all</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="Action" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Remark" MaxLength="128" Nullable="true" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Controoller" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Role" Relationship="Model.PermissionRole" FromRole="Permission" ToRole="Role" />
+          <NavigationProperty Name="SpecialPermission" Relationship="Model.SpecialPermissionPermission" FromRole="Permission" ToRole="SpecialPermission" />
+          <Property Type="String" Name="Area" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>域</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="DateTime" Name="SubTime" Nullable="true" Precision="3" />
+          <Property Type="Int16" Name="IsDeleted" Nullable="false" DefaultValue="0" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="User" Relationship="Model.UserRole" FromRole="Role" ToRole="User" />
+          <NavigationProperty Name="Permission" Relationship="Model.PermissionRole" FromRole="Role" ToRole="Permission" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int16" Name="IsDeleted" Nullable="false" DefaultValue="0" />
+          <Property Type="String" Name="Remark" Nullable="false" DefaultValue="请填写您的说明信息" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="DateTime" Name="SubTime" Nullable="true" Precision="3" />
+        </EntityType>
+        <Association Name="UserRole">
+          <End Type="Model.User" Role="User" Multiplicity="*" />
+          <End Type="Model.Role" Role="Role" Multiplicity="*" />
+        </Association>
+        <Association Name="PermissionRole">
+          <End Type="Model.Permission" Role="Permission" Multiplicity="*" />
+          <End Type="Model.Role" Role="Role" Multiplicity="*" />
+        </Association>
+        <Association Name="TeacherVerifyUserPaper">
+          <Documentation>
+            <LongDescription>一个教师可以批改多份试卷</LongDescription>
+          </Documentation>
+          <End Type="Model.TestPaper" Role="TestPaper" Multiplicity="*" />
+          <End Type="Model.User" Role="User" Multiplicity="*" />
+        </Association>
+        <Association Name="TestPaperUserCheck">
+          <Documentation>
+            <LongDescription>一个用户可以审查多个考卷</LongDescription>
+          </Documentation>
+          <End Type="Model.TestPaper" Role="TestPaper" Multiplicity="*" />
+          <End Type="Model.User" Role="User" Multiplicity="*" />
+        </Association>
+        <Association Name="FillingQuestionUser">
+          <End Type="Model.FillingQuestion" Role="FillingQuestion" Multiplicity="*" />
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FillingQuestion">
+              <PropertyRef Name="PublisherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ShortQuestionUser">
+          <End Type="Model.ShortQuestion" Role="ShortQuestion" Multiplicity="*" />
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShortQuestion">
+              <PropertyRef Name="PublisherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TrueFalseQuestionUser">
+          <End Type="Model.TrueFalseQuestion" Role="TrueFalseQuestion" Multiplicity="*" />
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TrueFalseQuestion">
+              <PropertyRef Name="PublisherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClassInfoAcademy">
+          <End Type="Model.ClassInfo" Role="ClassInfo" Multiplicity="*" />
+          <End Type="Model.Academy" Role="Academy" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Academy">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ClassInfo">
+              <PropertyRef Name="AcademyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StudentPaperTestPaper">
+          <End Type="Model.StudentPaper" Role="StudentPaper" Multiplicity="*" />
+          <End Type="Model.TestPaper" Role="TestPaper" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="TestPaper">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StudentPaper">
+              <PropertyRef Name="TestPaperID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SpecialPermission">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="SubTime" Nullable="true" Precision="3" />
+          <Property Type="String" Name="Remark" Nullable="false" DefaultValue="请填写您的说明信息" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int16" Name="IsDeleted" Nullable="false" DefaultValue="0" />
+          <NavigationProperty Name="User" Relationship="Model.SpecialPermissionUser" FromRole="SpecialPermission" ToRole="User" />
+          <NavigationProperty Name="Permission" Relationship="Model.SpecialPermissionPermission" FromRole="SpecialPermission" ToRole="Permission" />
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="Int32" Name="PermissionID" Nullable="false" />
+          <Property Type="Boolean" Name="IsPass" Nullable="false" DefaultValue="true" />
+        </EntityType>
+        <Association Name="SpecialPermissionUser">
+          <End Type="Model.SpecialPermission" Role="SpecialPermission" Multiplicity="*" />
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SpecialPermission">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SpecialPermissionPermission">
+          <End Type="Model.SpecialPermission" Role="SpecialPermission" Multiplicity="*" />
+          <End Type="Model.Permission" Role="Permission" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Permission">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SpecialPermission">
+              <PropertyRef Name="PermissionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Friend">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="IsDeleted" Nullable="false" DefaultValue="0" />
+          <Property Type="String" Name="Remark" Nullable="true" DefaultValue="请填写您的说明信息" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="DateTime" Name="SubTime" Nullable="false" Precision="3" />
+          <Property Name="UserId" Nullable="false" Type="Int32" />
+          <Property Name="FriendId" Nullable="false" Type="Int32" />
+          <Property Type="DateTime" Name="AddTime" Nullable="true" Precision="3" >
+            <Documentation>
+              <LongDescription>添加好友的时间</LongDescription>
+            </Documentation>
+          </Property>
+        </EntityType>
+        <EntityType Name="Article">
+          <Documentation>
+            <LongDescription>文章新闻通知表</LongDescription>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="IsDeleted" Nullable="false" DefaultValue="0" />
+          <Property Type="String" Name="Remark" Nullable="true" DefaultValue="请填写您的说明信息" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="DateTime" Name="SubTime" Nullable="true" Precision="3" />
+          <Property Type="String" Name="Title" Nullable="true" DefaultValue="标题" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Content" Nullable="true" DefaultValue="内容" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="DateTime" Name="EndTime" Nullable="true" Precision="3" />
+          <Property Type="DateTime" Name="PublishTime" Nullable="true" Precision="3" />
+          <Property Type="Model.ArticleType" Name="ArticleType" Nullable="false" >
+            <Documentation>
+              <LongDescription>1文章2新闻3通告</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Publisher" Relationship="Model.ArticleUser" FromRole="Article" ToRole="User" />
+          <Property Type="Int32" Name="LikePoint" Nullable="true" DefaultValue="0" />
+          <Property Type="Int32" Name="RecommendPoint" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="DislikePoint" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="ReadTimes" Nullable="false" DefaultValue="0" />
+          <Property Type="String" Name="Tips" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <LongDescription>标签</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Attachment" Relationship="Model.AttachmentArticle" FromRole="Article" ToRole="File" />
+          <NavigationProperty Name="CollectUser" Relationship="Model.UserFavoritesArticle" FromRole="Article" ToRole="User" />
+          <Property Name="IsItemUseToTitle" Type="Boolean" Nullable="false" DefaultValue="false" />
+          <Property Name="IsItemUseToContent" Type="Boolean" Nullable="true" DefaultValue="false" />
+          <NavigationProperty Name="Comment" Relationship="Model.CommentArticle" FromRole="Article" ToRole="Comment" />
+          <Property Type="Int32" Name="PublisherID" Nullable="false" />
+        </EntityType>
+        <Association Name="ArticleUser">
+          <End Type="Model.Article" Role="Article" Multiplicity="*" />
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Article">
+              <PropertyRef Name="PublisherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="File">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="IsDeleted" Nullable="false" DefaultValue="0" />
+          <Property Type="String" Name="Remark" Nullable="true" DefaultValue="请填写您的说明信息" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="DateTime" Name="SubTime" Nullable="true" Precision="3" />
+          <Property Type="String" Name="FileName" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="FileType" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="FileSize" Nullable="true" DefaultValue="0" >
+            <Documentation>
+              <LongDescription>kb</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="FileUrl" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="DownloadTimes" Nullable="true" DefaultValue="0" />
+          <NavigationProperty Name="Article" Relationship="Model.AttachmentArticle" FromRole="File" ToRole="Article" />
+          <NavigationProperty Name="User" Relationship="Model.FileUser" FromRole="File" ToRole="User" />
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="Int32" Name="ArticleID" Nullable="true" />
+          </EntityType>
+        <Association Name="AttachmentArticle">
+          <End Type="Model.File" Role="File" Multiplicity="*" />
+          <End Type="Model.Article" Role="Article" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Article">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="File">
+              <PropertyRef Name="ArticleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FileUser">
+          <End Type="Model.File" Role="File" Multiplicity="*" />
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="File">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Voted">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="IsDeleted" Nullable="false" DefaultValue="0" />
+          <Property Type="String" Name="Remark" Nullable="true" DefaultValue="请填写您的说明信息" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="DateTime" Name="SubTime" Nullable="true" Precision="3" />
+          <Property Name="Reason" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SelectOptions" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PostTime" Type="DateTime" Nullable="true" Precision="3" />
+          <NavigationProperty Name="Vote" Relationship="Model.VotedVote" FromRole="Voted" ToRole="Vote" />
+          <Property Type="Int32" Name="VoteID" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false">
+            <Documentation>
+              <LongDescription>投票人ID</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="User" Relationship="Model.VotedUser" FromRole="Voted" ToRole="User" />
+        </EntityType>
+        <Association Name="UserFavoritesArticle">
+          <End Type="Model.Article" Role="Article" Multiplicity="*" />
+          <End Type="Model.User" Role="User" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Vote">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsDeleted" Type="Int16" Nullable="false" DefaultValue="0" />
+          <Property Name="Remark" Type="String" Nullable="true" DefaultValue="请填写您的说明信息" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SubTime" Type="DateTime" Nullable="true" Precision="3" />
+          <Property Name="ClassName" Nullable="false" DefaultValue="无" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
+          <Property Name="VoteTitle" Type="String" Nullable="false" DefaultValue="投票标题" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="VoteContent" Type="String" Nullable="false" DefaultValue="投票内容" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Option1" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Option2" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Option3" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Option4" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Option5" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Option6" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Option7" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Option8" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Option9" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Option10" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ParentId" Type="Int32" DefaultValue="0" Nullable="true">
+            <Documentation>
+              <LongDescription>为0则不属于任何投票</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="MoreInfo" Type="String" Nullable="true" DefaultValue="无说明信息" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsEnded" Type="Boolean" DefaultValue="false" Nullable="true" />
+          <Property Name="IsMutilSelect" Type="Boolean" Nullable="false" DefaultValue="false" />
+          <Property Name="MutilSelectCount" Type="Int16" Nullable="false" DefaultValue="1" />
+          <Property Name="StartTime" Type="DateTime" Nullable="true" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="true" Precision="3" />
+          <Property Name="VoteImageUrl" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Voted" Relationship="Model.VotedVote" FromRole="Vote" ToRole="Voted" />
+          <Property Name="VoteClassID" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="VoteClass" Relationship="Model.VoteClassVote" FromRole="Vote" ToRole="VoteClass" />
+          <NavigationProperty Name="Publisher" Relationship="Model.VoteUser" FromRole="Vote" ToRole="User" />
+          <Property Type="Int32" Name="PublisherID" Nullable="false" />
+        </EntityType>
+        <Association Name="VotedVote">
+          <End Type="Model.Vote" Role="Vote" Multiplicity="1" />
+          <End Type="Model.Voted" Role="Voted" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vote">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Voted">
+              <PropertyRef Name="VoteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="VoteClass">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="true" DefaultValue="false" />
+          <Property Name="SubTime" Type="DateTime" Nullable="true" Precision="3" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Remark" Type="String" Nullable="false" DefaultValue="无说明" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Vote" Relationship="Model.VoteClassVote" FromRole="VoteClass" ToRole="Vote" />
+        </EntityType>
+        <Association Name="VoteClassVote">
+          <End Type="Model.VoteClass" Role="VoteClass" Multiplicity="0..1" />
+          <End Type="Model.Vote" Role="Vote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoteClass">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vote">
+              <PropertyRef Name="VoteClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Effect" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Target" Type="Model.ItemTargetType" Nullable="true" >
+            <Documentation>
+              <Summary>个人，文章，回复，他人</Summary>
+              <LongDescription>使用对象</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="Price" Type="Int32" Nullable="false" DefaultValue="0" />
+          <Property Name="EffectDays" Type="Int32" Nullable="false" DefaultValue="0" />
+          <Property Name="IsDeleted" Type="Int16" Nullable="false" DefaultValue="0" />
+          <Property Name="Remark" Type="String" Nullable="true" DefaultValue="请填写您的说明信息" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SubTime" Type="DateTime" Nullable="true" Precision="3" />
+          <NavigationProperty Name="UserItem" Relationship="Model.ItemUserItem" FromRole="Item" ToRole="UserItem" />
+          <Property Name="ItemEffectType" Type="Model.ItemEffectType" Nullable="false" >
+            <Documentation>
+              <Summary>一次性，持久性</Summary>
+              <LongDescription>道具类型（一次性还是持久性）</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="ImageUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="EntTIme" Type="DateTime" Precision="3" Nullable="true" />
+        </EntityType>
+        <EntityType Name="UserItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Count" Type="Int32" Nullable="true" DefaultValue="0" />
+          <Property Name="StartUseTime" Type="DateTime" Nullable="true" Precision="3" >
+            <Documentation>
+              <LongDescription>当前道具使用的开始时间</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="UsedCount" Type="Int32" Nullable="false" DefaultValue="0" />
+          <NavigationProperty Name="User" Relationship="Model.UserItemUser" FromRole="UserItem" ToRole="User" />
+          <NavigationProperty Name="Item" Relationship="Model.ItemUserItem" FromRole="UserItem" ToRole="Item" />
+          <Property Name="EndUseTime" Type="DateTime" Precision="3" >
+            <Documentation>
+              <LongDescription>当前使用的道具截至时间</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="IsDeleted" Type="Int16" Nullable="false" DefaultValue="0" />
+          <Property Name="Remark" Type="String" Nullable="true" DefaultValue="请填写您的说明信息" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SubTime" Type="DateTime" Nullable="true" Precision="3" />
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="Int32" Name="ItemID" Nullable="false" />
+        </EntityType>
+        <Association Name="UserItemUser">
+          <End Type="Model.UserItem" Role="UserItem" Multiplicity="*" />
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserItem">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ItemUserItem">
+          <End Type="Model.Item" Role="Item" Multiplicity="1" />
+          <End Type="Model.UserItem" Role="UserItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserItem">
+              <PropertyRef Name="ItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ImageUrl" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsHidedByItem" Type="Boolean" Nullable="true" DefaultValue="false" />
+          <Property Name="IsDeleted" Type="Int16" Nullable="false" DefaultValue="0" />
+          <Property Name="Remark" Type="String" Nullable="true" DefaultValue="请填写您的说明信息" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SubTime" Type="DateTime" Nullable="true" Precision="3" />
+          <NavigationProperty Name="Article" Relationship="Model.CommentArticle" FromRole="Comment" ToRole="Article" />
+          <Property Name="IsItemUsedToComent" Type="Boolean" Nullable="true" DefaultValue="false" />
+          <Property Type="Int32" Name="ArticleID" Nullable="false" />
+        </EntityType>
+        <Association Name="CommentArticle">
+          <End Type="Model.Comment" Role="Comment" Multiplicity="*" />
+          <End Type="Model.Article" Role="Article" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Article">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="ArticleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="BigQuestion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Remark" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="DateTime" Name="SubTime" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="Score" Nullable="false" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" DefaultValue="false" />
+          <NavigationProperty Name="TestPaper" Relationship="Model.TestPaperBigQuestion" FromRole="BigQuestion" ToRole="TestPaper" />
+          <Property Type="Int32" Name="TestPaperID" Nullable="false" />
+        </EntityType>
+        <Association Name="TestPaperBigQuestion">
+          <End Type="Model.TestPaper" Role="TestPaper" Multiplicity="1" />
+          <End Type="Model.BigQuestion" Role="BigQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TestPaper">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BigQuestion">
+              <PropertyRef Name="TestPaperID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TestPaperUser">
+          <End Type="Model.TestPaper" Role="TestPaper" Multiplicity="*" />
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TestPaper">
+              <PropertyRef Name="PublisherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TestPaperCourse">
+          <End Type="Model.TestPaper" Role="TestPaper" Multiplicity="*" />
+          <End Type="Model.Course" Role="Course" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TestPaper">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserChoiceQuestion">
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <End Type="Model.ChoiceQuestion" Role="ChoiceQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ChoiceQuestion">
+              <PropertyRef Name="PublisherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CourseChoiceQuestion">
+          <End Type="Model.Course" Role="Course" Multiplicity="0..1" />
+          <End Type="Model.ChoiceQuestion" Role="ChoiceQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ChoiceQuestion">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CourseFillingQuestion">
+          <End Type="Model.Course" Role="Course" Multiplicity="1" />
+          <End Type="Model.FillingQuestion" Role="FillingQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FillingQuestion">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CourseShortQuestion">
+          <End Type="Model.Course" Role="Course" Multiplicity="1" />
+          <End Type="Model.ShortQuestion" Role="ShortQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShortQuestion">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CourseTrueFalseQuestion">
+          <End Type="Model.Course" Role="Course" Multiplicity="1" />
+          <End Type="Model.TrueFalseQuestion" Role="TrueFalseQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TrueFalseQuestion">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CourseAcademy">
+          <End Type="Model.Course" Role="Course" Multiplicity="*" />
+          <End Type="Model.Academy" Role="Academy" Multiplicity="*" />
+        </Association>
+        <Association Name="UserInfoUser">
+          <End Type="Model.UserInfo" Role="UserInfo" Multiplicity="0..1" />
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Answer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="Int32" Name="QuestionID" Nullable="true" >
+            <Documentation>
+              <Summary>问题ID,可以是选择题，填空题，判断题，简答题</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Int32" Name="BigQuestionID" Nullable="false" />
+          <Property Type="Model.QuestionType" Name="QuestionType" Nullable="false" />
+          <Property Type="DateTime" Name="SubTime" Nullable="true" Precision="3" />
+          <Property Type="Int16" Name="Score" Nullable="true" />
+          <NavigationProperty Name="User" Relationship="Model.AnswerUser" FromRole="Answer" ToRole="User" />
+          <Property Type="String" Name="AnswerContent" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="true" />
+        </EntityType>
+        <ComplexType Name="Question" >
+          <Property Type="Int16" Name="Type" Nullable="false" />
+          <Property Type="String" Name="Kind" Nullable="false" />
+        </ComplexType>
+        <EnumType Name="QuestionType" UnderlyingType="Int16">
+          <Member Name="ChoiceQuestion" Value="1" />
+          <Member Name="FillingQuestion" Value="2" />
+          <Member Name="TrueFalseQuestion" Value="3" />
+          <Member Name="ShortQuestion" Value="4" />
+        </EnumType>
+        <Association Name="AnswerUser">
+          <End Type="Model.Answer" Role="Answer" Multiplicity="*" />
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Answer">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="ArticleType" UnderlyingType="Int16">
+          <Member Name="IsArticle" />
+          <Member Name="IsNews" />
+          <Member Name="IsNotice" />
+        </EnumType>
+        <EnumType Name="ItemTargetType" UnderlyingType="Int16">
+          <Member Name="ToUserSelf" />
+          <Member Name="ToOtherUser" />
+          <Member Name="ToUserSelfAndOtherUser" />
+          <Member Name="ToUserSelfOrOtherUser" />
+          <Member Name="ToArticle" />
+          <Member Name="ToArticleTitle" />
+          <Member Name="ToArticleComment" />
+          <Member Name="ToItem" />
+          <Member Name="ToFile" />
+        </EnumType>
+        <EnumType Name="ItemEffectType" UnderlyingType="Int16">
+          <Member Name="IsOneTime" />
+          <Member Name="IsLongTime" />
+        </EnumType>
+        <EnumType Name="PaperType" UnderlyingType="Int16">
+          <Member Name="HomeWork" />
+          <Member Name="ForTest" />
+          <Member Name="Public" />
+          <Member Name="Private" />
+        </EnumType>
+        <Association Name="VotedUser">
+          <End Type="Model.Voted" Role="Voted" Multiplicity="*" />
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Voted">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="VoteUser">
+          <End Type="Model.Vote" Role="Vote" Multiplicity="*" />
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vote">
+              <PropertyRef Name="PublisherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SmallQuestion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="BigQuestionID" Nullable="false" />
+          <Property Type="Int32" Name="QuestionID" Nullable="false" />
+          <Property Type="Model.QuestionType" Name="QuestionType" Nullable="false" />
+          <Property Type="Int16" Name="Score" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Application" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Thread" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Level" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Logger" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Server" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Location" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Message" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Exception" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PaperCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ParentID" />
+          <Property Type="DateTime" Name="SubTime" Precision="3" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted" DefaultValue="false" />
+        </EntityType>
+        <EntityType Name="TestpaperTarget">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="TestPaperID" />
+          <Property Type="Model.TestpaperTargetType" Name="TargetType" />
+          <Property Type="Int32" Name="TargetID" />
+        </EntityType>
+        <EnumType Name="TestpaperTargetType" UnderlyingType="Int16">
+          <Member Name="ToAcademy" Value="1" />
+          <Member Name="ToClass" Value="2" />
+          <Member Name="ToDepartment" Value="3" />
+          <Member Name="ToAll" Value="4" />
+        </EnumType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="ModelContainer">
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.User)">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserNumber" ColumnName="UserNumber" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+          <ScalarProperty Name="Experiences" ColumnName="Experiences" />
+          <ScalarProperty Name="Golds" ColumnName="Golds" />
+          <ScalarProperty Name="LastLoginTime" ColumnName="LastLoginTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SafeQuestion" ColumnName="SafeQuestion" />
+          <ScalarProperty Name="SafeAnswer" ColumnName="SafeAnswer" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+          <ScalarProperty Name="ClassInfoID" ColumnName="ClassInfoID" />
+          <ScalarProperty Name="IsItemUsedToNickName" ColumnName="IsItemUsedToNickName" />
+          <ScalarProperty Name="AcademyID" ColumnName="AcademyID" />
+          <ScalarProperty Name="VoteID" ColumnName="VoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.UserInfo)">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Interest" ColumnName="Interest" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="BlogUrl" ColumnName="BlogUrl" />
+          <ScalarProperty Name="MicroBlogUrl" ColumnName="MicroBlogUrl" />
+          <ScalarProperty Name="WeChatAccount" ColumnName="WeChatAccount" />
+          <ScalarProperty Name="LivePlace" ColumnName="LivePlace" />
+          <ScalarProperty Name="GovFace" ColumnName="GovFace" />
+          <ScalarProperty Name="IdNumber" ColumnName="IdNumber" />
+          <ScalarProperty Name="TelNumber" ColumnName="TelNumber" />
+          <ScalarProperty Name="QqNumber" ColumnName="QqNumber" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="HeadImageUrl" ColumnName="HeadImageUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChoiceQuestion">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.ChoiceQuestion)">
+        <MappingFragment StoreEntitySet="ChoiceQuestion">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="SelectA" ColumnName="SelectA" />
+          <ScalarProperty Name="SelectB" ColumnName="SelectB" />
+          <ScalarProperty Name="SelectC" ColumnName="SelectC" />
+          <ScalarProperty Name="SelectD" ColumnName="SelectD" />
+          <ScalarProperty Name="SelectE" ColumnName="SelectE" />
+          <ScalarProperty Name="SelectF" ColumnName="SelectF" />
+          <ScalarProperty Name="Answers" ColumnName="Answers" />
+          <ScalarProperty Name="IsMultiSelect" ColumnName="IsMultiSelect" />
+          <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+          <ScalarProperty Name="Difficulty" ColumnName="Difficulty" />
+          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FillingQuestion">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.FillingQuestion)">
+        <MappingFragment StoreEntitySet="FillingQuestion">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Answers" ColumnName="Answers" />
+          <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+          <ScalarProperty Name="IsMultiFilling" ColumnName="IsMultiFilling" />
+          <ScalarProperty Name="Difficulty" ColumnName="Difficulty" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrueFalseQuestion">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.TrueFalseQuestion)">
+        <MappingFragment StoreEntitySet="TrueFalseQuestion">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Difficulty" ColumnName="Difficulty" />
+          <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+          <ScalarProperty Name="Answers" ColumnName="Answers" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TestPaper">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.TestPaper)">
+        <MappingFragment StoreEntitySet="TestPaper">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="PaperName" ColumnName="PaperName" />
+          <ScalarProperty Name="PaperDescription" ColumnName="PaperDescription" />
+          <ScalarProperty Name="PaperDate" ColumnName="PaperDate" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="PaperScore" ColumnName="PaperScore" />
+          <ScalarProperty Name="PaperType" ColumnName="PaperType" />
+          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="Knowledge" ColumnName="Knowledge" />
+          <ScalarProperty Name="TestMinutes" ColumnName="TestMinutes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShortQuestion">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.ShortQuestion)">
+        <MappingFragment StoreEntitySet="ShortQuestion">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Difficulty" ColumnName="Difficulty" />
+          <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+          <ScalarProperty Name="Answers" ColumnName="Answers" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentPaper">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.StudentPaper)">
+        <MappingFragment StoreEntitySet="StudentPaper">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PaperScore" ColumnName="PaperScore" />
+          <ScalarProperty Name="SubmitTime" ColumnName="SubmitTime" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TeacherWords" ColumnName="TeacherWords" />
+          <ScalarProperty Name="TestPaperID" ColumnName="TestPaperID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Department)">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Population" ColumnName="Population" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Boss" ColumnName="Boss" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="SiteUrl" ColumnName="SiteUrl" />
+          <ScalarProperty Name="IconUrl" ColumnName="IconUrl" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="IsLeaf" ColumnName="IsLeaf" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Course">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Course)">
+        <MappingFragment StoreEntitySet="Course">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClassInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.ClassInfo)">
+        <MappingFragment StoreEntitySet="ClassInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="Population" ColumnName="Population" />
+          <ScalarProperty Name="SiteUrl" ColumnName="SiteUrl" />
+          <ScalarProperty Name="ClassIcon" ColumnName="ClassIcon" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="AcademyID" ColumnName="AcademyID" />
+          <ScalarProperty Name="MonitorID" ColumnName="MonitorID" />
+          <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Academy">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Academy)">
+        <MappingFragment StoreEntitySet="Academy">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Population" ColumnName="Population" />
+          <ScalarProperty Name="President" ColumnName="President" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="SiteUrl" ColumnName="SiteUrl" />
+          <ScalarProperty Name="IconUrl" ColumnName="IconUrl" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="VicePresidentA" ColumnName="VicePresidentA" />
+          <ScalarProperty Name="VicePresidentB" ColumnName="VicePresidentB" />
+          <ScalarProperty Name="VicePresidentC" ColumnName="VicePresidentC" />
+          <ScalarProperty Name="VicePresidentD" ColumnName="VicePresidentD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permission">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Permission)">
+        <MappingFragment StoreEntitySet="Permission">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="HttpMethod" ColumnName="HttpMethod" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Controoller" ColumnName="Controoller" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Role)">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SpecialPermission">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.SpecialPermission)">
+        <MappingFragment StoreEntitySet="SpecialPermission">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PermissionID" ColumnName="PermissionID" />
+          <ScalarProperty Name="IsPass" ColumnName="IsPass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Friend">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Friend)">
+        <MappingFragment StoreEntitySet="Friend">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FriendId" ColumnName="FriendId" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Article">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Article)">
+        <MappingFragment StoreEntitySet="Article">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="PublishTime" ColumnName="PublishTime" />
+          <ScalarProperty Name="ArticleType" ColumnName="ArticleType" />
+          <ScalarProperty Name="LikePoint" ColumnName="LikePoint" />
+          <ScalarProperty Name="RecommendPoint" ColumnName="RecommendPoint" />
+          <ScalarProperty Name="DislikePoint" ColumnName="DislikePoint" />
+          <ScalarProperty Name="ReadTimes" ColumnName="ReadTimes" />
+          <ScalarProperty Name="Tips" ColumnName="Tips" />
+          <ScalarProperty Name="IsItemUseToTitle" ColumnName="IsItemUseToTitle" />
+          <ScalarProperty Name="IsItemUseToContent" ColumnName="IsItemUseToContent" />
+          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="File">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.File)">
+        <MappingFragment StoreEntitySet="File">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="FileUrl" ColumnName="FileUrl" />
+          <ScalarProperty Name="DownloadTimes" ColumnName="DownloadTimes" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Voted">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Voted)">
+        <MappingFragment StoreEntitySet="Voted">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="SelectOptions" ColumnName="SelectOptions" />
+          <ScalarProperty Name="PostTime" ColumnName="PostTime" />
+          <ScalarProperty Name="VoteID" ColumnName="VoteID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vote">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Vote)">
+        <MappingFragment StoreEntitySet="Vote">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="VoteTitle" ColumnName="VoteTitle" />
+          <ScalarProperty Name="VoteContent" ColumnName="VoteContent" />
+          <ScalarProperty Name="Option1" ColumnName="Option1" />
+          <ScalarProperty Name="Option2" ColumnName="Option2" />
+          <ScalarProperty Name="Option3" ColumnName="Option3" />
+          <ScalarProperty Name="Option4" ColumnName="Option4" />
+          <ScalarProperty Name="Option5" ColumnName="Option5" />
+          <ScalarProperty Name="Option6" ColumnName="Option6" />
+          <ScalarProperty Name="Option7" ColumnName="Option7" />
+          <ScalarProperty Name="Option8" ColumnName="Option8" />
+          <ScalarProperty Name="Option9" ColumnName="Option9" />
+          <ScalarProperty Name="Option10" ColumnName="Option10" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="MoreInfo" ColumnName="MoreInfo" />
+          <ScalarProperty Name="IsEnded" ColumnName="IsEnded" />
+          <ScalarProperty Name="IsMutilSelect" ColumnName="IsMutilSelect" />
+          <ScalarProperty Name="MutilSelectCount" ColumnName="MutilSelectCount" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="VoteImageUrl" ColumnName="VoteImageUrl" />
+          <ScalarProperty Name="VoteClassID" ColumnName="VoteClassID" />
+          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VoteClass">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.VoteClass)">
+        <MappingFragment StoreEntitySet="VoteClass">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Item">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Item)">
+        <MappingFragment StoreEntitySet="Item">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Effect" ColumnName="Effect" />
+          <ScalarProperty Name="Target" ColumnName="Target" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="EffectDays" ColumnName="EffectDays" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="ItemEffectType" ColumnName="ItemEffectType" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="EntTIme" ColumnName="EntTIme" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserItem">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.UserItem)">
+        <MappingFragment StoreEntitySet="UserItem">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="StartUseTime" ColumnName="StartUseTime" />
+          <ScalarProperty Name="UsedCount" ColumnName="UsedCount" />
+          <ScalarProperty Name="EndUseTime" ColumnName="EndUseTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comment">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Comment)">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="IsHidedByItem" ColumnName="IsHidedByItem" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="IsItemUsedToComent" ColumnName="IsItemUsedToComent" />
+          <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BigQuestion">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.BigQuestion)">
+        <MappingFragment StoreEntitySet="BigQuestion">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TestPaperID" ColumnName="TestPaperID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Answer">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Answer)">
+        <MappingFragment StoreEntitySet="Answer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="BigQuestionID" ColumnName="BigQuestionID" />
+          <ScalarProperty Name="QuestionType" ColumnName="QuestionType" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="AnswerContent" ColumnName="AnswerContent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SmallQuestion">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.SmallQuestion)">
+        <MappingFragment StoreEntitySet="SmallQuestion">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BigQuestionID" ColumnName="BigQuestionID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="QuestionType" ColumnName="QuestionType" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Log">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Log)">
+        <MappingFragment StoreEntitySet="Log">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Application" ColumnName="Application" />
+          <ScalarProperty Name="Thread" ColumnName="Thread" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Logger" ColumnName="Logger" />
+          <ScalarProperty Name="Server" ColumnName="Server" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Exception" ColumnName="Exception" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaperCategory">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.PaperCategory)">
+        <MappingFragment StoreEntitySet="PaperCategory">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TestpaperTarget">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.TestpaperTarget)">
+        <MappingFragment StoreEntitySet="TestpaperTarget">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TestPaperID" ColumnName="TestPaperID" />
+          <ScalarProperty Name="TargetType" ColumnName="TargetType" />
+          <ScalarProperty Name="TargetID" ColumnName="TargetID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="UserDepartment" TypeName="Model.UserDepartment" StoreEntitySet="UserDepartment">
+      <EndProperty Name="User">
+        <ScalarProperty Name="ID" ColumnName="User_ID" />
+      </EndProperty>
+      <EndProperty Name="Department">
+        <ScalarProperty Name="ID" ColumnName="Department_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserRole" TypeName="Model.UserRole" StoreEntitySet="UserRole">
+      <EndProperty Name="User">
+        <ScalarProperty Name="ID" ColumnName="User_ID" />
+      </EndProperty>
+      <EndProperty Name="Role">
+        <ScalarProperty Name="ID" ColumnName="Role_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PermissionRole" TypeName="Model.PermissionRole" StoreEntitySet="PermissionRole">
+      <EndProperty Name="Permission">
+        <ScalarProperty Name="ID" ColumnName="Permission_ID" />
+      </EndProperty>
+      <EndProperty Name="Role">
+        <ScalarProperty Name="ID" ColumnName="Role_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TeacherVerifyUserPaper" TypeName="Model.TeacherVerifyUserPaper" StoreEntitySet="TeacherVerifyUserPaper">
+      <EndProperty Name="TestPaper">
+        <ScalarProperty Name="ID" ColumnName="VerifyPaper_ID" />
+      </EndProperty>
+      <EndProperty Name="User">
+        <ScalarProperty Name="ID" ColumnName="VerifyBy_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TestPaperUserCheck" TypeName="Model.TestPaperUserCheck" StoreEntitySet="TestPaperUserCheck">
+      <EndProperty Name="TestPaper">
+        <ScalarProperty Name="ID" ColumnName="CheckPaper_ID" />
+      </EndProperty>
+      <EndProperty Name="User">
+        <ScalarProperty Name="ID" ColumnName="CheckBy_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserFavoritesArticle" TypeName="Model.UserFavoritesArticle" StoreEntitySet="UserFavoritesArticle">
+      <EndProperty Name="Article">
+        <ScalarProperty Name="ID" ColumnName="FavoriteArticle_ID" />
+      </EndProperty>
+      <EndProperty Name="User">
+        <ScalarProperty Name="ID" ColumnName="CollectUser_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CourseAcademy" TypeName="Model.CourseAcademy" StoreEntitySet="CourseAcademy">
+      <EndProperty Name="Course">
+        <ScalarProperty Name="ID" ColumnName="Course_ID" />
+      </EndProperty>
+      <EndProperty Name="Academy">
+        <ScalarProperty Name="ID" ColumnName="Academy_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserInfoUser" TypeName="Model.UserInfoUser" StoreEntitySet="UserInfo">
+      <EndProperty Name="User">
+        <ScalarProperty Name="ID" ColumnName="User_ID" />
+      </EndProperty>
+      <EndProperty Name="UserInfo">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fc0b447579ae44c3a83ecf0851c94cfb" Name="关系图1">
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserInfo" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ChoiceQuestion" Width="1.5" PointX="7.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FillingQuestion" Width="1.5" PointX="3" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TrueFalseQuestion" Width="1.5" PointX="3" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TestPaper" Width="1.5" PointX="5.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ShortQuestion" Width="1.5" PointX="3" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.StudentPaper" Width="1.5" PointX="3" PointY="33.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Department" Width="1.5" PointX="7.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Course" Width="1.5" PointX="7.5" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ClassInfo" Width="1.5" PointX="7.5" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Academy" Width="1.5" PointX="9.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Permission" Width="1.5" PointX="8.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Role" Width="1.5" PointX="10.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SpecialPermission" Width="1.5" PointX="3" PointY="38.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Friend" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Article" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.File" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Voted" Width="1.5" PointX="3" PointY="43.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Vote" Width="1.5" PointX="0.75" PointY="41.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.VoteClass" Width="1.5" PointX="1.5" PointY="50.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Item" Width="1.5" PointX="0.75" PointY="53.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserItem" Width="1.5" PointX="3" PointY="53.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Comment" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BigQuestion" Width="1.5" PointX="7.5" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Answer" Width="1.5" PointX="3" PointY="57.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SmallQuestion" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.StudentPaperUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.UserClassInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.AcademyUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.UserDepartment" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.UserRole" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.PermissionRole" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.TeacherVerifyUserPaper" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.TestPaperUserCheck" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FillingQuestionUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ShortQuestionUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.TrueFalseQuestionUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ClassInfoAcademy" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.StudentPaperTestPaper" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SpecialPermissionUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SpecialPermissionPermission" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ArticleUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.AttachmentArticle" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FileUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.UserFavoritesArticle" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.VotedVote" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.VoteClassVote" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.UserItemUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ItemUserItem" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CommentArticle" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.TestPaperBigQuestion" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.TestPaperUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.TestPaperCourse" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.UserChoiceQuestion" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CourseChoiceQuestion" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CourseFillingQuestion" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CourseShortQuestion" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CourseTrueFalseQuestion" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CourseAcademy" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.UserInfoUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.AnswerUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.VotedUser" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.VoteUser" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

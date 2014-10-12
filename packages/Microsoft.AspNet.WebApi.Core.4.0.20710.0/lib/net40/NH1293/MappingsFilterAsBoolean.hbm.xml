@@ -1,0 +1,43 @@
+namespace NHibernate.Test.CompositeId
+{
+	public class LineItem
+	{
+		public class ID
+		{
+			private string customerId;
+			private int orderNumber;
+			private string productId;
+			public ID() {}
+			public ID(string customerId, int orderNumber, string productId)
+			{
+				this.customerId = customerId;
+				this.orderNumber = orderNumber;
+				this.productId = productId;
+			}
+
+			public string CustomerId
+			{
+				get { return customerId; }
+				set { customerId = value; }
+			}
+
+			public int OrderNumber
+			{
+				get { return orderNumber; }
+				set { orderNumber = value; }
+			}
+
+			public string ProductId
+			{
+				get { return productId; }
+				set { productId = value; }
+			}
+
+			public override bool Equals(object obj)
+			{
+				ID that = obj as ID;
+				if (that == null)
+					return false;
+
+				return customerId == that.customerId && productId == that.productId && orderNumber == that.orderNumber;
+			}

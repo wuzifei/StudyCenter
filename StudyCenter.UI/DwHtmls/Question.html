@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<style type="text/css">
+	body{
+		text-align:center;
+	}
+
+	.allItems{
+		border:1px solid red;
+		margin:0 auto;
+		width:500px;
+		text-align:left;
+	}
+	.title{
+		font-size:14px;
+		margin-left:5px;
+	}
+	.content textarea,.content input{
+		border:1px solid #09f;
+		margin:2px;
+	}
+	
+	.singleItem{
+		margin-top:5px;
+	}
+	
+	input[type="text"]{
+		width:300px;
+	}	
+	input[type="checkbox"]{
+		margin-bottom:0px;
+	}
+	.submitBar{
+		text-align:center;
+		margin-bottom:5px;
+	}
+	.btnSubmit{
+		margin:0 auto;
+		background-color:#09f;
+		color:#fff;
+		width:48%;
+		border:1px solid #300;	
+		font-size:25px;
+
+	}
+	.btnSubmit:hover{
+		background-color:#006;
+		color:#fff;
+	}
+	
+	.commonItems{
+		text-align:center;
+	}
+</style>
+
+
+
+<div class="allItems" style="width:500px;height600px;">
+
+<div class="pageDescription" style="margin:10px;font-size:12px;color:#09f;">
+	<p>可以同过此页进行题库的添加工作，请注意不要添加重复或相似的问题</p>
+    <p>添加完一个题目后，您将会获得5经验值与5金币</p>
+    <p style="color:red;">请将要设为答案的选项后的复选框选中,若没有选中,将默认为第一个！支持多选！</p>
+</div>
+
+	<hr style="border:0.5px solid #09f ;width:98%;" />
+    
+    <div class="singleItem">
+       <div class="commonItems">
+            <label for="Content">所属课程</label> 
+            <select name="Answer" >
+            	<option>编译原理</option>
+            	<option>计算机科学</option>
+            	<option>高等数学</option>
+            	<option>数据库原理</option>
+                <option>综合布线之智能楼宇系统的设计实训</option>
+            </select>
+            
+            <label for="Content">难度系数</label> 
+            <select name="Answer" >
+            	<option>1</option>
+            	<option>2</option>
+            	<option>3</option>
+            	<option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    
+	<div class="singleItem">
+        <div class="title">
+            <label for="Content">题目</label>
+        </div>
+        <div class="content">
+            <textarea rows="7" cols="50" name="">Hello</textarea>
+        </div>
+    </div>
+
+    <div class="singleItem">
+       <div class="title">
+            <label for="Content">选项A</label>
+        </div>
+        <div class="content">
+        	<input type="text" name="Answer" />
+            <input type="checkbox" id="SelectF" name="SelectF"/><label for="SelectF">设为答案</label>
+        </div>
+    </div>  
+    
+    <div class="singleItem">
+       <div class="title">
+            <label for="Content">选项B</label>
+        </div>
+        <div class="content">
+        	<input type="text" name="Answer" />
+        </div>
+    </div>
+   <div class="singleItem">
+       <div class="title">
+            <label for="Content">选项C</label>
+        </div>
+        <div class="content">
+        	<input type="text" name="Answer" />
+        </div>
+    </div>
+   <div class="singleItem">
+       <div class="title">
+            <label for="Content">选项D</label>
+        </div>
+        <div class="content">
+        	<input type="text" name="Answer" />
+        </div>
+    </div>
+   <div class="singleItem">
+       <div class="title">
+            <label for="Content">选项E</label>
+        </div>
+        <div class="content">
+        	<input type="text" name="Answer" />
+        </div>
+    </div>
+   <div class="singleItem">
+       <div class="title">
+            <label for="Content">选项F</label>
+        </div>
+        <div class="content">
+        	<input type="text" name="Answer" />
+            <input type="checkbox" id="SelectF" name="SelectF"/><label for="SelectF">设为答案</label>
+        </div>
+    </div>
+    
+   <div class="singleItem">
+        <div class="title">
+            <label for="Content">试题详解</label>
+        </div>
+        <div class="content">
+            <textarea rows="5" cols="50" name="">略</textarea>
+        </div>
+    </div>
+
+    
+    <div class="submitBar">
+        <input type="button" class="btnSubmit" value="添加"/>
+        <input type="button" class="btnSubmit" value="添加并继续"/>
+    </div>
+    
+    
+    
+</div>
+
+
+
+
+
+</body>
+</html>

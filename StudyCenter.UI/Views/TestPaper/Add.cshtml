@@ -1,0 +1,211 @@
+﻿@model StudyCenter.UI.ViewModel.TestPaperInfo
+@{
+    Layout = "~/Views/Shared/_Header.cshtml";
+}
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="~/Content/CSS/TestPaperIndex.css" rel="stylesheet" />
+        <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+        <script src="~/Scripts/jquery-easyui-1.3.6/jquery.easyui.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/Scripts/jquery-easyui-1.3.6/themes/metro-blue/easyui.css"/>
+        <link rel="stylesheet" type="text/css" href="/Scripts/jquery-easyui-1.3.6/themes/icon.css"/>        
+        <link rel="stylesheet" type="text/css" href="/Content/CSS/TestPaper.css"/>
+        <script src="~/Scripts/TestPaper/AddAndEdit.js"></script>
+        <script type="text/javascript">
+            var CQ = 'CQ'; //选择题
+            var FQ = 'FQ'; //填空题
+            var TQ = 'TQ'; //判断题
+            var SQ = 'SQ'; //简答题
+            var CurScore = 2; //当前小题预设分数
+            //所有小题ID
+            var TotalCQIdList = new Array();
+            var TotalFQIdList = new Array();
+            var TotalTQIdList = new Array();
+            var TotalSQIdList = new Array();
+            //当前从题库选中待处理的小题ID
+            var CurCQIdList = new Array();
+            var CurFQIdList = new Array();
+            var CurTQIdList = new Array();
+            var CurSQIdList = new Array();
+            var isTruelyFromTestPaper = true;
+            var chinesNumber = new Array('零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一',
+                '十二', '十三', '十四', '十五', '十六', '十七', '十八', '十九', '二十');
+            var PublishAs = "ToPublic";
+            var oldScore = 0;
+            var oldUrls = "";
+            var isSavedOrPublished = false;
+
+
+            $.extend($.fn.validatebox.defaults.rules, {
+                startTime: {
+                    validator: function (value, param) {
+                        var dateStart = new Date(value);
+                        var now = new Date();
+                        var nowSpan = dateStart - now;
+                        if (nowSpan > 0) {
+                            return true;
+                        }
+                        return false;
+                    },
+                    message: '开始时间不能设为过去'
+                }
+            });
+            $.extend($.fn.validatebox.defaults.rules, {
+                endTime: {
+                    validator: function (value, param) {
+                        var sTime = $(".Time").first().datetimebox("getText");
+                        var dateStart = new Date(sTime);
+                        var dateEnd = new Date(value);
+                        if ((dateEnd - dateStart) < 30000)
+                            return false;
+                        return true;
+                    },
+                    message: '结束时间至少要在开始时间之后5分钟'
+                }
+            });
+        </script>
+
+        <form  method="post" action="/testpaper/add">
+            <!--工具栏开始-->
+	        <div class="paperToolBar">
+	            <div class="singleTool">
+	                <label>课程</label>
+  		            @Html.DropDownList("CourseID", @Model.Courses, new { id = "CourseID", name = "CourseID", style = "text-align:center;width: 150px" })
+	            </div>
+	            <div class="singleTool">
+	                <label>类别</label>
+                    @Html.DropDownList("CourseID", @Model.BigCategory,
+                            new { id = "BigCategory", name = "BigCategoryID", onchange = "ChangeCategory();", style = "text-align:center;width: 100px" })
+
+	            </div>
+	            <div class="singleTool">
+	                <label></label>
+                    @Html.DropDownList("SmallCategoryID", @Model.SmallCategory, new { id = "SmallCategory", name = "SmallCategoryID", style = "text-align:center;width: 150px" })
+	            </div>       
+        
+                <div class="singleTool">
+                    <label>出卷人:</label>
+                    <label style="color:red;" >吴自飞</label>
+                </div>       
+                <div class="singleTool">
+        	        <input id="DraftBox" type="button" onclick="javascript:alert('草稿箱');" value="草稿箱"/>
+                </div> 
+                <p class="PublishContent">
+                    <label style="color:#09f;font-size:20px;font-weight: bold;margin-bottom:0;padding-bottom: 0;">面向:</label>
+                    <select id="PublishToAllOrNot" name="PublishToAllOrNot" style="color:red;font-size:15px;" >
+                        <option value="1" selected="selected">指定人</option>
+                        <option value="2">所有人</option>
+                    </select>
+                    <input id="PublishTo" name="PublishToNames" type="text" style="font-size: 15px;color:red;" value=""/>
+                </p>   
+                <p id ="PaperPublishAs" >
+                    <span style="font-weight: bold;color:#0099ff;font-size:20px;">发布为:</span>
+                    <input type="radio" class="PublishAsClass" id="ToHomeWork" name="PublishAs" value="1"/><label for="ToHomeWork">作业</label>
+                    <input type="radio" class="PublishAsClass" id="ToTest" name="PublishAs" value="2"/><label for="ToTest">考试</label>
+                    <input type="radio" class="PublishAsClass" id="ToPublic" name="PublishAs" value="3" checked="checked" /><label style="color:red;font-weight: bold" for="ToPublic">公开</label>
+                    <span style="font-weight: bold;color:#0099ff;font-size:20px;margin-left: 15px;">知识点:</span>
+                    <input type="text" style="width:35%;border: 0;border-bottom: 1px solid #09f;font-size: 20px;color:red;" id="Knowledge" name="Knowledge" value="数据结构"/>
+                </p>
+	        </div>   
+            <!--添加大题按钮-->             
+            <div id="AddBigQuestionDiv" >
+                <input id="AddBigQuestion" type="button" onclick="javascript: AddBigQuestionItem();" style="border:0;" value="添加大题" />
+            </div>
+            <!--保存试卷按钮-->
+            <div id="SaveTestPaperDiv" style="position: absolute;background-color: #fff;color: #09f;" >
+                <input id="SaveTestPaper"  type="button" onclick="javascript: SaveAs();"  style="border:0;" value="保存试卷" />
+            </div>
+            <!--消息窗口-->
+            <div id="MessageBox"></div>
+            <!--添加大题窗体-->
+            <div style="display: none;" >
+                <div id="AddBigQuestionDialog">
+                    <div style="text-align: center;margin: 0 auto;">
+                        <p><label >大题标题:</label><input id="BigQuestionTitle" name="title" type="text"/></p>
+                        <p><label >试题说明:</label><input id="BigQuestionRemark" name="remark" type="text"/></p>
+                        <p>
+                            <label >每小题期望分值:</label>
+                            <input name="score" id="BigQuestionScore" style="width:470px;color:red;" class="easyui-numberspinner" 
+                                   required="required" data-options="min:0,value:2,editable:true,increment:1">  
+                        </p>
+                        <p id="AddBtns">
+                            <input type="button"  onclick="AddBigQuestionToServer(false)"  value="保存"/>
+                            <input type="button"  onclick="AddBigQuestionToServer(true)" value="保存并继续"/>
+                            <input type="button"  class="CloseWindow" value="取消"/>
+                        </p>   
+                        <p id="UpdateBtns" style="display: none;">
+                            <input type="button" id="UpdateBigQuestion" value="修改"/>
+                            <input type="button"  class="CloseWindow" value="取消"/>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!--添加小题窗体 -->
+            <div id="AddSmallQuestionDialog"></div>
+            <!--试卷内容开始-->
+            <div class="paperContent">
+                <div class="testPaper">
+                    <div class="testPaperTitle">
+                        <p>
+                            <label style="font-size:20px;color:#09f;">试卷名:</label>
+                            <input type="text" style="width:80%;" id="PaperName" name="PaperName" class="easyui-validatebox" 
+                                   data-options="required:true,missingMessage:'试卷名不可为空'"  />
+                        </p>
+                        <p>
+                            <label style="font-size:20px;color:#09f;">说明:</label>
+                            <input type="text" style="width:80%;" name="PaperDescription" />
+                        </p>
+                        <p >
+                            <label style="font-size:20px;color:#09f;">开始时间:</label>
+                            <input type="text"  style="width:220px;height: 30px;" class="Time" id="StartTime" name="StartTime"/>    &nbsp;         
+                            <label style="font-size:20px;color:#09f;">结束时间:</label>
+                            <input type="text" style="width:220px;height: 30px;" class="Time" id="EndTime" name="EndTime"/>
+                            <input type="button" style="width:auto;height: 30px;" value="无结束" onclick="NoEndTime();"/>
+                        </p>
+                        <p>
+                            <label >考试时长:</label>
+                            <input type="text" name="TestMinutes" value="90"/>
+                            <label>分钟</label>    &nbsp; &nbsp; &nbsp;   
+                            <label >总分:</label>
+                            <input type="text" name="PaperScore" value="100"/>
+                            <label></label>     
+                        </p>     
+                      @*  <p>
+                            <label style="font-weight: bold;">面向:</label>
+                            <input type="radio" class="PublishToClass" name="PublishTo" value="1"/><label>特定班级</label>
+                            <input type="radio" class="PublishToClass" name="PublishTo" value="2"/><label>指定学院</label>
+                            <input type="radio" class="PublishToClass" name="PublishTo" value="3"/><label>面向全校</label>
+                            <input type="radio" class="PublishToClass" name="PublishTo" value="4" checked="checked" /><label>所有人</label>
+                        </p>*@
+
+                    </div>
+
+                    <!--allQuestion start-->
+                    <div class="allQuestion">
+                        <input type="hidden" value="0" id="bigQuestionCount"/>
+                        <input type="hidden" value="0" id="smallQuestionCount"/>
+                        <input type="hidden" value="0" id="TestPaperID"/>
+                    </div> 
+                    <!--allQuestion end-->
+                    <!--提交按钮部分 start-->
+                    <div>
+                        <hr  style="border:1px solid #09f;margin: 10px;width: 730px; "/>
+                        <div>
+                            <input class="submitAnswer" type="button" id="PublishTestPaper" onclick="SaveTestPaperToServer(true);" value="发布试卷" />
+                            <input class="submitAnswer" type="button" id="SaveAsDraft" onclick="SaveTestPaperToServer(false);" value="保存为草稿" />
+                            <input class="submitAnswer" type="button" id="CancellAndClose" onclick=" Redirect();" value="取消并关闭" />
+                        </div>
+                    </div>
+                    <!--提交按钮部分 end-->
+                </div>
+            </div>
+            <!--试卷内容结束-->   
+
+            
+            
+
+            <!--工具栏结束-->
+            
+
+             
+        </form>  

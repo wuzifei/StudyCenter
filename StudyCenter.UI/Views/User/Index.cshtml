@@ -1,0 +1,76 @@
+﻿@model StudyCenter.Model.User
+
+@{
+    ViewBag.Title = "科大虚拟学院";
+}
+@{
+	Layout = "~/Views/Shared/_Header.cshtml";
+}
+    <!-- 滑动门容器-->
+    <div id="slide_container">
+	    <!-- 滑动门元素-->
+	    <div id="slide_elements">
+	        @{
+                var urls = ViewBag.Urls as List<string>;	                
+			    int urlCount = urls.Count;
+			    var url = ViewBag.Urls[0];
+			    for (int i = 0 ;i < urlCount ;i++)
+			    {
+				    int j = i+1;
+				    string current = i == 0 ? "_current" : "";
+				    <div id="slide_element_@(j)" class="slide_element@(current)">
+					    <a href="http://baidu.com" style="background-image:url(@ViewBag.Urls[i])">
+						    <div></div>
+					    </a>
+				    </div>
+			    }
+		    }
+	    </div>
+	    <!-- 滑动门元素end-->
+				
+	    <div id="slide_buttons">
+		    @{
+			    for (int i = 0; i < urlCount; i++)
+			    {
+				    string s= i==0?"_selected":"";
+				    int j = i + 1;
+				    <div id="slide_button_@j" class="slide_button"@s onmousemove="ChangeSlide('@j','@urlCount');"></div>
+			    }
+		    }
+	    </div>
+
+	    @*滑动门控制脚本*@
+	    <script language="javascript" type="text/javascript">
+    	    function ChangeSlide(num, count) {
+    	        var curSelect = document.getElementsByClassName("slide_element_current")[0];
+    	        curSelect.className = "slide_element";
+    	        curSelect.style.display = 'none';
+    	        document.getElementById("slide_element_" + num).className = "slide_element_current";
+    	        document.getElementById("slide_element_" + num).style.display = "block";
+    	        for (var i = 1; i <= count; i++) {
+    	            document.getElementById("slide_button_" + i).className = "slide_button";
+    	        }
+    	        document.getElementById("slide_button_" + num).className = "slide_button_selected";
+    	    }
+    	</script>
+
+    </div>
+	<!-- 滑动门 end-->
+
+@*主要内容*@
+
+Main Content
+
+@section Sidebar
+{
+    <p>You are beautiful ! </p>
+    <p>You are beautiful ! </p>
+    <p>You are beautiful ! </p>
+    <p>You are beautiful ! </p>
+    <p>You are beautiful ! </p>
+}
+
+@section footer 
+{
+	<p style="color:red;"><b>This is @ViewBag.Title's footer</b></p>
+}

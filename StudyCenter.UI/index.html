@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+
+<style type="text/css">
+
+
+
+	<!--头部及导航栏布局样式 start-->
+	*{
+		padding:0px;
+		margin:0px;
+	}
+	#top_bar {
+		width: 1040px;
+		height: 28px;
+		margin: 0px auto;
+		left: 50%;
+		position: 520px;
+	}
+	
+	#school_log {
+		width: 200px;
+		height: 26px;
+		float: left;
+		background-image: url("/Content/images/log.png");
+		background-repeat: no-repeat;
+		background-position: left;
+	}
+	
+	#top_bar .status_bar {
+		width: 20%;
+		float: right;
+		text-align: right;
+	}
+	
+	.container,#content{
+		width: 1040px;
+		margin: 5px auto;
+		left: 50%;
+		position: 520px;
+		overflow:hidden;
+	}
+	
+	#log a {
+		text-decoration: none;
+		font-size: 30px;
+	}
+	
+	#log, #menu_list {
+		float: left;
+	}
+	
+	ol, ul {
+		display: block;
+		list-style: none;
+	}
+	
+	li a {
+		float: left;
+		text-decoration: none;
+		display: inline;
+		color: #000;
+		margin: 9px 5px 0px 20px;
+		font-size: 22px;
+	}
+	
+	
+	.menu_item {
+		text-decoration: none;
+		margin: 9px 5px 0px 0px;
+	}
+	
+	#search_word {
+		width:220px;
+		float: right;
+		margin: 9px 0px 0px 0px;
+	}
+	#search_box{
+		float:right;
+		
+	}
+	#search {
+		float: right;
+		border: hidden;
+		background-image: url("/Content/images/search.png");
+		background-repeat: no-repeat;
+		width: 30px;
+		height: 22px;
+		cursor: pointer;
+		margin: 9px 0px 0px 0px;
+	}
+	<!--头部布局样式 end-->
+	
+	<!--主要内容布局样式 start-->
+	#content{
+		margin-top:0px;
+	}
+	
+	#main_content{
+		float:left;
+		width:750px;
+		margin: auto;
+		padding:0px;
+		}
+	#side_bar{
+		float:right;
+		width:250px;
+		margin: auto;
+		padding:0px;
+		}
+	#footer{
+		float:left;
+		padding-top:30px;
+		width:100%;
+		}
+	<!--主要内容布局样式 end-->
+	
+	<!--滑动门样式 start-->
+	#slide_container{
+		overflow:hidden;
+		width:750px;
+		height:300px;
+		clear:both !important;
+		}
+	.slide_element a{
+		overflow:hidden;
+		width:750px;
+		height:300px;
+		display:none;
+		}
+	.slide_element_current a{
+		height:300px;
+		width:750px;
+		display:block;
+		float:left;
+	}
+	
+	#slide_buttons{
+		float:left;
+		position:absolute;
+		overflow: hidden;
+		display: inline-block;
+		top: 350px;
+		left: 810px;
+	}
+	.slide_button{
+		float:left;
+		width: 25px;
+		height: 20px;
+		margin:4px;
+		background-image:url(content/images/search.png);
+		cursor:pointer;
+	}
+	<!--滑动门样式 end-->
+	
+	<!--通告框样式 start-->
+	.notic_bar{
+		width:98%;
+		overflow:hidden;
+		border:2px solid #33C ;			
+	}
+	.notice_left{
+		width:64%;
+		height:135px;
+		float:left;
+		background-color:#FFF;
+		border:1px solid #33c;
+		color:#33C;
+		}
+	.notice_right{
+		width:34%;
+		height:135px;
+		float:left;
+		background-color:#33C;
+		border:1px solid #33c;
+		color:white;
+		overflow:hidden;
+		}
+	<!--通告框样式 end-->
+		
+</style>
+
+</head>
+
+<body>
+
+<!--顶端条-->
+<div id="top_bar">
+    <div id="internal_container">
+        <a id="school_log"   href="http://www.jxstnu.cn" target="_blank"></a>  
+        <div class="status_bar">
+            <a href="user/login">登录</a>
+        </div>
+    </div>  
+</div>
+
+
+<!--头部容器 start-->
+<div class="container">
+	<!--网站头部 start-->
+	<div class="header"> 
+    	<!--网站文字log start-->
+        <div id="log">
+          <a href="http://www.jxstnu.cn/studycenter">科大虚拟学院</a>
+        </div><!--网站文字log end-->
+        
+        <!--网站导航菜单 start-->
+    	<div class="menu_list">
+        	<ul>
+            	<li class="menu_item">
+                	<a href="" >主页</a>
+                </li>
+                <li class="menu_item">
+                	<a href="" >学习</a>
+                </li>
+                <li class="menu_item">
+                	<a href="" >博文</a>
+                </li>
+                <li class="menu_item">
+                	<a href="" >资源</a>
+                </li>
+                <li class="menu_item">
+                	<a href="" >道具</a>
+                </li>
+                <li class="menu_item">
+                	<a href="" >投票</a>
+                </li>
+                <li class="menu_item">
+                	<a href="" >帮助</a>
+                </li>
+            </ul>
+        </div><!--网站导航菜单 end-->
+
+		<!--网站搜索 start-->
+        <div id="search_box"> 
+            <input type="button" id="search" />
+            <input type="text" id="search_word" />
+        </div><!--网站搜索 end-->
+    </div><!--网站头部 end-->
+</div><!--头部容器 end-->
+
+<!--网站全部内容容器 start-->
+<div id="content">
+	<!--网站主要内容容器 start-->
+    <div id="main_content">
+    <!-- 滑动门容器-->  
+        <div id="slide_container">
+            <!-- 滑动门元素--> 
+            <div id="slide_elements">
+                <div id="slide_element_1" class="slide_element">
+                    <a href="http://baidu.com" style="background-image:url(/content/images/1.jpg)">
+                        <div></div>
+                    </a>
+                </div>
+                <div id="slide_element_2" class="slide_element_current">
+                    <a href="http://baidu.com" style="background-image:url(/content/images/2.jpg)">
+                        <div>内容2</div>
+                    </a>
+                </div>
+                <div id="slide_element_3" class="slide_element">
+                    <a href="http://baidu.com" style="background-image:url(/content/images/3.jpg)">
+                        <div>内容3</div>
+                    </a>
+                </div>
+                <div id="slide_element_1" class="slide_element">
+                    <a href="http://baidu.com" style="background-image:url(/content/images/1.jpg)">
+                        <div>内容4</div>
+                    </a>
+                </div> 
+            </div>
+            <!-- 滑动门元素end-->
+            
+            <script language="javascript" type="text/javascript">
+                function ChangeSlide(num){
+                    var count =document.getElementsByClassName("slide_element_current").length;
+                    var curSelect = document.getElementsByClassName("slide_element_current")[0];
+                    curSelect.className = "slide_element";
+                    curSelect.style.display='none';
+                    document.getElementById("slide_element_" + num).className="slide_element_current";
+                    document.getElementById("slide_element_" + num).style.display="block";
+                    }
+            </script>
+            
+            <!-- 滑动门切换按钮-->
+            <div id="slide_buttons">
+                <div id="slide_button_1" class="slide_button" onclick="ChangeSlide(1);"></div>
+                <div id="slide_button_2" class="slide_button" onclick="ChangeSlide('2')"></div>
+                <div id="slide_button_3" class="slide_button" onclick="ChangeSlide('3');"></div>
+                <div id="slide_button_1" class="slide_button" onclick="ChangeSlide('1');"></div>
+            </div>
+            <!-- 滑动门切换按钮end-->  
+        </div>
+        <!-- 滑动门 end-->
+        
+        <p>我们都是一家人，我们爱自己的祖国</p>
+        <p>我们都是一家人，我们爱自己的祖国</p>
+        <p>我们都是一家人，我们爱自己的祖国</p>
+        <p>我们都是一家人，我们爱自己的祖国</p>
+        <p>我们都是一家人，我们爱自己的祖国</p>
+        <p>我们都是一家人，我们爱自己的祖国</p>
+    </div><!--网站主要内容容器 end-->
+    <!--网站左边框容器 start-->
+    <div id="side_bar">
+        <!-- start 设置通告 start:noticeTitle,noticeContent,noticeUrl,noticeTime(发布了多少天)-->
+        <div id="notice" class="notice_bar">
+        	<!--通告左边框 start-->
+            <div class="notice_left">
+                <p id="noticeTitle" style="font-size:15px;margin:3px;"><strong>通告标题</strong></p>
+                <p style="font-size:12px;margin:3px;" id="noticeContent">
+                      50字通告内容:通告内容:不能超过50字,否则省略,科大虚拟学院是我校的唯一正式成立的学生课后学习及考勤的虚拟学院
+                </p>
+                <div style="width: 100%; height: 20px; text-align: cneter; vertical-align: 
+                            bottom; margin-bottom: 0px; margin-top: 8px; color: #00A0D0;">
+                    <a href="notice/id" id="noticeId">
+                        <div style="background-image:url(content/images/search.png);width:20px;
+                                    height:20px;margin-left:20px;display:block;float:left;">
+                        </div>
+                    </a>
+                    <a href="notice/id" id="noticeUrl" style="font-size:20px;color:#3169D0;text-decoration:none;" >
+                        <strong>点击查看</strong>
+                    </a>
+                </div>
+            </div><!--通告左边框 end-->
+            <!--通告右边框 start-->
+            <div class="notice_right">
+			<!--<p id="noticePublisher" style="width:80px;font-size:25px;text-align:right;margin-top:2px;">吴自飞</p>-->  
+                <p id="noticeTime" style="font-size:44px;text-align:right;margin:10px;">331</p>
+                <p style="font-size:14px;text-align:right;margin:10px;">距离发布时间</p>
+            </div><!--通告右边框 end-->	
+        </div>
+        <!-- end end end end 设置通告:end end end end-->
+        
+        <h1>统计信息</h1>
+        <p>我们都是一家人</p>
+        <p>我们都是一家人，我们爱自己的祖国</p>
+        <p>我们都是一家人，我们爱自己的祖国</p>
+        <p>我们都是一家人，我们爱自己的祖国</p>
+        <p>我们都是一家人，我们爱自己的祖国</p>
+        <p>我们都是一家人，我们爱自己的祖国</p>
+    </div>
+    <!--end end end 网站主要内容容器 end end end-->
+    
+    
+    <div id="footer">
+        <p>这是footer</p>
+        <p>这是footer</p>
+        <p>这是footer</p>
+        <p>这是footer</p>
+        <p>这是footer</p>
+        <p>这是footer</p>
+    </div>
+</div>
+<!--end end end 网站全部内容容器 end end end-->
+
+</body>
+</html>

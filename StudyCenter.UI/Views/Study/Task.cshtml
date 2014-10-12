@@ -1,0 +1,213 @@
+﻿
+<style type="text/css">
+
+body{
+	text-align:center;
+}
+
+.testPaper{
+	width:720px;
+	margin:0 auto;
+}
+
+.allQuestion{
+	text-align:left;
+}
+
+.testPaperTitle{
+	text-align:center;
+}
+
+.testPaperTitle h1{
+	color:#09f;
+}
+
+.questionTitle h2{
+	text-align:left;
+	color:#09f;
+}
+.questionTitle{
+	color:#36C;
+}
+
+.questionItems ul  li{
+	list-style:none;
+	display:inline-block;
+	margin-left:20px;
+	margin-bottom:20px;
+}
+
+.questionItems li{
+
+	margin-bottom:10px;
+}
+
+.answerContent{
+	margin-left:20px;
+	margin-top:5px;
+}
+
+.fillAnswerBox{
+	border:0px solid #09f;
+	border-bottom:1px solid #09f;
+	width:500px;
+}
+
+.submitAnswer{
+	margin-right:15px;
+	width:600px;
+	height:30px;
+	background-color:#6CF;
+	color:#fff;
+	border:0px;
+	font-size:24px;
+}
+.submitAnswer:hover{
+	background-color:#30C;
+	color:#fff;
+}
+</style>
+
+<form  method="post" action="/study/checkpaper/">
+    <div class="testPaper">
+
+        <div class="testPaperTitle">
+            <h1>数据库原理期中测试A卷</h1>
+        </div>
+    
+        <div class="testPaperTitle">
+            <p>说明：请学生们不要作弊，不然将无法获得学士学位!</p>
+            <p style="color:red;">注意：本考试系统具有防作弊功能，若发现雷同试卷，都将将视为作弊!</p>
+            <span>出题人：吴自飞</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>考试时间：90分钟</span>
+        </div>
+
+        <div class="allQuestion">
+            <!--selectQuestion start--> 
+            <div class="selectQuestion">
+        
+                <div class="questionTitle">
+                    <h2>一.选择题 (共10小题,每题2分,共20分)</h2>
+                </div>
+            
+                <div class="questionContent">
+                    <ul class="questionItems" style="list-style:none;">
+                        <li>
+                            <label class="questionTitle">1.钢铁是怎么样炼成的?</label><br/>
+                            <div class="answerContent">
+                                <input name="selectQuestionId + 'SQ'" type="radio" value="A" />A.放在锅里面<br />
+                                <input name="selectQuestionId + 'SQ'" type="radio" value="B" />B.放在锅里面<br />
+                                <input name="selectQuestionId + 'SQ'" type="radio" value="C" />C.放在锅里面<br />
+                                <input name="selectQuestionId + 'SQ'" type="radio" value="D" />D.放在锅里面
+                            </div>
+                        </li>
+                        <li>
+                            <label class="questionTitle">2.你喜欢ASP.NET吗?(多选)</label><br/>
+                            <div class="answerContent">
+                                <label   value="A" >A.喜欢</label><br />
+                                <label   value="B" >B.很喜欢</label><br />
+                                <label   value="C" >C.非常喜欢</label><br />
+                                <label   value="D" >D.必须喜欢</label><br />
+                                <span style="color:#66F" >答案:</span>
+                                <input class="fillAnswerBox" name="selectQuestionId + 'SQ'" type="text" value="" /><br />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+    
+            </div><!--selectQuestion end--> 
+        
+            <!--fillingQuestion start--> 
+            <div class="fillingQuestion">
+        
+                <div class="questionTitle">
+                    <h2>二.填空题(每空两分,多填请用或号:'<span style="color:red;">|</span>' 隔开,共10空,总20分)</h2>
+                </div>
+            
+                <div class="questionContent">
+                    <ul class="questionItems" style="list-style:none;">
+                        <li>
+                            <label class="questionTitle">1.钢铁是怎么样炼成的______?</label><br/>
+                            <div class="answerContent">
+                                <span style="color:#66F" >答案:</span>
+                                <input class="fillAnswerBox" name="selectQuestionId + 'FQ'" type="text" value="放锅里炼" /><br />
+                            </div>
+                        </li>
+                        <li>
+                            <label class="questionTitle">2.常用的程序结构有______和______和______?(多填)</label><br/>
+                            <div class="answerContent">
+                                <span style="color:#66F" >答案:</span>
+                                <input class="fillAnswerBox" name="selectQuestionId + 'FQ'" type="text" value="顺序结构|循环结构|选择结构" /><br />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            
+            </div><!--fillingQuestion end--> 
+        
+            <!--trueFalseQuestion start--> 
+            <div class="trueFalseQuestion">
+        
+                <div class="questionTitle">
+                    <h2>三.判断题(每题1分,共10题,总10分)</h2>      
+                </div>
+            
+                <div class="questionContent">
+                    <ul class="questionItems" style="list-style:none;">
+                        <li>
+                            <label class="questionTitle">1.你喜欢ASP.NET吗?</label><br/>
+                            <div class="answerContent">
+                                <input name="trueFalseQuestionId + 'TFQ'" type="radio" value="true" >对</input><br />
+                                <input name="trueFalseQuestionId + 'TFQ'" type="radio" value="false" >错</input><br />
+                            </div>
+                        </li>
+                        <li>
+                            <label class="questionTitle">2.你喜欢ASP.NET吗?</label><br/>
+                            <div class="answerContent">
+                                <input name="trueFalseQuestionId + 'TFQ'" type="radio" value="true" >对</input><br />
+                                <input name="trueFalseQuestionId + 'TFQ'" type="radio" value="false" >错</input><br />
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+    
+            </div><!--trueFalseQuestion end-->  
+
+            <!--shortQuestion start-->         
+            <div class="shortQuestion">
+        
+                <div class="questionTitle">
+                    <h2>四.简答题</h2>          
+                </div>
+            
+                <div class="questionContent">
+                    <ul class="questionItems" style="list-style:none;">
+                        <li>
+                            <label class="questionTitle">1.请解释下钢铁是怎么样炼成的?</label><br/>
+                            <div class="answerContent">
+                                <p><span style="color:#66F" >答案:</span></p>
+                                <textarea name="shortQuestionId + 'SHQ'" rows="10" cols="50" style="width:600px;height:100px;"></textarea>
+                            </div>
+                        </li>
+                        <li>
+                            <label class="questionTitle">2.请解释下铝是怎么样炼成的?</label><br/>
+                            <div class="answerContent">
+                                <p><span style="color:#66F" >答案:</span></p>
+                                <textarea name="shortQuestionId + 'SHQ'" rows="10" cols="50" style="width:600px;height:100px;"></textarea>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!--shortQuestion end-->  
+        </div> <!--allQuestion end-->
+
+        <hr  style="border:1px solid #09f;margin: 10px;width: 650px; "/>
+
+        <div>
+            <input class="submitAnswer" type="submit" value="确认答案无误,提交" />
+        </div>
+    </div>
+
+</form>
+

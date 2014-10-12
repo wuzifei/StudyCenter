@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{804AD3BE-9DC2-4C9C-B59B-82BFD62F7227}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StudyCenter.Model</RootNamespace>
+    <AssemblyName>StudyCenter.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\StudyCenter.UI\Library\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Academy.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcademyEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AllId.cs" />
+    <Compile Include="Answer.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AnswerEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Article.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArticleEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArticleType.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="BigQuestion.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BigQuestionEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChoiceQuestion.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChoiceQuestionEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClassInfo.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClassInfoEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Comment.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CommentEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Course.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enum\ArticleType.cs" />
+    <Compile Include="Enum\ItemTargetType.cs" />
+    <Compile Include="Enum\ItemType.cs" />
+    <Compile Include="Enum\PaperType.cs" />
+    <Compile Include="File.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FileEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FillingQuestion.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FillingQuestionEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Friend.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FriendEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEffectType.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemTargetType.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Log.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="ModelExtensions\BaseQuestion.cs" />
+    <Compile Include="ModelExtensions\QuestionsEx.cs" />
+    <Compile Include="ModelToPoco.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaperCategory.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaperCategoryEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaperType.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Permission.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PermissionEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Question.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionType.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShortQuestion.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShortQuestionEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SmallQuestion.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SmallQuestionEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialPermission.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialPermissionEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentPaper.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentPaperEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestPaper.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestPaperEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestpaperTarget.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestpaperTargetEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestpaperTargetType.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrueFalseQuestion.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrueFalseQuestionEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfo.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfoEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserItem.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserItemEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AjaxMessage.cs" />
+    <Compile Include="ViewModel\AnswerTestpaper.cs" />
+    <Compile Include="ViewModel\EasyUiTreeData.cs" />
+    <Compile Include="ViewModel\Pagination.cs" />
+    <Compile Include="ViewModel\QuestionInfo.cs" />
+    <Compile Include="ViewModel\QuestionLists.cs" />
+    <Compile Include="ViewModel\StudyStudent.cs" />
+    <Compile Include="ViewModel\TestModel.cs" />
+    <Compile Include="ViewModel\TestPaperDo.cs" />
+    <Compile Include="ViewModel\TestPaperEdit.cs" />
+    <Compile Include="ViewModel\TestPaperIndex.cs" />
+    <Compile Include="ViewModel\TestPaperInfo.cs" />
+    <Compile Include="Vote.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VoteClass.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VoteClassEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Voted.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VotedEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VoteEx.cs">
+      <DependentUpon>ModelToPoco.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ModelToPoco.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelToPoco.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="StudyCenterDataSet.xsc">
+      <DependentUpon>StudyCenterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StudyCenterDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StudyCenterDataSet.xss">
+      <DependentUpon>StudyCenterDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model.edmx.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
